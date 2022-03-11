@@ -38,11 +38,11 @@ app.get('/fahrenheit/:value/celsius', (req, res) => {
 });
 
 app.get('/swagger.yaml', (req, res) => {
-    res.download(__dirname +'docs/swagger.yaml');
+    res.download(__dirname +'/docs/swagger.yaml');
 });
 
 app.get('/openapi.yaml', (req, res) => {
-    res.download(__dirname +'docs/openapi.yaml');
+    res.download(__dirname +'/docs/openapi.yaml');
 });
 
 app.get('/celsius/:value/fahrenheit', (req, res) => {
