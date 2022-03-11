@@ -84,7 +84,7 @@ jobs:
       - name: DAST  
         uses: zaproxy/action-api-scan@v0.1.0
         with:
-          target: https://api-service-brunobotelhobr.cloud.okteto.net/openpai.yaml
+          target: https://api-service-brunobotelhobr.cloud.okteto.net/openapi.yaml
           format: openapi
           rules_file_name: .zap_gnore
           cmd_options: '-a'
