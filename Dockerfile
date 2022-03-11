@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:current-alpine
 WORKDIR /app
 COPY package*.json ./
 ARG DEBIAN_FRONTEND=noninteractive
