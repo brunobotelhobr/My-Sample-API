@@ -1,15 +1,10 @@
 
-10020	IGNORE	(Missing Anti-clickjacking Header)
-10021	IGNORE	(Cookie Without Secure Flag)
-10037	IGNORE	(Cookie Without Secure Flag)
-10038	IGNORE	(Content Security Policy (CSP) Header Not Set)
-10063	IGNORE	(Permissions Policy Header Not Set)
-10055 IGNORE	(Wildcard Directive)
+10020 IGNORE (Missing Anti-clickjacking Header)
+10021 IGNORE (Cookie Without Secure Flag)
+10037 IGNORE (Cookie Without Secure Flag)
+10038 IGNORE (Content Security Policy (CSP) Header Not Set)
+10063 IGNORE (Permissions Policy Header Not Set)
+10055 IGNORE (Wildcard Directive)
 90022 IGNORE  (Application Error Disclosure)
-100000  IGNORE  (A Server Error response code was returned by the server)
-100001  IGNORE  (Unexpected Content-Type was returned)
-
-100001	OUTOFSCOPE	https://api-service-brunobotelhobr.cloud.okteto.net/openpai.yaml
-100001	OUTOFSCOPE	https://api-service-brunobotelhobr.cloud.okteto.net/7799007344787767964
-100001	OUTOFSCOPE	https://api-service-brunobotelhobr.cloud.okteto.net/docs
-100001	OUTOFSCOPE	https://api-service-brunobotelhobr.cloud.okteto.net/docs/
+100000 IGNORE (A Server Error response code was returned by the server)
+100001 IGNORE (Unexpected Content-Type was returned)
