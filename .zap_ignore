@@ -5,6 +5,7 @@
 10038	IGNORE	(Content Security Policy (CSP) Header Not Set)
 10063	IGNORE	(Permissions Policy Header Not Set)
 100001	IGNORE	(Unexpected Content-Type was returned)
+10055	IGNORE	(Wildcard Directive)
 
 100001	OUTOFSCOPE	https://api-service-brunobotelhobr.cloud.okteto.net/openpai.yaml
 100001	OUTOFSCOPE	https://api-service-brunobotelhobr.cloud.okteto.net/7799007344787767964
