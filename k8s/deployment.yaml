@@ -73,7 +73,7 @@ spec:
       port: 8080
 
 --- 
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: api-as
@@ -84,4 +84,10 @@ spec:
     name: api
   minReplicas: 2
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 75
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
