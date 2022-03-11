@@ -1,5 +1,4 @@
 
-10001	IGNORE	(Unexpected Content-Type was returned)
 10020	IGNORE	(Missing Anti-clickjacking Header)
 10021	IGNORE	(Cookie Without Secure Flag)
 10037	IGNORE	(Cookie Without Secure Flag)
@@ -11,4 +10,3 @@
 100001	OUTOFSCOPE	https://api-service-brunobotelhobr.cloud.okteto.net/7799007344787767964
 100001	OUTOFSCOPE	https://api-service-brunobotelhobr.cloud.okteto.net/docs
 100001	OUTOFSCOPE	https://api-service-brunobotelhobr.cloud.okteto.net/docs/
-100001	OUTOFSCOPE	https://api-service-brunobotelhobr.cloud.okteto.net/3461459443107352934
