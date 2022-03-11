@@ -86,7 +86,7 @@ jobs:
         with:
           target: https://api-service-brunobotelhobr.cloud.okteto.net/openpai.yaml
           format: openapi
-          rules_file_name: .zap_gnore
+          rules_file_name: .zap_ignore
           cmd_options: '-a'
           fail_action: true
   QA:
