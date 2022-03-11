@@ -1,3 +1,10 @@
 # Rules do Ignore
+# Ezample
 # 10011	IGNORE	(Cookie Without Secure Flag)
 
+10001	IGNORE	(Unexpected Content-Type was returned)
+10020	IGNORE	(Missing Anti-clickjacking Header)
+10021	IGNORE	(Cookie Without Secure Flag)
+10037	IGNORE	(Cookie Without Secure Flag)
+10038	IGNORE	(Content Security Policy (CSP) Header Not Set)
+10063	IGNORE	(Permissions Policy Header Not Set)
