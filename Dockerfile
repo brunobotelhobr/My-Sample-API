@@ -1,5 +1,5 @@
 #FROM node:14.16.1-alpine3.13
-FROM ubuntu
+FROM ubuntu:18.04
 WORKDIR /app
 COPY package*.json ./
 ARG DEBIAN_FRONTEND=noninteractive
