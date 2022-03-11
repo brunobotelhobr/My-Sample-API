@@ -1,4 +1,4 @@
-#FROM node:14.16.1-alpine3.13
+#FROM node:latest
 FROM ubuntu:18.04
 WORKDIR /app
 COPY package*.json ./
