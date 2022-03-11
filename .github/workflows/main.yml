@@ -80,7 +80,13 @@ jobs:
         uses: okteto/apply@master
         with:
           manifest: k8s/deployment.yaml
-
+          
+      - name: DAST  
+        uses: zaproxy/action-api-scan@v0.1.0
+        with:
+          target: https://api-service-brunobotelhobr.cloud.okteto.net/openpai.yaml
+          format: openpi
+          fail_action: true
   QA:
     needs: [CD]
     runs-on: ubuntu-latest
