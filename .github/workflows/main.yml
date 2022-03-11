@@ -29,7 +29,7 @@ jobs:
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
           skip-dirs: ./test
-      - name: SCA Files
+      - name: SCA Dependencies
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'

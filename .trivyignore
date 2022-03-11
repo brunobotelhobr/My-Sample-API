@@ -8,3 +8,6 @@ KSV013
 KSV014
 KSV020
 KSV021
+
+#Issues to Ignore on Dependencies
+GHSA-qrmm-w75w-3wpx
