@@ -39,7 +39,7 @@ spec:
           failureThreshold: 1
         resources:
           requests:
-            cpu: "100m"
+            cpu: "150m"
             memory: "32Mi"
           limits:
             cpu: "300m"
