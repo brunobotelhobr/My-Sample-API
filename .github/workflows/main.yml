@@ -35,7 +35,7 @@ jobs:
       - name: Okteto Login
         uses: okteto/login@master
         with:
-          token: ${{ secrets.K8S }}
+          token: ${{ secrets.OKTETO_API_KEY }}
 
       - name: Activate K8s Cluster
         uses: okteto/namespace@master
