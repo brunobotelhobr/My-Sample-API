@@ -14,7 +14,9 @@ jobs:
         uses: docker/login-action@v1.10.0      
         with:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
-          password: ${{ secrets.DOCKERHUB_PASS }}   
+          password: ${{ secrets.DOCKERHUB_PASS }} 
+      - name: DAST
+        run: curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest/horusec start -p="./" -e="true"    
       - name: Build Artefacts
         uses: docker/build-push-action@v2.6.1
         with: 
