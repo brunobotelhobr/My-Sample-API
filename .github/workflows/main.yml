@@ -19,6 +19,26 @@ jobs:
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
           horusec start -p="./" -e="true"      
+      - name: SCA IAC
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          hide-progress: false
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+          skip-dirs: ./test
+      - name: SCA Files
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          hide-progress: false
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+          skip-dirs: ./test
       - name: Build Artefacts
         uses: docker/build-push-action@v2.6.1
         with: 
@@ -28,6 +48,16 @@ jobs:
           tags: |
             brunobotelhobr/api_conversao:latest
             brunobotelhobr/api_conversao:${{ github.run_number }}
+      - name: SCA Artefacts
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'image'
+          image-ref: 'brunobotelhobr/api_conversao:${{ github.run_number }}'
+          hide-progress: false
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
 
   CD:
       runs-on: ubuntu-latest
