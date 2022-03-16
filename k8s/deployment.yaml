@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: api
@@ -39,10 +39,10 @@ spec:
           failureThreshold: 1
         resources:
           requests:
-            cpu: "100m"
+            cpu: "200m"
             memory: "32Mi"
           limits:
-            cpu: "250m"
+            cpu: "450m"
             memory: "64Mi"
 
 --- 
