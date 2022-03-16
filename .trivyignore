@@ -11,3 +11,6 @@ KSV021
 
 #Issues to Ignore on Dependencies
 GHSA-qrmm-w75w-3wpx
+
+#Issues to Ignore on Container Image
+CVE-2022-0778
