@@ -80,7 +80,10 @@ jobs:
         uses: okteto/apply@master
         with:
           manifest: k8s/deployment.yaml
-          
+      - name: Sleep for 20s
+        uses: juliangruber/sleep-action@v1
+        with:
+          time: 20s
       - name: DAST  
         uses: zaproxy/action-api-scan@v0.1.0
         with:
