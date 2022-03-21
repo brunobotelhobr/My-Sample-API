@@ -1,5 +1,5 @@
 ## My Application URL
-    - https://api-service-brunobotelhobr.cloud.okteto.net/)
+    - https://api-service-brunobotelhobr.cloud.okteto.net/
 
 ## Local Environment
 
@@ -10,15 +10,18 @@
     http://localhost:8080/
 
 ### Build an Image
+
     docker image build -t my-sample-api:1.0 .
 
 ### Run Your Image
+
     ocker run -p 8080:8080 my-sample-api:1.0
 
 ## Deploy using GitHub Actions
-- We will store the image on docker hub.
-- We run the application usng a free tier account on Okteto (https://www.okteto.com/) You can create an acount an deploy some workload on the freetier, it will run for 24 hours.
-    - More details on: https://www.okteto.com/pricing/
+
+    - We will store the image on docker hub.
+    - We run the application usng a free tier account on Okteto (https://www.okteto.com/) You can create an acount an deploy some workload on the freetier, it will run for 24 hours.
+        - More details on: https://www.okteto.com/pricing/
 To use this pipeline, you will need a free acount on DockerHUb and on Okteto.
 
 ### Adjustments:
