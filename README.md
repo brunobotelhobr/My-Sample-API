@@ -15,7 +15,7 @@
 
 ### Run Your Image
 
-    ocker run -p 8080:8080 my-sample-api:1.0
+    docker run -p 8080:8080 my-sample-api:1.0
 
 ## Deploy using GitHub Actions
 
