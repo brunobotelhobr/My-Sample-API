@@ -1,0 +1,9 @@
+{
+  "horusecCliFalsePositiveHashes": [
+    "2b412c239cd9dde7a58822d22b5d1dff9065c90d3e0a74ade991b47988f2ee65",
+    "96fa88d6cbf46775551f991fb8438b0a94025ee76e4ae79238ebc26e6826011f"
+  ],
+  "horusecCliRiskAcceptHashes": [
+    "5f8e2010baeaa167806d063018a1bd56a54425799ddfae749c23b605733edeef"
+  ]
+}
