@@ -26,7 +26,7 @@ To use this pipeline, you will need a free acount on DockerHUb and on Okteto.
 
 ### Adjustments:
 
-    On your Repository, set the following secrets:
+On your Repository, set the following secrets:
 
         secrets.DOCKERHUB_LOGIN         # Your DockerHUB Login
         secrets.DOCKERHUB_PASS          # Your DockerHUB Password
