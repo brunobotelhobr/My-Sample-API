@@ -26,20 +26,20 @@ To use this pipeline, you will need a free acount on DockerHUb and on Okteto.
 
 ### Adjustments:
 
-On your Repository, set the following secrets:
+    On your Repository, set the following secrets:
 
-    secrets.DOCKERHUB_LOGIN         # Your DockerHUB Login
-    secrets.DOCKERHUB_PASS          # Your DockerHUB Password
-    secrets.OKTETO_API_KEY          # Your Oketeto API Key
+        secrets.DOCKERHUB_LOGIN         # Your DockerHUB Login
+        secrets.DOCKERHUB_PASS          # Your DockerHUB Password
+        secrets.OKTETO_API_KEY          # Your Oketeto API Key
 
-On the file .github/workflows/main.yaml
+    On the file .github/workflows/main.yaml
 
-Set your repository name for image hosting (Mys are brunobotelhobr for exmaple)
-      tags: |
-            brunobotelhobr/api_conversao:latest
-            brunobotelhobr/api_conversao:${{ github.run_number }}
+    Set your repository name for image hosting (Mys are brunobotelhobr for exmaple)
+        tags: |
+                brunobotelhobr/api_conversao:latest
+                brunobotelhobr/api_conversao:${{ github.run_number }}
 
-With this you should be able to Go.
+    With this you should be able to Go.
 
 ## Challenges
 
