@@ -1,68 +1,68 @@
-// Logging with the script name is super helpful!
-function logger() {
-    print('[' + this['zap.script.name'] + '] ' + arguments[0]);
-  }
-  
-  // Control.getSingleton().getExtensionLoader().getExtension(ExtensionUserManagement.class);
-  var HttpSender    = Java.type('org.parosproxy.paros.network.HttpSender');
-  var ScriptVars    = Java.type('org.zaproxy.zap.extension.script.ScriptVars');
-  var HtmlParameter = Java.type('org.parosproxy.paros.network.HtmlParameter')
-  var COOKIE_TYPE   = org.parosproxy.paros.network.HtmlParameter.Type.cookie;
-  
-  function sendingRequest(msg, initiator, helper) {  
-    if (initiator === HttpSender.AUTHENTICATION_INITIATOR) {
-      logger("Trying to auth")
-    return msg;
-    }
-  
-    var token = ScriptVars.getGlobalVar("access_token")
-    if (!token) {return;}
-    var headers = msg.getRequestHeader();
-    var cookie = new HtmlParameter(COOKIE_TYPE, "token", token);
-    msg.getRequestHeader().getCookieParams().add(cookie);
-    // For all non-authentication requests we want to include the authorization header
-    logger("Added authorization token " + token.slice(0, 20) + " ... ")
-    msg.getRequestHeader().setHeader('Authorization', 'Bearer ' + token);
-    return msg;
-  }
-  
-  function responseReceived(msg, initiator, helper) {
-    var resbody     = msg.getResponseBody().toString()
-    var resheaders  = msg.getResponseHeader()
-  
-    if (initiator !== HttpSender.AUTHENTICATION_INITIATOR) {
-       var token = ScriptVars.getGlobalVar("jwt-token");
-       if (!token) {return;}
-  
-       var headers = msg.getRequestHeader();
-       var cookies = headers.getCookieParams();
-       var cookie = new HtmlParameter(COOKIE_TYPE, "token", token);
-         
-       if (cookies.contains(cookie)) {return;}
-       msg.getResponseHeader().setHeader('Set-Cookie', 'token=' + token + '; Path=/;');
-       return;
-    }
-  
-    logger("Handling auth response")
-    if (resheaders.getStatusCode() > 299) {
-      logger("Auth failed")
-      return;
-    } 
-  
-    // Is response JSON? @todo check content-type
-    if (resbody[0] !== '{') {return;}
-    try {
-      var data = JSON.parse(resbody);
-    } catch (e) {
-      return;
-    }
-    
-    // If auth request was not succesful move on
-    if (!data['authentication']) {return;}
-    
-    // @todo abstract away to be configureable
-    var token = data["authentication"]["token"]
-    logger("Capturing token for JWT\n" + token)
-    ScriptVars.setGlobalVar("jwt-token", token)
-    msg.getResponseHeader().setHeader('Set-Cookie', 'token=' + token + '; Path=/;');
-  }
+var HttpRequestHeader = Java.type("org.parosproxy.paros.network.HttpRequestHeader");
+var HttpHeader = Java.type("org.parosproxy.paros.network.HttpHeader");
+var URI = Java.type("org.apache.commons.httpclient.URI");
+
+function authenticate(helper, paramsValues, credentials) {
+ print("Authenticating via JavaScript script…");
+ var authHelper = new OAuthAuthenticator(helper, paramsValues, credentials);
+return authHelper.login();
+}
+
+function getRequiredParamsNames(){
+ return ["APP_URL", "param1", "param2", "param3"];
+}
+
+function getOptionalParamsNames(){
+ return ["param4"];
+}
+
+function getCredentialsParamsNames(){
+ return ["username", "password"];
+}
+
+function OAuthAuthenticator(helper, paramsValues, credentials) {
+this.helper = helper;
+ this.loginApiUrl = paramsValues.get('APP_URL');
+ this.param1 = paramsValues.get('param1');
+ this.param2 = paramsValues.get('param2');
+ this.param3 = paramsValues.get('param3');
+ this.userName = credentials.getParam('Username');
+ this.password = credentials.getParam('Password');
+ 
+ return this;
+}
+
+OAuthAuthenticator.prototype = {
+ login: function () {
+ 
+ var loginToken,
+ requestBody = 'postparam4=this.param4&postparam3=' + this.param3,
+ response = this.doRequest(
+ this.loginApiUrl,
+ HttpRequestHeader.POST,
+ requestBody
+ ),
+ parsedResponse = JSON.parse(response.getResponseBody().toString());
+ 
+ if (parsedResponse.error == 'Unauthorized') {
+ print('Authentication failure to ' + this.loginApiUrl + ' with : Username = ' + this.userName + ' Password = ' + this.password);
+ }
+ else {
+ print('Authentication success. Token = ' + parsedResponse.accessToken);
+ org.zaproxy.zap.extension.script.ScriptVars.setGlobalVar("logintoken",parsedResponse.accessToken)
+ }
+ return response;
+ },
+doRequest: function (url, requestMethod, requestBody) {
+ var msg,
+ requestUri = new URI(url, false);
+ requestHeader = new HttpRequestHeader(requestMethod, requestUri, HttpHeader.HTTP10);
+ requestHeader.setHeader("Authorization", "Basic "+this.param2);
+msg = this.helper.prepareMessage();
+ msg.setRequestHeader(requestHeader);
+ msg.setRequestBody(requestBody);
+ requestHeader.setContentLength(requestBody.length);
+ this.helper.sendAndReceive(msg);
+return msg;
+ }
+};
