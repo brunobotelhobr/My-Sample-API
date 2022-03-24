@@ -48,6 +48,11 @@ jobs:
         with:
           manifest: k8s/deployment.yaml
 
+      - name: Sleep for 20s
+        uses: juliangruber/sleep-action@v1
+        with:
+          time: 20s
+
   QA:
     needs: [CD]
     runs-on: ubuntu-latest
