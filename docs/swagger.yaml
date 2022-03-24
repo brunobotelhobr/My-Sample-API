@@ -10,6 +10,8 @@ servers:
 tags:
 - name: Temperature
   description: Temperature conversion resources.
+- name: Auth Bearer
+  description: Simple Authentication.
 - name: House Keeping
   description: House Keeping resources.
 - name: Misc
@@ -208,6 +210,50 @@ paths:
         400:
           description: Bad Input Parameter
           content: {}
+  /login:
+      post:
+        tags:
+        - Auth Bearer
+        description: Authenticate a User
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object 
+                required:
+                  - user
+                  - pass
+                properties:
+                  user:
+                    type: string
+                    example: admin
+                  pass:
+                    type: string
+                    example: admin
+        responses:
+          200:
+            description: Message
+            content: 
+              application/json:
+                schema:
+                  type: object
+                  properties:   
+                    msg:
+                      type: string
+                      example: Success
+                    token_type:
+                      type: string
+                      example: "bearer"
+                    expires_in: 
+                      type: number
+                      example: 5183999 
+                    access_token:
+                      type: string
+                      example: "5Kz4PPg...Aus2Pij1SsQ"
+          400:
+            description: Bad Input Parameter
+            content: {}
   /secret/{secret}:
     get:
       tags:
@@ -227,8 +273,53 @@ paths:
         400:
           description: Fail, you don't know the secret
           content: {}
+  /whoami:
+    get:
+      tags:
+        - Auth Bearer
+      description: If you have a Valid Authorization Header, We wellcome you.
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Message
+          content: {}
+        400:
+          description: Bad Input Parameter
+          content: {}
+  /give-me-the-secret:
+    get:
+      tags:
+        - Auth Bearer
+      description: Don't know the secret? Here you can get it.
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Message
+          content: {}
+        400:
+          description: Bad Input Parameter
+          content: {}
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT 
   schemas:
+    user:
+      type: object
+      properties:
+        value:
+          type: string
+          example: admin
+    pass:
+      type: object
+      properties:
+        value:
+          type: string
+          example: admin
     temperature:
       required:
       - value
