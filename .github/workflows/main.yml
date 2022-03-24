@@ -22,8 +22,9 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            brunobotelhobr/api_conversao:latest
             brunobotelhobr/api_conversao:${{ github.run_number }}
+            brunobotelhobr/api_conversao:latest
+            
 
   CD:
       runs-on: ubuntu-latest
