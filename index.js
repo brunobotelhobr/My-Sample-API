@@ -5,7 +5,7 @@ const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const bodyParser = require('body-parser');
 const swaggerDocument = YAML.load('./docs/swagger.yaml');
-const config = require('./config/system-life');
+const config = require('./config/system-life.js');
 const NodeHog = require('nodehog');
 
 app.use(config.middlewares.healthMid);
