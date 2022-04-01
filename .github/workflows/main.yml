@@ -24,8 +24,6 @@ jobs:
           tags: |
             brunobotelhobr/api_conversao:${{ github.run_number }}
             brunobotelhobr/api_conversao:latest
-            
-
   CD:
       runs-on: ubuntu-latest
       needs: [CI]
@@ -47,17 +45,15 @@ jobs:
         uses: okteto/apply@master
         with:
           manifest: k8s/deployment.yaml
-
-      - name: Sleep for 20s
-        uses: juliangruber/sleep-action@v1
-        with:
-          time: 20s
-
   QA:
     needs: [CD]
     runs-on: ubuntu-latest
     steps:
     - name: Download Code
       uses: actions/checkout@v2
+    - name: Sleep for 30s
+      uses: juliangruber/sleep-action@v1
+      with:
+        time: 30s
     - name: QA tests
       run: chmod +x test/qa.sh; test/qa.sh
