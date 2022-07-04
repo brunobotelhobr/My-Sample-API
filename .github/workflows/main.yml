@@ -40,6 +40,7 @@ jobs:
         uses: okteto/deploy-stack@master
         with:
           build: true
+          manifest: k8s/deployment.yaml
           namespace: brunobotelhobr
 
   QA:
