@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 app.use('/', config.routers);
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument)); 
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get('/echo/:msg', (req, res) => {
     let msg = req.params.msg;
@@ -29,8 +29,8 @@ app.get('/secret/:msg', (req, res) => {
     } else {
         res.statusCode = 400;
         return res.send('');
-    }  
-    
+    }
+
     res.json({ "txt-input": msg, "hostname": os.hostname() });
 });
 
@@ -42,11 +42,11 @@ app.get('/fahrenheit/:value/celsius', (req, res) => {
 });
 
 app.get('/swagger.yaml', (req, res) => {
-    res.download(__dirname +'/docs/swagger.yaml');
+    res.download(__dirname + '/docs/swagger.yaml');
 });
 
 app.get('/openapi.yaml', (req, res) => {
-    res.download(__dirname +'/docs/openapi.yaml');
+    res.download(__dirname + '/docs/openapi.yaml');
 });
 
 app.get('/celsius/:value/fahrenheit', (req, res) => {
@@ -79,8 +79,8 @@ app.get('/whoami', (req, res) => {
     } else {
         res.statusCode = 401;
         res.json({ "msg": "Not Authorized", "hostname": os.hostname() });
-    }  
-    
+    }
+
 });
 
 app.get('/give-me-the-secret', (req, res) => {
@@ -92,8 +92,8 @@ app.get('/give-me-the-secret', (req, res) => {
     } else {
         res.statusCode = 401;
         res.json({ "msg": "Not Authorized", "hostname": os.hostname() });
-    }  
-    
+    }
+
 });
 
 app.get('/priv-echo/:msg', (req, res) => {
@@ -107,8 +107,8 @@ app.get('/priv-echo/:msg', (req, res) => {
         console.log("Authorization Unsuccessful");
         res.statusCode = 401;
         res.json({ "msg": "Not Authorized", "hostname": os.hostname() });
-    }  
-    
+    }
+
 });
 
 app.get('*', (req, res) => {
@@ -122,7 +122,7 @@ app.put('/stress/:resource/time/:time/interval/:interval/cycles/:cycles', (req, 
     const interval = req.params.interval * 1000;
     const cycles = req.params.cycles;
     new NodeHog(resource, time, interval, cycles).start();
-    res.json({"status": "Mission Accomplished" , "hostname": os.hostname() });
+    res.json({ "status": "Mission Accomplished", "hostname": os.hostname() });
 });
 
 app.post('/login', (req, res) => {
@@ -131,13 +131,13 @@ app.post('/login', (req, res) => {
     if (pass == "password" && user == "admin") {
         console.log("Login Successful | user: ", user, " pass: ", pass);
         res.statusCode = 200;
-        res.json({ "msg": "Success", "hostname": os.hostname(),  "token_type": "bearer", "expires_in": 5183999 ,"access_token" : "5Kz4PPgAus2Pij1SsQl7dbUfufP8i_KN2So1MQyI5TCh9u1BdDrpmpyccxM6JAp5YWPgESJj6mjInr5lsGAOcIJyH_paBb9f3o5KO2KyLdzFrYWd7fMWfCNeQeGBakUcNTU0JnzUl8QxZBTbfIYG4QOPWaPlSJo5rEN5lB1o" });
+        res.json({ "msg": "Success", "hostname": os.hostname(), "token_type": "bearer", "expires_in": 5183999, "access_token": "5Kz4PPgAus2Pij1SsQl7dbUfufP8i_KN2So1MQyI5TCh9u1BdDrpmpyccxM6JAp5YWPgESJj6mjInr5lsGAOcIJyH_paBb9f3o5KO2KyLdzFrYWd7fMWfCNeQeGBakUcNTU0JnzUl8QxZBTbfIYG4QOPWaPlSJo5rEN5lB1o" });
     } else {
         res.statusCode = 401;
         res.json({ "msg": "Login Fail", "hostname": os.hostname() });
-        
-    }  
-    
+
+    }
+
 });
 
 app.listen(8080, () => {
