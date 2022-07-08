@@ -44,11 +44,10 @@ jobs:
           namespace: brunobotelhobr
 
       - name: Okteto Deploy and Wait
-        uses: okteto/actions/deploy@latest
+        uses: okteto/deploy-stack@latest
         with:
           namespace: brunobotelhobr
-          manifest: k8s/deployment.yml
-          waitOn: deployment/brunobotelhobr
+          file: k8s/deployment.yml
 
   QA:
     needs: [CD]
