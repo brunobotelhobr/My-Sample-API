@@ -37,11 +37,13 @@ jobs:
           token: ${{ secrets.OKTETO_TOKEN }}
 
       - name: Okteto Deploy application
-        uses: okteto/deploy-stack@master
+        uses: okteto/actions/deploy@v1
         with:
           build: true
           manifest: k8s/deployment.yaml
           namespace: brunobotelhobr
+          tag: brunobotelhobr/api_conversao:${{ github.run_number }}
+          waitOn: deployment/hello-world
 
   QA:
     needs: [CD]
