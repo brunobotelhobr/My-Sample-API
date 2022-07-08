@@ -7,14 +7,17 @@ jobs:
       actions: read
       contents: read
       security-events: write
+
     steps:
       - name: Download Code
         uses: actions/checkout@v2
+
       - name: DockerHub Login
         uses: docker/login-action@v1.10.0
         with:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
           password: ${{ secrets.DOCKERHUB_PASS }}
+
       - name: Build Artefacts
         uses: docker/build-push-action@v2.6.1
         with:
@@ -28,6 +31,7 @@ jobs:
   CD:
     runs-on: ubuntu-latest
     needs: [CI]
+
     steps:
       - name: Download Code
         uses: actions/checkout@v2
@@ -38,19 +42,22 @@ jobs:
           name: brunobotelhobr
 
       - name: Okteto Deploy Application
-        uses: okteto/apply@master
+        uses: okteto/apply
         with:
           manifest: k8s/deployment.yaml
 
   QA:
     needs: [CD]
     runs-on: ubuntu-latest
+
     steps:
       - name: Download Code
         uses: actions/checkout@v2
+
       - name: Sleep for 45s
         uses: juliangruber/sleep-action@v1
         with:
           time: 30s
+
       - name: QA tests
         run: chmod +x test/qa.sh; test/qa.sh
