@@ -45,7 +45,7 @@ jobs:
       - name: Okteto deploy
         uses: okteto/apply@2.4.2
         with:
-        manifest: k8s/deployment.yaml
+          manifest: k8s/deployment.yaml
 
   QA:
     needs: [CD]
