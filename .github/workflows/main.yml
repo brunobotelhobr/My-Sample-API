@@ -39,7 +39,7 @@ jobs:
       - name: Okteto Get Kubeconfig
         uses: okteto/context@latest
         with:
-          token: ${{ secrets.OKTETO_TOKEN }}
+          token: ${{ secrets.OKTETO_API_KEY }}
 
       - name: Okteto Deploy and Wait
         uses: okteto/deploy-stack@latest
