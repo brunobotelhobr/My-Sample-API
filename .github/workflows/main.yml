@@ -38,10 +38,8 @@ jobs:
 
       - name: Okteto Get Kubeconfig
         uses: okteto/namespace@latest
-        id: namespace
         with:
           token: ${{ secrets.OKTETO_TOKEN }}
-          namespace: brunobotelhobr
 
       - name: Okteto Deploy and Wait
         uses: okteto/deploy-stack@latest
