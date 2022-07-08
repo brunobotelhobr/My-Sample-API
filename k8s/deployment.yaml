@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: api
@@ -17,35 +17,35 @@ spec:
         prometeus.io/scrape: "true"
     spec:
       containers:
-      - name: api
-        image: brunobotelhobr/api_conversao:latest
-        ports:
-        - containerPort: 8080
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 5
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 1
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: 8080
-          initialDelaySeconds: 10
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 1
-        resources:
-          requests:
-            cpu: "150m"
-            memory: "32Mi"
-          limits:
-            cpu: "300m"
-            memory: "64Mi"
+        - name: api
+          image: brunobotelhobr/api_conversao:latest
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 1
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 1
+          resources:
+            requests:
+              cpu: "150m"
+              memory: "32Mi"
+            limits:
+              cpu: "300m"
+              memory: "64Mi"
 
---- 
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -58,16 +58,16 @@ spec:
     - name: http
       port: 8080
 
---- 
+---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: api-as
 spec:
- scaleTargetRef:
-   apiVersion: apps/v1
-   kind: Deployment
-   name: api
- minReplicas: 2
- maxReplicas: 10
- targetCPUUtilizationPercentage: 50
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: api
+  minReplicas: 5
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
