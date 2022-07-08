@@ -41,16 +41,6 @@ jobs:
         with:
           token: ${{ secrets.OKTETO_API_KEY }}
 
-      - name: "Okteto cleanup namespace"
-        uses: okteto/delete-namespace@latest
-        with:
-          namespace: brunobotelhobr
-
-      - name: "Okteto create namespace"
-        uses: okteto/create-namespace@latest
-        with:
-          namespace: brunobotelhobr
-
       - name: Okteto deploy
         uses: okteto/apply@2.4.2
         with:
