@@ -42,7 +42,7 @@ jobs:
           name: brunobotelhobr
 
       - name: Okteto Deploy Application
-        uses: okteto/apply
+        uses: okteto/apply@latest
         with:
           manifest: k8s/deployment.yaml
 
