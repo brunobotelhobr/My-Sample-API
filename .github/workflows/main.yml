@@ -36,15 +36,19 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v2
 
-      - name: " Okteto Activate Namespace"
-        uses: okteto/namespace@latest
-        with:
-          name: brunobotelhobr
+      - name: Okteto Get Kubeconfig
+        uses: okteto/actions/namespace@latest
+          id: namespace
+          with:
+            token: ${{ secrets.OKTETO_TOKEN }}
+            namespace: brunobotelhobr
 
-      - name: Okteto Deploy Application
-        uses: okteto/apply@latest
-        with:
-          manifest: k8s/deployment.yaml
+      - name: Okteto Deploy and Wait
+        uses: okteto/actions/deploy@latest
+          with:
+            namespace: brunobotelhobr
+            manifest: k8s/deployment.yml
+            waitOn: deployment/brunobotelhobr
 
   QA:
     needs: [CD]
