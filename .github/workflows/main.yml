@@ -24,6 +24,7 @@ jobs:
           tags: |
             brunobotelhobr/api_conversao:${{ github.run_number }}
             brunobotelhobr/api_conversao:latest
+
   CD:
     runs-on: ubuntu-latest
     needs: [CI]
@@ -39,7 +40,7 @@ jobs:
       - name: Okteto Deploy Application
         uses: okteto/apply@master
         with:
-          manifest: deployment.yaml
+          manifest: k8s/deployment.yaml
 
   QA:
     needs: [CD]
