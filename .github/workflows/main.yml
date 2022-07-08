@@ -52,7 +52,7 @@ jobs:
           namespace: devenvs-cindylopez
 
       - name: Okteto deploy
-        uses: okteto/deploy@2.4.2
+        uses: okteto/apply@2.4.2
         with:
           file: k8s/deployment.yaml
 
