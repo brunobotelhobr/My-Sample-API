@@ -42,10 +42,9 @@ jobs:
           token: ${{ secrets.OKTETO_API_KEY }}
 
       - name: Okteto Deploy and Wait
-        uses: okteto/deploy-stack@latest
+        uses: okteto/deploy@latest
         with:
-          namespace: brunobotelhobr
-          file: k8s/deployment.yml
+          file: k8s/deployment.yaml
 
   QA:
     needs: [CD]
