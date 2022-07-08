@@ -11,17 +11,17 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v2
       - name: DockerHub Login
-        uses: docker/login-action@v1.10.0      
+        uses: docker/login-action@v1.10.0
         with:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
-          password: ${{ secrets.DOCKERHUB_PASS }} 
+          password: ${{ secrets.DOCKERHUB_PASS }}
       - name: SAST
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
-          horusec start -p="./" -e="true"      
+          horusec start -p="./" -e="true"
       - name: Build Artefacts
         uses: docker/build-push-action@v2.6.1
-        with: 
+        with:
           context: .
           file: ./Dockerfile
           push: true
@@ -45,15 +45,13 @@ jobs:
       - name: Okteto deploy
         uses: okteto/apply@2.4.2
         with:
-          manifest: k8s/deployment.yaml
-
-          manifest: k8s/deployment.yaml
+        manifest: k8s/deployment.yaml
 
   QA:
     needs: [CD]
     runs-on: ubuntu-latest
     steps:
-    - name: Download Code
-      uses: actions/checkout@v2
-    - name: QA tests
-      run: chmod +x test/qa.sh; test/qa.sh
+      - name: Download Code
+        uses: actions/checkout@v2
+      - name: QA tests
+        run: chmod +x test/qa.sh; test/qa.sh
