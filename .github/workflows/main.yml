@@ -38,17 +38,17 @@ jobs:
 
       - name: Okteto Get Kubeconfig
         uses: okteto/actions/namespace@latest
-          id: namespace
-          with:
-            token: ${{ secrets.OKTETO_TOKEN }}
-            namespace: brunobotelhobr
+        id: namespace
+        with:
+          token: ${{ secrets.OKTETO_TOKEN }}
+          namespace: brunobotelhobr
 
       - name: Okteto Deploy and Wait
         uses: okteto/actions/deploy@latest
-          with:
-            namespace: brunobotelhobr
-            manifest: k8s/deployment.yml
-            waitOn: deployment/brunobotelhobr
+        with:
+          namespace: brunobotelhobr
+          manifest: k8s/deployment.yml
+          waitOn: deployment/brunobotelhobr
 
   QA:
     needs: [CD]
