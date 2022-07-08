@@ -62,22 +62,18 @@ jobs:
   CD:
     runs-on: ubuntu-latest
     needs: [CI]
+
     steps:
       - name: Download Code
         uses: actions/checkout@v2
 
-      - name: Okteto Login
-        uses: okteto/login@master
+      - name: Okteto get Kubeconfig
+        uses: okteto/context@latest
         with:
           token: ${{ secrets.OKTETO_API_KEY }}
 
-      - name: Activate K8s Cluster
-        uses: okteto/namespace@master
-        with:
-          namespace: brunobotelhobr
-
-      - name: Create deployment
-        uses: okteto/apply@master
+      - name: Okteto deploy
+        uses: okteto/apply@2.4.2
         with:
           manifest: k8s/deployment.yaml
 
