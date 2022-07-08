@@ -31,19 +31,15 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v2
 
-      - name: OktetoSet context
-        uses: okteto/context@latest
+      - name: " Okteto Activate Namespace"
+        uses: okteto/namespace@latest
         with:
-          token: ${{ secrets.OKTETO_TOKEN }}
+          name: brunobotelhobr
 
-      - name: Okteto Deploy application
-        uses: okteto/actions/deploy@v1
+      - name: Okteto Deploy Application
+        uses: okteto/apply@master
         with:
-          build: true
-          manifest: k8s/deployment.yaml
-          namespace: brunobotelhobr
-          tag: brunobotelhobr/api_conversao:${{ github.run_number }}
-          waitOn: deployment/hello-world
+          manifest: deployment.yaml
 
   QA:
     needs: [CD]
