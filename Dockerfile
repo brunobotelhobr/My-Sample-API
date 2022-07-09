@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y nodejs npm
 RUN npm install
 COPY . .
 EXPOSE 8080
-CMD ["node", "index.js"]
+CMD docker
