@@ -1,34 +1,34 @@
 openapi: 3.0.1
 info:
-  title: Temperature Conversion API 2.0+
-  description:Temperature Conversion API 2.0+
+  title: Temperature Conversion API 2.0
+  description: Temperature Conversion API 2.0
   contact:
     email: bruno.botlho.br@gmail.com
   version: 2.0
 servers:
-- url: /
+  - url: /
 tags:
-- name: Temperature
-  description: Temperature conversion resources.
-- name: Auth Bearer
-  description: Simple Authentication.
-- name: House Keeping
-  description: House Keeping resources.
-- name: Misc
-  description: Other Stuff.
+  - name: Temperature
+    description: Temperature conversion resources.
+  - name: Auth Bearer
+    description: Simple Authentication.
+  - name: House Keeping
+    description: House Keeping resources.
+  - name: Misc
+    description: Other Stuff.
 paths:
   /fahrenheit/{value}/celsius:
     get:
       tags:
-      - Temperature
+        - Temperature
       description: Convert from Fahrenheit to Celsius
       parameters:
-      - name: value
-        in: path
-        description: value that will be converted
-        required: true
-        schema:
-          type: number
+        - name: value
+          in: path
+          description: value that will be converted
+          required: true
+          schema:
+            type: number
       responses:
         200:
           description: Conversion result
@@ -37,22 +37,22 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/temperature'
+                  $ref: "#/components/schemas/temperature"
         400:
           description: Bad Input Parameter
           content: {}
   /celsius/{value}/fahrenheit:
     get:
       tags:
-      - Temperature
+        - Temperature
       description: Convert from Celsius to Fahrenheit
       parameters:
-      - name: value
-        in: path
-        description: value that will be converted
-        required: true
-        schema:
-          type: number
+        - name: value
+          in: path
+          description: value that will be converted
+          required: true
+          schema:
+            type: number
       responses:
         200:
           description: Conversion result
@@ -61,14 +61,14 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/temperature'
+                  $ref: "#/components/schemas/temperature"
         400:
           description: Bad Input Parameter
           content: {}
   /ready:
     get:
       tags:
-      - House Keeping
+        - House Keeping
       description: Is the Node ready to operate? It retuns yes if it is OK.
       responses:
         200:
@@ -78,14 +78,14 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ready'
+                  $ref: "#/components/schemas/ready"
         500:
           description: No ready yet
           content: {}
   /health:
     get:
       tags:
-      - House Keeping
+        - House Keeping
       description: Is the Node health to operate? It retuns yes if it is OK.
       responses:
         200:
@@ -95,14 +95,14 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ready'
+                  $ref: "#/components/schemas/ready"
         500:
           description: Node isn't health
           content: {}
   /unhealth:
     put:
       tags:
-      - House Keeping
+        - House Keeping
       description: It makes the node unhealth
       responses:
         200:
@@ -112,22 +112,22 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ready'
+                  $ref: "#/components/schemas/ready"
         500:
           description: It wasn't possible change the Node status
           content: {}
   /unreadyfor/{time}:
     put:
       tags:
-      - House Keeping
+        - House Keeping
       description: It makes the node unready for X seconds
       parameters:
-      - name: time
-        in: path
-        description: Time in Seconds
-        required: true
-        schema:
-          type: string
+        - name: time
+          in: path
+          description: Time in Seconds
+          required: true
+          schema:
+            type: string
       responses:
         200:
           description: Node isn't health for the requested amount of time
@@ -136,44 +136,40 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ready'
+                  $ref: "#/components/schemas/ready"
         500:
           description: It wasn't possible change the Node health status
           content: {}
   /stress/{resource}/time/{time}/interval/{interval}/cycles/{cycles}:
     put:
       tags:
-      - House Keeping
-      description: Used to create scheduled stress tests on a given target. Use cases
-        include testing program performance under max CPU or Memory load, testing
-        recovery from max load, and testing virtual autoscaling features such as the
-        Kubernetes horizontal pod autoscaler.
+        - House Keeping
+      description: Used to create scheduled stress tests on a given target.
       parameters:
-      - name: resource
-        in: path
-        description: The type of resource to stress (memory | cpu)
-        required: true
-        schema:
-          type: string
-      - name: time
-        in: path
-        description: The length of the stress period in seconds
-        required: true
-        schema:
-          type: number
-      - name: interval
-        in: path
-        description: he length of the relief period in seconds
-        required: true
-        schema:
-          type: number
-      - name: cycles
-        in: path
-        description: The number of cycles to complete before NodeHog exits (1 cycle
-          = 1 lifespan + 1 deathspan)
-        required: true
-        schema:
-          type: number
+        - name: resource
+          in: path
+          description: The type of resource to stress (memory | cpu)
+          required: true
+          schema:
+            type: string
+        - name: time
+          in: path
+          description: The length of the stress period in seconds
+          required: true
+          schema:
+            type: number
+        - name: interval
+          in: path
+          description: he length of the relief period in seconds
+          required: true
+          schema:
+            type: number
+        - name: cycles
+          in: path
+          description: The number of cycles to complete before NodeHog exits (1 cycle = 1 lifespan + 1 deathspan)
+          required: true
+          schema:
+            type: number
       responses:
         200:
           description: Retorno
@@ -182,22 +178,22 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/status'
+                  $ref: "#/components/schemas/status"
         400:
           description: Bad Input Parameter
           content: {}
   /echo/{msg}:
     get:
       tags:
-      - Misc
+        - Misc
       description: Return a message
       parameters:
-      - name: msg
-        in: path
-        description: Message
-        required: true
-        schema:
-          type: string
+        - name: msg
+          in: path
+          description: Message
+          required: true
+          schema:
+            type: string
       responses:
         200:
           description: Message
@@ -206,66 +202,66 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/msg'
+                  $ref: "#/components/schemas/msg"
         400:
           description: Bad Input Parameter
           content: {}
   /login:
-      post:
-        tags:
+    post:
+      tags:
         - Auth Bearer
-        description: Authenticate a User
-        requestBody:
-          required: true
+      description: Authenticate a User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - user
+                - pass
+              properties:
+                user:
+                  type: string
+                  example: admin
+                pass:
+                  type: string
+                  example: admin
+      responses:
+        200:
+          description: Message
           content:
             application/json:
               schema:
-                type: object 
-                required:
-                  - user
-                  - pass
+                type: object
                 properties:
-                  user:
+                  msg:
                     type: string
-                    example: admin
-                  pass:
+                    example: Success
+                  token_type:
                     type: string
-                    example: admin
-        responses:
-          200:
-            description: Message
-            content: 
-              application/json:
-                schema:
-                  type: object
-                  properties:   
-                    msg:
-                      type: string
-                      example: Success
-                    token_type:
-                      type: string
-                      example: "bearer"
-                    expires_in: 
-                      type: number
-                      example: 5183999 
-                    access_token:
-                      type: string
-                      example: "5Kz4PPg...Aus2Pij1SsQ"
-          400:
-            description: Bad Input Parameter
-            content: {}
+                    example: "bearer"
+                  expires_in:
+                    type: number
+                    example: 5183999
+                  access_token:
+                    type: string
+                    example: "5Kz4PPg...Aus2Pij1SsQ"
+        400:
+          description: Bad Input Parameter
+          content: {}
   /secret/{secret}:
     get:
       tags:
-      - Misc
+        - Misc
       description: Answer yes, if you get the secret right.
       parameters:
-      - name: secret
-        in: path
-        description: Secret Word
-        required: true
-        schema:
-          type: string
+        - name: secret
+          in: path
+          description: Secret Word
+          required: true
+          schema:
+            type: string
       responses:
         200:
           description: Sucess, you know the secret
@@ -306,7 +302,7 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
-      bearerFormat: JWT 
+      bearerFormat: JWT
   schemas:
     user:
       type: object
@@ -322,7 +318,7 @@ components:
           example: admin
     temperature:
       required:
-      - value
+        - value
       type: object
       properties:
         value:
