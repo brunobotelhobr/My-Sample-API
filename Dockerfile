@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 WORKDIR /app
 COPY package*.json ./
 ARG DEBIAN_FRONTEND=noninteractive
