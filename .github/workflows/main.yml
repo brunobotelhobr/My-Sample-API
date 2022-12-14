@@ -18,7 +18,7 @@ jobs:
       - name: SAST
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
-          horusec start -p="./" -e="true"
+          horusec start -p="./" -e="true" --config-file-path=./horusec-config.json
       - name: Build Artefacts
         uses: docker/build-push-action@v2.6.1
         with:
