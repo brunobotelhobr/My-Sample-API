@@ -8,3 +8,4 @@
 90022	IGNORE	(Application Error Disclosure)
 100000	IGNORE	(A Server Error response code was returned by the server)
 100001	IGNORE	(Unexpected Content-Type was returned)
+40035	IGNORE	(Hidden File Found)
