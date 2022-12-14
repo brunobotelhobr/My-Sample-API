@@ -22,10 +22,9 @@
     - We will store the image on docker hub.
     - We run the application usng a free tier account on Okteto (https://www.okteto.com/) You can create an acount an deploy some workload on the freetier, it will run for 24 hours.
         - More details on: https://www.okteto.com/pricing/
-To use this pipeline, you will need a free acount on DockerHUb and on Okteto.
+To use this pipeline, you will need a free acount on DockerHub and on Okteto.
 
 ### Adjustments:
-
 On your Repository, set the following secrets:
 
         secrets.DOCKERHUB_LOGIN         # Your DockerHUB Login
