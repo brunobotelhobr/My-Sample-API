@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Temperature Conversion API 3.0
+  title: Temperature Conversion API 4.0
   description: Temperature Conversion API 2.0
   contact:
     email: bruno.botlho.br@gmail.com
