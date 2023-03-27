@@ -58,7 +58,7 @@ jobs:
       - name: Sleep for 45s
         uses: juliangruber/sleep-action@v1
         with:
-          time: 30s
+          time: 45s
 
       - name: QA tests
         run: chmod +x test/qa.sh; test/qa.sh
