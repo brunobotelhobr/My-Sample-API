@@ -50,8 +50,15 @@ jobs:
   QA:
     needs: [CD]
     runs-on: ubuntu-latest
+
     steps:
       - name: Download Code
         uses: actions/checkout@v2
+
+      - name: Sleep for 45s
+        uses: juliangruber/sleep-action@v1
+        with:
+          time: 45s
+
       - name: QA tests
         run: chmod +x test/qa.sh; test/qa.sh
