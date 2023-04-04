@@ -1,0 +1,2913 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "serialNumber": "urn:uuid:01182f79-28b1-4b63-9c8d-2b01ff1edf1f",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2023-03-30T14:57:25.911Z",
+    "tools": [
+      {
+        "vendor": "AppThreat",
+        "name": "cdxgen",
+        "version": "7.0.5"
+      }
+    ],
+    "authors": [
+      {
+        "name": "Team AppThreat",
+        "email": "cloud@appthreat.com"
+      }
+    ],
+    "component": {
+      "group": "",
+      "name": "My-Sample-API",
+      "version": "",
+      "type": "application"
+    }
+  },
+  "components": [
+    {
+      "publisher": "",
+      "group": "",
+      "name": "accepts",
+      "version": "1.3.7",
+      "description": "Higher-level content negotiation",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "225f3442cd968d89492013733642ba298aa554c4db64b5e01f1da84f4a54fdf8d11f2129f8f11f10f634477582c001953ad6aec61d613b136021fe5bbfb750a4"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/accepts@1.3.7",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/accepts#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/accepts.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/accepts@1.3.7"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "argparse",
+      "version": "1.0.10",
+      "description": "CLI arguments parser. Native port of python's argparse.",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a39468cbab4d1b848bfc53a408037a4738e26a4652db944b605adc32db49a9b75df015ab9c0f9f1b3e7b88de4f6f4ea9bc11af979810d01e3c74996c957be84e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Python-2.0",
+            "url": "https://opensource.org/licenses/Python-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/argparse@1.0.10",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/nodeca/argparse#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/nodeca/argparse.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/argparse@1.0.10"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "array-flatten",
+      "version": "1.1.1",
+      "description": "Flatten nested arrays",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "9a5f699051b1e7073328f2a008968b64ea2955d2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/array-flatten@1.1.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/blakeembrey/array-flatten"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/blakeembrey/array-flatten.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/array-flatten@1.1.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "balanced-match",
+      "version": "1.0.0",
+      "description": "Match balanced character pairs, like \"{\" and \"}\"",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "89b4d199ab2bee49de164ea02b89ce462d71b767"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/balanced-match@1.0.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/juliangruber/balanced-match"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/juliangruber/balanced-match.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/balanced-match@1.0.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "body",
+      "version": "5.1.0",
+      "description": "Body parsing",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "e4ba0ce410a46936323367609ecb4e6553125069"
+        }
+      ],
+      "licenses": [],
+      "purl": "pkg:npm/body@5.1.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/Raynos/body"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/Raynos/body.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/body@5.1.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "bytes",
+      "version": "1.0.0",
+      "description": "Utility to parse a string bytes to bytes and vice-versa",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "3569ede8ba34315fab99c3e92cb04c7220de1fa8"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/bytes@1.0.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/visionmedia/bytes.js#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/visionmedia/bytes.js.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/bytes@1.0.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "raw-body",
+      "version": "1.1.7",
+      "description": "Get and validate the raw body of a readable stream.",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "1d027c2bfa116acc6623bca8f00016572a87d425"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/raw-body@1.1.7",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/stream-utils/raw-body#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/stream-utils/raw-body.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/raw-body@1.1.7"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "body-parser",
+      "version": "1.19.0",
+      "description": "Node.js body parsing middleware",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "76110fb3bd943db0e701027d64a30d4cfea9b496a2a2784fe5c05be78d675cf956eb425ea68f5157f6b87d7e17596f42b8534adb692b86b8f5fab83389f342b3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/body-parser@1.19.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/expressjs/body-parser#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/expressjs/body-parser.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/body-parser@1.19.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "brace-expansion",
+      "version": "1.1.11",
+      "description": "Brace expansion as known from sh/bash",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "882b8f1c3160ac75fb1f6bc423fe71a73d3bcd21c1d344e9ba0aa1998b5598c3bae75f260ae44ca0e60595d101974835f3bb9fa3375a1e058a71815beb5a8688"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/brace-expansion@1.1.11",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/juliangruber/brace-expansion"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/juliangruber/brace-expansion.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/brace-expansion@1.1.11"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "bytes",
+      "version": "3.1.0",
+      "description": "Utility to parse a string bytes to bytes and vice-versa",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "cdab8b8eb7c21bec6fa326aa2e857c6cb5575cd182e09aa5c450aeb520d603a7c9ad3a3666ebcb613a99eda1c12d948c3a8a5bcf0bfc7fec19715cdf5532360e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/bytes@3.1.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/visionmedia/bytes.js#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/visionmedia/bytes.js.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/bytes@3.1.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "concat-map",
+      "version": "0.0.1",
+      "description": "concatenative mapdashery",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "d8a96bd77fd68df7793a73036a3ba0d5405d477b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/concat-map@0.0.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ljharb/concat-map#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/ljharb/concat-map.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/concat-map@0.0.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "content-disposition",
+      "version": "0.5.3",
+      "description": "Create and parse Content-Disposition header",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1313b4efbe2290439b200115f640e8e74a3eefd54251d101ea7ea5cca806c2ea5c55e46586b8f7a8601fc2af06eae0498e4a8bae14f4a846057169e0f33d73d2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/content-disposition@0.5.3",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/content-disposition#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/content-disposition.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/content-disposition@0.5.3"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "content-type",
+      "version": "1.0.4",
+      "description": "Create and parse HTTP Content-Type header",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8483f71043ecf2d07d013d4bf8d52ab70380a6ce269366686fcf4c5973078c75a0f668a517f8f8a2c9e740b5c108114193fb6f206fed51cf663942623c184f5c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/content-type@1.0.4",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/content-type#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/content-type.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/content-type@1.0.4"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "continuable-cache",
+      "version": "0.3.1",
+      "description": "Cache a continuable",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "bd727a7faed77e71ff3985ac93351a912733ad0f"
+        }
+      ],
+      "licenses": [],
+      "purl": "pkg:npm/continuable-cache@0.3.1",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "git://github.com/Raynos/continuable-cache.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/continuable-cache@0.3.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "cookie",
+      "version": "0.4.0",
+      "description": "HTTP server cookie parsing and serialization",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f87a7c7cba79ef09d44add2d634b47117878be86510e7a08ad93ea968dc33e2238cbd97083f8eac7ed4e9bde3f5ba65a3c33946e78ceb7ff7dc3aeb393e9755e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/cookie@0.4.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/cookie#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/cookie.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/cookie@0.4.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "cookie-signature",
+      "version": "1.0.6",
+      "description": "Sign and unsign cookies",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "e303a882b342cc3ee8ca513a79999734dab3ae2c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/cookie-signature@1.0.6",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/visionmedia/node-cookie-signature#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/visionmedia/node-cookie-signature.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/cookie-signature@1.0.6"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "debug",
+      "version": "2.6.9",
+      "description": "Lightweight debugging utility for Node.js and the browser",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6c2ec496b7496899cf6c03fed44a2d62fa99b1bdde725e708ba05f8ba0494d470da30a7a72fb298348d7ce74532838e6fc4ec076014155e00f54c35c286b0730"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/debug@2.6.9",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/debug-js/debug#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/debug-js/debug.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/debug@2.6.9"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "depd",
+      "version": "1.1.2",
+      "description": "Deprecate all the things",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "9bcd52e14c097763e749b274c4346ed2e560b5a9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/depd@1.1.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/dougwilson/nodejs-depd#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/dougwilson/nodejs-depd.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/depd@1.1.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "destroy",
+      "version": "1.0.4",
+      "description": "destroy a stream if possible",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "978857442c44749e4206613e37946205826abd80"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/destroy@1.0.4",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/stream-utils/destroy#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/stream-utils/destroy.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/destroy@1.0.4"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "ee-first",
+      "version": "1.1.1",
+      "description": "return the first event in a set of ee/event pairs",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "590c61156b0ae2f4f0255732a158b266bc56b21d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ee-first@1.1.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jonathanong/ee-first"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/jonathanong/ee-first"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/ee-first@1.1.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "encodeurl",
+      "version": "1.0.2",
+      "description": "Encode a URL to a percent-encoded form, excluding already-encoded sequences",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/encodeurl@1.0.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pillarjs/encodeurl#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/pillarjs/encodeurl.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/encodeurl@1.0.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "error",
+      "version": "7.2.1",
+      "description": "Custom errors",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7e8f4706f5a7c7734650a32f33007f08108c32b7c42606c34d50c490fca003705d77794cd4ec8277eadb43c0709e917a19d55e38b0cd9b22f8379060f3466f74"
+        }
+      ],
+      "licenses": [],
+      "purl": "pkg:npm/error@7.2.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/Raynos/error"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/Raynos/error.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/error@7.2.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "escape-html",
+      "version": "1.0.3",
+      "description": "Escape string for use in HTML",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "0258eae4d3d0c0974de1c169188ef0051d1d1988"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/escape-html@1.0.3",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/component/escape-html"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/component/escape-html"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/escape-html@1.0.3"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "etag",
+      "version": "1.8.1",
+      "description": "Create simple HTTP ETags",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "41ae2eeb65efa62268aebfea83ac7d79299b0887"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/etag@1.8.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/etag#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/etag.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/etag@1.8.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "express",
+      "version": "4.17.1",
+      "description": "Fast, unopinionated, minimalist web framework",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "98727d3bbf51aa5ba9851adcc365ff19387793db55bfc61ca326382a487858331460a45952ad21d68d30dabaebc41a8ced5a1e515aa06f6ef19443174e762de2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/express@4.17.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "http://expressjs.com/"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/expressjs/express.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/express@4.17.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "finalhandler",
+      "version": "1.1.2",
+      "description": "Node.js final http responder",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "68059c5b9eeec5536b419a855e3213a56dec2144261c61b7a926fd9946a1f4c80c0b835e5a134e94d8d7118ab71e3440bcbe9aad4be2646189b0183acf4cec58"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/finalhandler@1.1.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pillarjs/finalhandler#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/pillarjs/finalhandler.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/finalhandler@1.1.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "forwarded",
+      "version": "0.1.2",
+      "description": "Parse HTTP X-Forwarded-For header",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "98c23dab1175657b8c0573e8ceccd91b0ff18c84"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/forwarded@0.1.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/forwarded#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/forwarded.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/forwarded@0.1.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "fresh",
+      "version": "0.5.2",
+      "description": "HTTP response freshness testing",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "3d8cadd90d976569fa835ab1f8e4b23a105605a7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fresh@0.5.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/fresh#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/fresh.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/fresh@0.5.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "fs.realpath",
+      "version": "1.0.0",
+      "description": "Use node's fs.realpath, but fall back to the JS implementation if the native one fails",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "1504ad2523158caa40db4a2787cb01411994ea4f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "url": "https://opensource.org/licenses/ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fs.realpath@1.0.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/isaacs/fs.realpath#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/isaacs/fs.realpath.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/fs.realpath@1.0.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "glob",
+      "version": "7.1.6",
+      "description": "the most correct and second fastest glob implementation in JavaScript",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2f06b1c3267bd8b93bbd920db4d36bcb05f466e2f24adadd0ed69b79f64a018e59189855b607739e5b917acc4d98f8ad1344803be3b6eac5931de292236c0c04"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "url": "https://opensource.org/licenses/ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/glob@7.1.6",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/isaacs/node-glob#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/isaacs/node-glob.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/glob@7.1.6"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "http-errors",
+      "version": "1.7.2",
+      "description": "Create HTTP error objects",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b94401b771ff7122157dc87a8b512e3cdcbf62c4523940574d57d9fb247b6637b3dea8c1cfa8bdfa2e338cd6a8a9ca05548e25409e69960eb74ef19f4520c246"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/http-errors@1.7.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/http-errors#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/http-errors.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/http-errors@1.7.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "iconv-lite",
+      "version": "0.4.24",
+      "description": "Convert character encodings in pure javascript.",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "bf73179d901cbe7cb091350466898801cb657bb4575de79d391df5c3097b565ca85cee108bd6abbd27a73505a77b54dc4708422f51f02c8db56c4a9da63f3fac"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/iconv-lite@0.4.24",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ashtuchkin/iconv-lite"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/ashtuchkin/iconv-lite.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/iconv-lite@0.4.24"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "inflight",
+      "version": "1.0.6",
+      "description": "Add callbacks to requests in flight to avoid async duplication",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "49bd6331d7d02d0c09bc910a1075ba8165b56df9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "url": "https://opensource.org/licenses/ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/inflight@1.0.6",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/isaacs/inflight"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/npm/inflight.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/inflight@1.0.6"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "inherits",
+      "version": "2.0.3",
+      "description": "Browser-friendly inheritance fully compatible with standard node.js inherits()",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "633c2c83e3da42a502f52466022480f4208261de"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "url": "https://opensource.org/licenses/ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/inherits@2.0.3",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/isaacs/inherits#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/isaacs/inherits.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/inherits@2.0.3"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "ipaddr.js",
+      "version": "1.9.1",
+      "description": "A library for manipulating IPv4 and IPv6 addresses in JavaScript.",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d0a23feb4ef1a31493a07ec68cdd457d26cba14d3e6ed4e2723b1049642587f859ca437c2a998c7fbb98c0f5b747e6a467a47fc35f199574870585e26143cede"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ipaddr.js@1.9.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/whitequark/ipaddr.js#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/whitequark/ipaddr.js.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/ipaddr.js@1.9.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "media-typer",
+      "version": "0.3.0",
+      "description": "Simple RFC 6838 media type parser and formatter",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "8710d7af0aa626f8fffa1ce00168545263255748"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/media-typer@0.3.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/media-typer#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/media-typer.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/media-typer@0.3.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "merge-descriptors",
+      "version": "1.0.1",
+      "description": "Merge objects using descriptors",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/merge-descriptors@1.0.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/component/merge-descriptors"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/component/merge-descriptors"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/merge-descriptors@1.0.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "methods",
+      "version": "1.1.2",
+      "description": "HTTP methods that node supports",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "5529a4d67654134edcc5266656835b0f851afcee"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/methods@1.1.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/methods"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/jshttp/methods"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/methods@1.1.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "mime",
+      "version": "1.6.0",
+      "description": "A comprehensive library for mime-type mapping",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c74567f2ca48fb0b89d4ee92ee09db69083c3f187834d1dbeca4883661162a23c4e1128ea65be28e7f8d92662699180febc99cef48f611b793151b2bb306907a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/mime@1.6.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/broofa/mime#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/broofa/mime.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/mime@1.6.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "mime-db",
+      "version": "1.44.0",
+      "description": "Media Type Database",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "fcd3937cbaec3c155e1fb62d14f82c556bdeb8bfb84a38d8c5a435c6d33528c163ec77719419717b234bce1c89571eebe2b64624067fea590a0a2b5273f366a6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/mime-db@1.44.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/mime-db#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/mime-db.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/mime-db@1.44.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "mime-types",
+      "version": "2.1.27",
+      "description": "The ultimate javascript content-type utility.",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "24886a9c26ac23dc83f92b2692ab870714d212e65d417e41b909d2d9573ba6e41043ef3288fe40639b9686976fe182f854ce5cea296289858f809fe72502e9ef"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/mime-types@2.1.27",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/mime-types#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/mime-types.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/mime-types@2.1.27"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "minimatch",
+      "version": "3.0.4",
+      "description": "a glob matcher in javascript",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c891d5404872a8f2d44e0b7d07cdcf5eee96debc7832fbc7bd252f4e8a20a70a060ce510fb20eb4741d1a2dfb23827423bbbb8857de959fb7a91604172a87450"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "url": "https://opensource.org/licenses/ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/minimatch@3.0.4",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/isaacs/minimatch#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/isaacs/minimatch.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/minimatch@3.0.4"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "ms",
+      "version": "2.0.0",
+      "description": "Tiny millisecond conversion utility",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "5608aeadfc00be6c2901df5f9861788de0d597c8"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ms@2.0.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/vercel/ms#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vercel/ms.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/ms@2.0.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "negotiator",
+      "version": "0.6.2",
+      "description": "HTTP content negotiation",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8595dcecad9ef8f81e23578305eff5d00adde1e91b7ebaea1bc129fbc2667f82480f66cd83b36f08f39937e91f179ef8a45408ee6ba6d8052a0e27682aa7133b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/negotiator@0.6.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/negotiator#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/negotiator.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/negotiator@0.6.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "nodehog",
+      "version": "0.1.2",
+      "description": "A simple cpu hog utility.",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "761cd9b0c479ff46fdcf9eb3ef09e031e39bf8e50f09899350c81820d9439fb32b44b93e8dd91b8e5e43f072316fea3a9d38cfc58e9388547adc8d5a41936f15"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/nodehog@0.1.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jaredgorski/nodehog#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jaredgorski/nodehog.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/nodehog@0.1.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "on-finished",
+      "version": "2.3.0",
+      "description": "Execute a callback when a request closes, finishes, or errors",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "20f1336481b083cd75337992a16971aa2d906947"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/on-finished@2.3.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/on-finished#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/on-finished.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/on-finished@2.3.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "once",
+      "version": "1.4.0",
+      "description": "Run a function exactly one time",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "583b1aa775961d4b113ac17d9c50baef9dd76bd1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "url": "https://opensource.org/licenses/ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/once@1.4.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/isaacs/once#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/isaacs/once.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/once@1.4.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "parseurl",
+      "version": "1.3.3",
+      "description": "parse a url with memoization",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0a2c9e3b1153fc96723799b4cfd3df5f0e1208127a4b2833d43a65d30aa39610c418604fd469ec51510bd29eb78681b57dc8f77c7ca75e2f4d60ee2758e2fea9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/parseurl@1.3.3",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pillarjs/parseurl#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/pillarjs/parseurl.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/parseurl@1.3.3"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "path-is-absolute",
+      "version": "1.0.1",
+      "description": "Node.js 0.12 path.isAbsolute() ponyfill",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/path-is-absolute@1.0.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/sindresorhus/path-is-absolute#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/sindresorhus/path-is-absolute.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/path-is-absolute@1.0.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "path-to-regexp",
+      "version": "0.1.7",
+      "description": "Express style path to RegExp utility",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "df604178005f522f15eb4490e7247a1bfaa67f8c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/path-to-regexp@0.1.7",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pillarjs/path-to-regexp#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/pillarjs/path-to-regexp.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/path-to-regexp@0.1.7"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "proxy-addr",
+      "version": "2.0.6",
+      "description": "Determine address of proxied request",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "761fdfaef0815664ac0d8cf0ea7f76ea3bfdef881d7619053df88df213ce8b7d166b1db9419c99106bde96e0a0962067aa6b8cf94266044adb014148a036e33b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/proxy-addr@2.0.6",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/proxy-addr#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/proxy-addr.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/proxy-addr@2.0.6"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "qs",
+      "version": "6.7.0",
+      "description": "A querystring parser that supports nesting and arrays, with a depth limit",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "54274144d1535f57f213b35be85628511a3f48f7bad9009a032cc9bd48f045a22c73e35e3c112788796fc459a65f9ebe1d9a61206b55d177828ab06da43ad3c9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause",
+            "url": "https://opensource.org/licenses/BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/qs@6.7.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ljharb/qs"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/ljharb/qs.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/qs@6.7.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "range-parser",
+      "version": "1.2.1",
+      "description": "Range header field string parser",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1eb82cc7ea2baa8ca09e68456ca68713a736f7a27e1d30105e8c4417a80dba944e9a6189468cb37c6ddc700bdea8206bc2bff6cb143905577f1939796a03b04a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/range-parser@1.2.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/range-parser#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/range-parser.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/range-parser@1.2.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "raw-body",
+      "version": "2.4.0",
+      "description": "Get and validate the raw body of a readable stream.",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e0ecfc0d423076fa1ae6a3097a5c62a738bf889222e343b9706575c0d629e61bd93fc64dd13fa388d90bd107a95ecf84b10f5727c8a9103a221fbd3249424fdd"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/raw-body@2.4.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/stream-utils/raw-body#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/stream-utils/raw-body.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/raw-body@2.4.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "safe-buffer",
+      "version": "5.1.2",
+      "description": "Safer Node.js Buffer API",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "19dd94641243917958ec66c9c5fb04f3f9ef2a45045351b7f1cd6c88de903fa6bd3d3f4c98707c1a7a6c71298c252a05f0b388aedf2e77fc0fb688f2b381bafa"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/safe-buffer@5.1.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/feross/safe-buffer"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/feross/safe-buffer.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/safe-buffer@5.1.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "safe-json-parse",
+      "version": "1.0.1",
+      "description": "Parse JSON safely without throwing",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "3e76723e38dfdda13c9b1d29a1e07ffee4b30b57"
+        }
+      ],
+      "licenses": [],
+      "purl": "pkg:npm/safe-json-parse@1.0.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/Raynos/safe-json-parse"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/Raynos/safe-json-parse.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/safe-json-parse@1.0.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "safer-buffer",
+      "version": "2.1.2",
+      "description": "Modern Buffer API polyfill without footguns",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "619a372bcd920fb462ca2d04d4440fa232f3ee4a5ea6749023d2323db1c78355d75debdbe5d248eeda72376003c467106c71bbbdcc911e4d1c6f0a9c42b894b6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/safer-buffer@2.1.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ChALkeR/safer-buffer#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/ChALkeR/safer-buffer.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/safer-buffer@2.1.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "send",
+      "version": "0.17.1",
+      "description": "Better streaming static file server with Range and conditional-GET support",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "06c54ab2219c40c1704fc531ca9a1b50acafee2ac23511e4d53d06ebcd2f93cf327fa2c107219c649393242ad33f6c5537ac88f978cf25c36e1375787d3f6c02"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/send@0.17.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pillarjs/send#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/pillarjs/send.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/send@0.17.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "ms",
+      "version": "2.1.1",
+      "description": "Tiny millisecond conversion utility",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b60a7e765e5c1a4dbcbad624b41b2b16a03b1ca82b8603ec83a67f11f856238825d47c2af01fc6998ff4a1767a9c5f210d57ac4bf1699d8683fe439685842fca"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ms@2.1.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/vercel/ms#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vercel/ms.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/ms@2.1.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "serve-static",
+      "version": "1.14.1",
+      "description": "Serve static files",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "24caef530139e1e98261695323e846ac6bf923c744c26728ff4d04be4cc822c47b32aac7a276c3f693b630e7c59e9167b65ede72966cfb7996f976d066ef500a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/serve-static@1.14.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/expressjs/serve-static#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/expressjs/serve-static.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/serve-static@1.14.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "setprototypeof",
+      "version": "1.1.1",
+      "description": "A small polyfill for Object.setprototypeof",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "26f74059f6d778819a67d7082e9dfc1e7b594854a8de65a0eb119c249b1df9de1a44c3aa6ae6a0d42eb77497c3c3b39a318c046c730ec4467596a55160fd8e03"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "url": "https://opensource.org/licenses/ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/setprototypeof@1.1.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/wesleytodd/setprototypeof"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/wesleytodd/setprototypeof.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/setprototypeof@1.1.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "sprintf-js",
+      "version": "1.0.3",
+      "description": "JavaScript sprintf implementation",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "04e6926f662895354f3dd015203633b857297e2c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause",
+            "url": "https://opensource.org/licenses/BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/sprintf-js@1.0.3",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/alexei/sprintf.js#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/alexei/sprintf.js.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/sprintf-js@1.0.3"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "statuses",
+      "version": "1.5.0",
+      "description": "HTTP status utility",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "161c7dac177659fd9811f43771fa99381478628c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/statuses@1.5.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/statuses#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/statuses.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/statuses@1.5.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "string_decoder",
+      "version": "0.10.31",
+      "description": "The string_decoder module from Node core",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "62e203bc41766c6c28c9fc84301dab1c5310fa94"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/string_decoder@0.10.31",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/nodejs/string_decoder"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/nodejs/string_decoder.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/string_decoder@0.10.31"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "string-template",
+      "version": "0.2.1",
+      "description": "A simple string template function based on named or indexed arguments",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "42932e598a352d01fc22ec3367d9d84eec6c9add"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/string-template@0.2.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/Matt-Esch/string-template"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/Matt-Esch/string-template.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/string-template@0.2.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "swagger-ui-dist",
+      "version": "3.34.0",
+      "description": "[![NPM version](https://badge.fury.io/js/swagger-ui-dist.svg)](http://badge.fury.io/js/swagger-ui-dist)",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c64e4231bc28415239deb4eaf68fe23288c0a973f9353e3ff9331e4cfe2e5d60c81f5f2907d01780ee4e96ab74457b9fde31f4df60c0e034b8ab37a6e9775703"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://opensource.org/licenses/Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/swagger-ui-dist@3.34.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/swagger-api/swagger-ui#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+ssh://git@github.com/swagger-api/swagger-ui.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/swagger-ui-dist@3.34.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "swagger-ui-express",
+      "version": "4.1.4",
+      "description": "Swagger UI Express",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "11af7a79ca42f88abd194aa4783fcb151df6c52b3c818aa64d6d605c2b8a83cd5cdba595e990b616c0523d513140fe9693252ecf91c4891d2c12ffc7082df8de"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/swagger-ui-express@4.1.4",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/scottie1984/swagger-ui-express"
+        },
+        {
+          "type": "vcs",
+          "url": "git+ssh://git@github.com/scottie1984/swagger-ui-express.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/swagger-ui-express@4.1.4"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "toidentifier",
+      "version": "1.0.0",
+      "description": "Convert a string of words to a JavaScript identifier",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c9a387fcf93f5448415964e5848faa5f10c55e57a30c67108a9325cb175af67b61ba56b12d950d714a85c68929d2f7189efb5e2659f914d40346bc63dd871b57"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/toidentifier@1.0.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/component/toidentifier#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/component/toidentifier.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/toidentifier@1.0.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "type-is",
+      "version": "1.6.18",
+      "description": "Infer the content-type of a request.",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4e444aafdb144f1107f0c75fb8248fed58b3272cd134c8e3d89d9da3626bdcaca6e7df0955d124b2eccf4029e514f5b8932f50fa203e99af411a6d3a5d0072f2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/type-is@1.6.18",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/type-is#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/type-is.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/type-is@1.6.18"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "unpipe",
+      "version": "1.0.0",
+      "description": "Unpipe a stream from all destinations",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "b2bf4ee8514aae6165b4817829d21b2ef49904ec"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/unpipe@1.0.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/stream-utils/unpipe"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/stream-utils/unpipe"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/unpipe@1.0.0"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "utils-merge",
+      "version": "1.0.1",
+      "description": "merge() utility function",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "9f95710f50a267947b2ccc124741c1028427e713"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/utils-merge@1.0.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jaredhanson/utils-merge#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/jaredhanson/utils-merge.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/utils-merge@1.0.1"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "vary",
+      "version": "1.1.2",
+      "description": "Manipulate the HTTP Vary header",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "2299f02c6ded30d4a5961b0b9f74524a18f634fc"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/vary@1.1.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jshttp/vary#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jshttp/vary.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/vary@1.1.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "wrappy",
+      "version": "1.0.2",
+      "description": "Callback wrapping utility",
+      "scope": "optional",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "url": "https://opensource.org/licenses/ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/wrappy@1.0.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/npm/wrappy"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/npm/wrappy.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/wrappy@1.0.2"
+    },
+    {
+      "publisher": "",
+      "group": "",
+      "name": "yamljs",
+      "version": "0.3.0",
+      "description": "Standalone JavaScript YAML 1.2 Parser & Encoder. Works under node.js and all major browsers. Also brings command line YAML/JSON conversion tools.",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0bf16c555861b7888f4185ce227a3150cff510b49ff44b20287df81687d03a9ea1c023eb5b8bc6e30e7ef93103df1454a3c803ee5d0fd49d5d2e50d8cce0ec4d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/yamljs@0.3.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jeremyfa/yaml.js#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/jeremyfa/yaml.js.git"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:npm/yamljs@0.3.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:application/api-conversao@1.0.0",
+      "dependsOn": [
+        "pkg:npm/body@5.1.0",
+        "pkg:npm/express@4.17.1",
+        "pkg:npm/nodehog@0.1.2",
+        "pkg:npm/swagger-ui-express@4.1.4",
+        "pkg:npm/yamljs@0.3.0"
+      ]
+    },
+    {
+      "ref": "pkg:npm/accepts@1.3.7",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/argparse@1.0.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/array-flatten@1.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/balanced-match@1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/body@5.1.0",
+      "dependsOn": [
+        "pkg:npm/bytes@1.0.0",
+        "pkg:npm/raw-body@1.1.7"
+      ]
+    },
+    {
+      "ref": "pkg:npm/bytes@1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/raw-body@1.1.7",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/body-parser@1.19.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/brace-expansion@1.1.11",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/bytes@3.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/concat-map@0.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/content-disposition@0.5.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/content-type@1.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/continuable-cache@0.3.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/cookie@0.4.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/cookie-signature@1.0.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/debug@2.6.9",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/depd@1.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/destroy@1.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/ee-first@1.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/encodeurl@1.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/error@7.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/escape-html@1.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/etag@1.8.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/express@4.17.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/finalhandler@1.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/forwarded@0.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/fresh@0.5.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/fs.realpath@1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/glob@7.1.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/http-errors@1.7.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/iconv-lite@0.4.24",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/inflight@1.0.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/inherits@2.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/ipaddr.js@1.9.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/media-typer@0.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/merge-descriptors@1.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/methods@1.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/mime@1.6.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/mime-db@1.44.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/mime-types@2.1.27",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/minimatch@3.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/ms@2.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/negotiator@0.6.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/nodehog@0.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/on-finished@2.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/once@1.4.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/parseurl@1.3.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/path-is-absolute@1.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/path-to-regexp@0.1.7",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/proxy-addr@2.0.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/qs@6.7.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/range-parser@1.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/raw-body@2.4.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/safe-buffer@5.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/safe-json-parse@1.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/safer-buffer@2.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/send@0.17.1",
+      "dependsOn": [
+        "pkg:npm/ms@2.1.1"
+      ]
+    },
+    {
+      "ref": "pkg:npm/ms@2.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/serve-static@1.14.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/setprototypeof@1.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/sprintf-js@1.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/statuses@1.5.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/string_decoder@0.10.31",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/string-template@0.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/swagger-ui-dist@3.34.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/swagger-ui-express@4.1.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/toidentifier@1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/type-is@1.6.18",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/unpipe@1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/utils-merge@1.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/vary@1.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/wrappy@1.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:npm/yamljs@0.3.0",
+      "dependsOn": []
+    }
+  ],
+  "externalReferences": [
+    {
+      "type": "other",
+      "url": ".",
+      "comment": "Base path"
+    },
+    {
+      "type": "other",
+      "url": "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/package-lock.json",
+      "comment": "Package file"
+    }
+  ]
+}
