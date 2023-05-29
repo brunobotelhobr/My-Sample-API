@@ -9,3 +9,7 @@
 100000	IGNORE	(A Server Error response code was returned by the server)
 100001	IGNORE	(Unexpected Content-Type was returned)
 40035	IGNORE	(Hidden File Found)
+10049	IGNORE	(Non-Storable Content)
+10015	IGNORE	(Re-examine Cache-control Directives)
+10049	IGNORE	(Storable and Cacheable Content )
+10104	IGNORE	(User Agent Fuzzer)
