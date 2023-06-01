@@ -47,7 +47,7 @@ brunobotelhobr/api_conversao:${{ github.run_number }}
 
 With this you should be able to Go.
 
-## Challenges
+## Challenge
 
     - Deploy the aplication with CI/CD
 
