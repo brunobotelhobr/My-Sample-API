@@ -1,4 +1,4 @@
-This is a example Node API to demosntrate how include opensource tools to increase security on a DevSecOps Model.
+This is a example Node API to demonstrate how include opensource tools to increase security on a DevSecOps Model.
 
 ## My Application URL
     - https://api-service-brunobotelhobr.cloud.okteto.net/
