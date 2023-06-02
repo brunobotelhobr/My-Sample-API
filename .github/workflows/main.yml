@@ -42,9 +42,6 @@ jobs:
         uses: okteto/context@latest
         with:
           token: ${{ secrets.OKTETO_API_KEY }}
-          
-      - name: Okteto Clean
-        uses: okteto/destroy-stack@latest
 
       - name: Okteto Deploy
         uses: okteto/apply@latest
