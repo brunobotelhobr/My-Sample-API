@@ -1,4 +1,6 @@
-on: [push, pull_request, workflow_dispatch]
+name: CI/CD
+
+on: [push, workflow_dispatch]
 
 jobs:
   CI:
@@ -41,10 +43,10 @@ jobs:
         with:
           token: ${{ secrets.OKTETO_API_KEY }}
           
-#       - name: Destroy Preview Environment
-#         uses: okteto/destroy-preview@latest
-#         with:
-#           name: development
+      - name: Destroy Preview Environment
+        uses: okteto/destroy-preview@latest
+        with:
+          name: api
 
       - name: Okteto deploy
         uses: okteto/apply@latest
