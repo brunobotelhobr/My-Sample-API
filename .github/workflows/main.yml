@@ -41,6 +41,11 @@ jobs:
         with:
           token: ${{ secrets.OKTETO_API_KEY }}
 
+      - name: Delete Namespace
+        uses: okteto/delete-namespace@2.16.0
+        with:
+          namespace: brunobotelhobr
+
       - name: Okteto deploy
         uses: okteto/apply@2.4.2
         with:
