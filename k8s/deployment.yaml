@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: brunobotelhobr/api_conversao:latest
+          image: brunobotelhobr/my-sample-api:latest
           ports:
             - containerPort: 8080
           livenessProbe:
