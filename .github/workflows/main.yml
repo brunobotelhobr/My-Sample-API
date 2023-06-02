@@ -9,18 +9,22 @@ jobs:
       actions: read
       contents: read
       security-events: write
+  
     steps:
       - name: Download Code
         uses: actions/checkout@v2
+  
       - name: DockerHub Login
         uses: docker/login-action@v1.10.0
         with:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
           password: ${{ secrets.DOCKERHUB_PASS }}
+
       - name: SAST
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
           horusec start -p="./" -e="true"
+  
       - name: Build Artefacts
         uses: docker/build-push-action@v2.6.1
         with:
@@ -28,8 +32,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            brunobotelhobr/api_conversao:latest
-            brunobotelhobr/api_conversao:${{ github.run_number }}
+            brunobotelhobr/my-sample-api:${{ github.run_number }}
+            brunobotelhobr/my-sample-api:latest
 
 
   CD:
