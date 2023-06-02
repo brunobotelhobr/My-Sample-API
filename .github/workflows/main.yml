@@ -40,18 +40,7 @@ jobs:
           ignore-unfixed: true
           severity: "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
           skip-dirs: ./test
-  
-      - name: SCA Artefacts
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: "image"
-          image-ref: "brunobotelhobr/my-sample-api:${{ github.run_number }}"
-          hide-progress: false
-          format: "table"
-          exit-code: "1"
-          ignore-unfixed: true
-          severity: "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
-  
+
       - name: DockerHub Login
         uses: docker/login-action@v1.10.0
         with:
@@ -67,6 +56,17 @@ jobs:
           tags: |
             brunobotelhobr/my-sample-api:${{ github.run_number }}
             brunobotelhobr/my-sample-api:latest
+
+      - name: SCA Artefacts
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "image"
+          image-ref: "brunobotelhobr/my-sample-api:${{ github.run_number }}"
+          hide-progress: false
+          format: "table"
+          exit-code: "1"
+          ignore-unfixed: true
+          severity: "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
 
 
   CD:
