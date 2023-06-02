@@ -1,6 +1,11 @@
 name: CI/CD
 
-on: [push, workflow_dispatch]
+on: 
+  push:
+  workflow_dispatch:
+  # Run Everyday
+  schedule:
+    - cron:  '0 2 * * *'
 
 jobs:
   CI:
