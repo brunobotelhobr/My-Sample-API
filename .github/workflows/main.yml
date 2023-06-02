@@ -38,17 +38,15 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v2
 
-      - name: Okteto get Kubeconfig
+      - name: Okteto Login
         uses: okteto/context@latest
         with:
           token: ${{ secrets.OKTETO_API_KEY }}
           
-      - name: Destroy Preview Environment
-        uses: okteto/destroy-preview@latest
-        with:
-          name: api
+      - name: Okteto Clean
+        uses: okteto/destroy-stack@latest
 
-      - name: Okteto deploy
+      - name: Okteto Deploy
         uses: okteto/apply@latest
         with:
           manifest: k8s/deployment.yaml
