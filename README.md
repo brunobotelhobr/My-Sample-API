@@ -1,69 +1,79 @@
-This is a example Node API to demonstrate how include opensource tools to increase security on a DevSecOps Model.
+This project showcases a Node.js API designed to demonstrate how to include open-source tools to increase security within a DevSecOps model.
 
-## My Application URL
-    - https://api-service-brunobotelhobr.cloud.okteto.net/
+## Live Application
+
+You can interact with the live API [here](https://api-service-brunobotelhobr.cloud.okteto.net/).
 
 ## Local Environment
 
-### Run it Locally
-```
+You can set up your local environment for development or testing.
+
+### Running the Application Locally
+
+First, install the required packages:
+```sh
 npm install
+```
+
+Then, start the server:
+
+```sh
 node index.js
-http://localhost:8080/
 ```
-### Build an Image
-```
+
+Access the application at `http://localhost:8080/`.
+
+### Docker Environment
+To containerize the application, you can create a Docker image and run it.
+
+Building an Image
+```sh
 docker image build -t my-sample-api:1.0 .
 ```
 
-### Run Your Image
-```
+Running the Docker Image
+```sh
 docker run -p 8080:8080 my-sample-api:1.0
-````
-
-## Deploy using GitHub Actions
-
-    - We will store the image on docker hub.
-    - We run the application usng a free tier account on Okteto (https://www.okteto.com/) You can create an acount an deploy some workload on the freetier, it will run for 24 hours.
-        - More details on: https://www.okteto.com/pricing/
-
-To use this pipeline, you will need a free acount on [DockerHub](https://hub.docker.com/) and on [Okteto](https://www.okteto.com/).
-
-### Adjustments:
-On your Repository, set the following secrets:
 ```
-secrets.DOCKERHUB_LOGIN         # Your DockerHUB Login
-secrets.DOCKERHUB_PASS          # Your DockerHUB Password
-secrets.OKTETO_API_KEY          # Your Oketeto API Key
-```
-On the file .github/workflows/main.yaml
 
-Set your repository name for image hosting (Mys are brunobotelhobr for exmaple)
+Access the application at `http://localhost:8080/`.
+
+Publishing on Docker Hub
+```sh
+docker login
+docker tag my-sample-api:1.0 myusername/my-sample-api:1.0
+docker push myusername/my-sample-api:1.0
 ```
+
+## Deployment Using GitHub Actions
+The application is configured to be automatically built, tested, and deployed using GitHub Actions. The Docker image is stored on Docker Hub and deployed to a free-tier Okteto account.
+
+You'll need free accounts on Docker Hub and Okteto to leverage the pipeline.
+
+## Setup for GitHub Actions
+Add the following secrets to your GitHub repository:
+
+`DOCKERHUB_LOGIN`: Your Docker Hub login
+`DOCKERHUB_PASS`: Your Docker Hub password
+`OKTETO_API_KEY`: Your Okteto API key
+
+In the .github/workflows/main.yaml file, set your Docker Hub username in place of brunobotelhobr:
+
+```sh
 tags: |
-brunobotelhobr/api_conversao:latest
-brunobotelhobr/api_conversao:${{ github.run_number }}
+    your_dockerhub_username/api_conversao:latest
+    your_dockerhub_username/api_conversao:${{ github.run_number }}
 ```
-
-With this you should be able to Go.
 
 ## Challenge
+The project comes with a set of challenges to test your DevSecOps skills:
 
-    - Deploy the aplication with CI/CD
+Deploy the application using Github Actions CI/CD.
 
-    - Scan it with [Horussec](https://horusec.io/site/) Locally
-    - Include Horusec on GitHub Actions
-    - Fix the vulenrabilities or create expections, so you deployment can move forward.
+Run a local security scan using HorusSec, integrate it into GitHub Actions, and address or bypass any vulnerabilities found.
+Similarly, scan the application with Trivy and OWASP ZAP and incorporate them into the CI/CD process.
+Remember, there are branches in this repository where these tools are already integrated. Feel free to check them out if you need any guidance.
 
-    - Scan it with [Trivy](https://trivy.dev/) Locally
-    - Include Horusec on GitHub Actions
-        - For Images
-        - For IAC
-        - For App imports
-    - Fix the vulenrabilities or create expections, so you deployment can move forward.
-
-    - Scan it with [OWASP ZAP](https://www.zaproxy.org/download/) Locally
-    - Include Horusec on GitHub Actions
-    - Fix the vulenrabilities or create expections, so you deployment can move forward.
+Happy hacking!
 
 * Hint, This repository has other branchs with the tools aready in place, you if need, check them.
