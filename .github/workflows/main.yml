@@ -45,7 +45,7 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: "image"
-          image-ref: "brunobotelhobr/api_conversao:${{ github.run_number }}"
+          image-ref: "brunobotelhobr/my-sample-api:${{ github.run_number }}"
           hide-progress: false
           format: "table"
           exit-code: "1"
