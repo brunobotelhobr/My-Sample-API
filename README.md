@@ -53,9 +53,9 @@ You'll need free accounts on Docker Hub and Okteto to leverage the pipeline.
 ## Setup for GitHub Actions
 Add the following secrets to your GitHub repository:
 
-`DOCKERHUB_LOGIN`: Your Docker Hub login
-`DOCKERHUB_PASS`: Your Docker Hub password
-`OKTETO_API_KEY`: Your Okteto API key
+    `DOCKERHUB_LOGIN`: Your Docker Hub login
+    `DOCKERHUB_PASS`: Your Docker Hub password
+    `OKTETO_API_KEY`: Your Okteto API key
 
 In the .github/workflows/main.yaml file, set your Docker Hub username in place of brunobotelhobr:
 
@@ -71,7 +71,9 @@ The project comes with a set of challenges to test your DevSecOps skills:
 Deploy the application using Github Actions CI/CD.
 
 Run a local security scan using HorusSec, integrate it into GitHub Actions, and address or bypass any vulnerabilities found.
+
 Similarly, scan the application with Trivy and OWASP ZAP and incorporate them into the CI/CD process.
+
 Remember, there are branches in this repository where these tools are already integrated. Feel free to check them out if you need any guidance.
 
 Happy hacking!
