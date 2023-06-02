@@ -40,14 +40,14 @@ jobs:
         uses: okteto/context@latest
         with:
           token: ${{ secrets.OKTETO_API_KEY }}
-
-      - name: Delete Namespace
-        uses: okteto/delete-namespace@2.16.0
-        with:
-          namespace: brunobotelhobr
+          
+#       - name: Destroy Preview Environment
+#         uses: okteto/destroy-preview@latest
+#         with:
+#           name: development
 
       - name: Okteto deploy
-        uses: okteto/apply@2.4.2
+        uses: okteto/apply@latest
         with:
           manifest: k8s/deployment.yaml
 
