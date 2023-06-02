@@ -1,8 +1,10 @@
-This project showcases a Node.js API designed to demonstrate how to include open-source tools to increase security within a DevSecOps model.
+## Introduction
+
+This project showcases a Node.js API with a variety of vulenrabilities, designed to demonstrate how to include open-source tools to increase security within a DevSecOps model.
 
 ## Live Application
 
-You can interact with the live API [here](https://api-service-brunobotelhobr.cloud.okteto.net/).
+You can interact with the live API: [https://api-service-brunobotelhobr.cloud.okteto.net/](https://api-service-brunobotelhobr.cloud.okteto.net/).
 
 ## Local Environment
 
@@ -16,7 +18,6 @@ npm install
 ```
 
 Then, start the server:
-
 ```sh
 node index.js
 ```
