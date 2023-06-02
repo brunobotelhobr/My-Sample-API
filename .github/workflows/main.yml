@@ -1,4 +1,6 @@
-on: [push, pull_request, workflow_dispatch]
+name: CI/CD
+
+on: [push, workflow_dispatch]
 
 jobs:
   CI:
@@ -62,19 +64,21 @@ jobs:
   CD:
     runs-on: ubuntu-latest
     needs: [CI]
+
     steps:
       - name: Download Code
         uses: actions/checkout@v2
 
-      - name: Okteto get Kubeconfig
+      - name: Okteto Login
         uses: okteto/context@latest
         with:
           token: ${{ secrets.OKTETO_API_KEY }}
 
-      - name: Okteto deploy
-        uses: okteto/apply@2.4.2
+      - name: Okteto Deploy
+        uses: okteto/apply@latest
         with:
           manifest: k8s/deployment.yaml
+
 
   QA:
     needs: [CD]
