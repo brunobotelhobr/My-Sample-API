@@ -13,3 +13,4 @@
 10015	IGNORE	(Re-examine Cache-control Directives)
 10049	IGNORE	(Storable and Cacheable Content )
 10104	IGNORE	(User Agent Fuzzer)
+10035	IGNORE	(Strict-Transport-Security Header Not Set)
