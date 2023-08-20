@@ -67,7 +67,6 @@ jobs:
           exit-code: '1'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
-            
 
   CD:
     runs-on: ubuntu-latest
