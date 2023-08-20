@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASS }}
 
       - name: Build Artefacts
-        uses: docker/build-push-action@latest
+        uses: docker/build-push-action@v3
         with:
           context: .
           file: ./Dockerfile
