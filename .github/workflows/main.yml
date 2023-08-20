@@ -12,16 +12,16 @@ jobs:
 
     steps:
       - name: Download Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@latest
 
       - name: DockerHub Login
-        uses: docker/login-action@v1.10.0
+        uses: docker/login-action@vlatest
         with:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
           password: ${{ secrets.DOCKERHUB_PASS }}
 
       - name: Build Artefacts
-        uses: docker/build-push-action@v2.6.1
+        uses: docker/build-push-action@vlatest
         with:
           context: .
           file: ./Dockerfile
@@ -36,7 +36,7 @@ jobs:
 
     steps:
       - name: Download Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@vlatest
 
       - name: Okteto Login
         uses: okteto/context@latest
@@ -54,10 +54,10 @@ jobs:
 
     steps:
       - name: Download Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@latest
 
       - name: Sleep for 45s
-        uses: juliangruber/sleep-action@v1
+        uses: juliangruber/sleep-action@latest
         with:
           time: 45s
 
