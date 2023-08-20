@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Download Code
-        uses: actions/checkout@latest
+        uses: actions/checkout@3.5.3
 
       - name: DockerHub Login
         uses: docker/login-action@vlatest
