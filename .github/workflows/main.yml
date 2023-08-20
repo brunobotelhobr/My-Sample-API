@@ -39,12 +39,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Okteto Login
-        uses: okteto/context@v2
+        uses: okteto/context@master
         with:
           token: ${{ secrets.OKTETO_API_KEY }}
 
       - name: Okteto Deploy
-        uses: okteto/apply@2
+        uses: okteto/apply@master
         with:
           manifest: k8s/deployment.yaml
 
