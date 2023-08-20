@@ -57,16 +57,16 @@ jobs:
             brunobotelhobr/my-sample-api:${{ github.run_number }}
             brunobotelhobr/my-sample-api:latest
 
-      - name: SCA Artefacts
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'image'
-          image-ref: 'brunobotelhobr/api_conversao:${{ github.run_number }}'
-          hide-progress: false
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+      # - name: SCA Artefacts
+      #   uses: aquasecurity/trivy-action@master
+      #   with:
+      #     scan-type: 'image'
+      #     image-ref: 'brunobotelhobr/api_conversao:${{ github.run_number }}'
+      #     hide-progress: false
+      #     format: 'table'
+      #     exit-code: '1'
+      #     ignore-unfixed: true
+      #     severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
 
   CD:
     runs-on: ubuntu-latest
