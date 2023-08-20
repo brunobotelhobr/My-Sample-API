@@ -92,7 +92,7 @@ jobs:
           time: 45s
 
       - name: DAST
-        uses: zaproxy/action-api-scan@v0.1.0
+        uses: zaproxy/action-api-scan@v0.4.0
         with:
           target: https://api-service-brunobotelhobr.cloud.okteto.net/openapi.yaml
           format: openapi
