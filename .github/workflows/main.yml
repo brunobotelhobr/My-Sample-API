@@ -54,10 +54,10 @@ jobs:
 
     steps:
       - name: Download Code
-        uses: actions/checkout@latest
+        uses: actions/checkout@v3
 
       - name: Sleep for 45s
-        uses: juliangruber/sleep-action@latest
+        uses: juliangruber/sleep-action@v2.0.0
         with:
           time: 45s
 
