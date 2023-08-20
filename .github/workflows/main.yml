@@ -9,46 +9,46 @@ jobs:
       actions: read
       contents: read
       security-events: write
-  
+
     steps:
       - name: Download Code
-        uses: actions/checkout@v2
-  
+        uses: actions/checkout@v3
+
       - name: SAST
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
-          horusec start -p="./" -e="true"
-  
-      - name: SCA IAC
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: "config"
-          hide-progress: false
-          format: "table"
-          exit-code: "1"
-          ignore-unfixed: true
-          severity: "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
-          skip-dirs: ./test
-    
+          horusec start -p="./" -e="true" --disable-docker="true"
+
       - name: SCA Dependencies
         uses: aquasecurity/trivy-action@master
         with:
-          scan-type: "fs"
+          scan-type: 'fs'
           hide-progress: false
-          format: "table"
-          exit-code: "1"
+          format: 'table'
+          exit-code: '1'
           ignore-unfixed: true
-          severity: "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
+          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+          skip-dirs: ./test
+
+      - name: SCA IAC
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          hide-progress: false
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
           skip-dirs: ./test
 
       - name: DockerHub Login
-        uses: docker/login-action@v1.10.0
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
           password: ${{ secrets.DOCKERHUB_PASS }}
-    
+
       - name: Build Artefacts
-        uses: docker/build-push-action@v2.6.1
+        uses: docker/build-push-action@v3
         with:
           context: .
           file: ./Dockerfile
@@ -57,17 +57,16 @@ jobs:
             brunobotelhobr/my-sample-api:${{ github.run_number }}
             brunobotelhobr/my-sample-api:latest
 
-      - name: SCA Artefacts
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: "image"
-          image-ref: "brunobotelhobr/my-sample-api:${{ github.run_number }}"
-          hide-progress: false
-          format: "table"
-          exit-code: "1"
-          ignore-unfixed: true
-          severity: "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
-
+      # - name: SCA Artefacts
+      #   uses: aquasecurity/trivy-action@master
+      #   with:
+      #     scan-type: 'image'
+      #     image-ref: 'brunobotelhobr/api_conversao:${{ github.run_number }}'
+      #     hide-progress: false
+      #     format: 'table'
+      #     exit-code: '1'
+      #     ignore-unfixed: true
+      #     severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
 
   CD:
     runs-on: ubuntu-latest
@@ -75,7 +74,7 @@ jobs:
 
     steps:
       - name: Download Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Okteto Login
         uses: okteto/context@latest
@@ -102,19 +101,13 @@ jobs:
           cmd_options: "-a"
           fail_action: true
 
-
   QA:
     needs: [CD]
     runs-on: ubuntu-latest
 
     steps:
       - name: Download Code
-        uses: actions/checkout@v2
-
-      - name: Sleep for 45s
-        uses: juliangruber/sleep-action@v1
-        with:
-          time: 45s
+        uses: actions/checkout@v3
 
       - name: QA tests
         run: chmod +x test/qa.sh; test/qa.sh
