@@ -9,13 +9,13 @@ jobs:
       actions: read
       contents: read
       security-events: write
-  
+
     steps:
       - name: Download Code
-        uses: actions/checkout@v2
-  
+        uses: actions/checkout@v3
+
       - name: DockerHub Login
-        uses: docker/login-action@v1.10.0
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
           password: ${{ secrets.DOCKERHUB_PASS }}
@@ -23,10 +23,10 @@ jobs:
       - name: SAST
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
-          horusec start -p="./" -e="true"
-  
+          horusec start -p="./" -e="true" --disable-docker="true"
+          
       - name: Build Artefacts
-        uses: docker/build-push-action@v2.6.1
+        uses: docker/build-push-action@v3
         with:
           context: .
           file: ./Dockerfile
@@ -35,25 +35,23 @@ jobs:
             brunobotelhobr/my-sample-api:${{ github.run_number }}
             brunobotelhobr/my-sample-api:latest
 
-
   CD:
     runs-on: ubuntu-latest
     needs: [CI]
 
     steps:
       - name: Download Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Okteto Login
-        uses: okteto/context@latest
+        uses: okteto/context@master
         with:
           token: ${{ secrets.OKTETO_API_KEY }}
 
       - name: Okteto Deploy
-        uses: okteto/apply@latest
+        uses: okteto/apply@master
         with:
           manifest: k8s/deployment.yaml
-
 
   QA:
     needs: [CD]
@@ -61,10 +59,10 @@ jobs:
 
     steps:
       - name: Download Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@latest
 
       - name: Sleep for 45s
-        uses: juliangruber/sleep-action@v1
+        uses: juliangruber/sleep-action@latest
         with:
           time: 45s
 
