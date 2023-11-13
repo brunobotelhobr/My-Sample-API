@@ -1,27 +1,161 @@
 {
+  "horusecCliCertInsecureSkipVerify": false,
+  "horusecCliCertPath": "",
+  "horusecCliContainerBindProjectPath": "",
+  "horusecCliCustomImages": {
+    "c": "",
+    "csharp": "",
+    "elixir": "",
+    "generic": "",
+    "go": "",
+    "hcl": "",
+    "javascript": "",
+    "leaks": "",
+    "php": "",
+    "python": "",
+    "ruby": "",
+    "shell": ""
+  },
+  "horusecCliCustomRulesPath": "",
+  "horusecCliDisableDocker": false,
+  "horusecCliEnableCommitAuthor": false,
+  "horusecCliEnableGitHistoryAnalysis": false,
+  "horusecCliEnableInformationSeverity": false,
+  "horusecCliEnableOwaspDependencyCheck": false,
+  "horusecCliEnableShellcheck": false,
   "horusecCliFalsePositiveHashes": [
-    "2c9ed8f3c58de0cc0eb1ce8ac3d5d88f088eccd69938f4136de73600be6538ec",
-    "bfa0944ef7d7c081e940f2dd81e0f7a9009144bb59c6eafa4fcde81420861804"
-  ],
-  "horusecCliRiskAcceptHashes": [
-    "efd53f487e544242c1f7014b7a8e59a2b11779bb8aa6f99b45cf4d96aada7b8e",
-    "4c4cc65fd5bfc7568ce02cf72708bf67add326d000bf3703e640d33f2a509e08",
-    "905b4a2802b639db6cf88d3cb7ae13895391351a151395029a51d0b28e064d23",
-    "0e48a4fbb7ba77344790bc5295aa8097e4134bbe903cac89beebdc80d4d5df63",
-    "0f42c312af023136573987a125b2ca5a23a684ab6c3ac572d9602af220a5857d",
-    "8028b67a02a5602d4a13dd733c76e25005dffe1bbe4fd861af5c85e72f9cc72f",
-    "fa9450f7a121e1a4d7cc77f9b79592b81b842b5e31329616e9ca4dbbbc18b731",
-    "ae99734b9f4301fac7c164686ba643e73d8c54d6efd1d4d8c535d5e0a8949188",
-    "85ee5e19fed17cab07619fbe983d0cc56e812b406787f2dcdd4f9aa97c40e72d",
-    "925917420d028bceea7f20ef19a9d6c37a12736bc89b6838a9f0bba98216fe61",
     "df4c5a8677619a7c526e812a30128f1578fe8f8bca408b5a61d6a0ee02199478",
+    "b8fac03a87c3024b66ba7b1debcafab933b7f7ac43d4bf3124796db6560745e3",
+    "426105bcb0a7f6d6077b5cfcc7aac4125e39c82dba97f8aa6a5ddc6bd37bbc63",
+    "1944beff0f494133ac47fb053c7df3cafb40f09906fe625affdc5da57bf8f63b",
+    "cc514ecdd6fdb1fd0f22a4f8beb5fc2fc335b1c28d471bdadfb0d696456550d5",
+    "5f8e2010baeaa167806d063018a1bd56a54425799ddfae749c23b605733edeef",
+    "d9655dc1c66f583477be88cc027049363022a83cb0ab5fa862687f727c07c6d3",
+    "32830b6deb525b3d91b2fea4abaed3c63014333123a9ac961fc281fe1f006663",
+    "5ffbede98e1f973410ff55e2108c631e2fd6fb0be6b1ac2a991acb94cd801215",
+    "ae99734b9f4301fac7c164686ba643e73d8c54d6efd1d4d8c535d5e0a8949188",
+    "96fa88d6cbf46775551f991fb8438b0a94025ee76e4ae79238ebc26e6826011f",
+    "0f42c312af023136573987a125b2ca5a23a684ab6c3ac572d9602af220a5857d",
+    "0e48a4fbb7ba77344790bc5295aa8097e4134bbe903cac89beebdc80d4d5df63",
+    "925917420d028bceea7f20ef19a9d6c37a12736bc89b6838a9f0bba98216fe61",
     "dd8e608fb6c4d7726bc685a477077035f51fcf3db86171730128495635f6eac0",
+    "2c9ed8f3c58de0cc0eb1ce8ac3d5d88f088eccd69938f4136de73600be6538ec",
+    "efd53f487e544242c1f7014b7a8e59a2b11779bb8aa6f99b45cf4d96aada7b8e",
+    "905b4a2802b639db6cf88d3cb7ae13895391351a151395029a51d0b28e064d23",
+    "85ee5e19fed17cab07619fbe983d0cc56e812b406787f2dcdd4f9aa97c40e72d",
+    "905b4a2802b639db6cf88d3cb7ae13895391351a151395029a51d0b28e064d23",
     "be6d08b86b74302e2a6344e6a4ca2ab38b74591f02f33864ea893d39c371a8e8",
     "d824aa1e2af25302f7d595b0850a2b00f7b67262a4c05d3089c3ddda636ee65b",
-    "f1f4f8a398dadef96c73f902fec67ec986d679214b4b95b75ae0983d6da3676d",
-    "7cd701d313770977f50b8c7d6d9bf2f61388934e4fdb5ecac990b09765abe12a",
-    "f57d3d2c99ae07d7cf48eed3860d471dd98949ca1694d63e269086d37145f5b6",
-    "f6dba7ed8c16b892f0a31a9983d0713a8e1f4bbaec5b05d43f6658b76aee3e15",
-    "1766d657a4dc6aab06b79b44f23cead8181f5cb6bbf326eb415023440549a21d"
-  ]
+    "8b8c4baf61969f4462b2739800870528e6be439acfff02332e336ce4d2c6311c"
+  ],
+  "horusecCliFilesOrPathsToIgnore": [
+    "*tmp*",
+    "**/.vscode/**"
+  ],
+  "horusecCliHeaders": {},
+  "horusecCliHorusecApiUri": "http://0.0.0.0:8000",
+  "horusecCliJsonOutputFilepath": "",
+  "horusecCliLogFilePath": "/var/folders/qm/307dxcxd74140r5_5cs81lf00000gn/T/horusec-2023-11-13-15-53-50.log",
+  "horusecCliMonitorRetryInSeconds": 15,
+  "horusecCliPrintOutputType": "",
+  "horusecCliProjectPath": "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API",
+  "horusecCliRepositoryAuthorization": "00000000-0000-0000-0000-000000000000",
+  "horusecCliRepositoryName": "My-Sample-API",
+  "horusecCliReturnErrorIfFoundVulnerability": false,
+  "horusecCliRiskAcceptHashes": null,
+  "horusecCliSeveritiesToIgnore": [
+    "INFO"
+  ],
+  "horusecCliShowVulnerabilitiesTypes": [
+    "Vulnerability"
+  ],
+  "horusecCliTimeoutInSecondsAnalysis": 600,
+  "horusecCliTimeoutInSecondsRequest": 300,
+  "horusecCliToolsConfig": {
+    "Bandit": {
+      "istoignore": false
+    },
+    "Brakeman": {
+      "istoignore": false
+    },
+    "BundlerAudit": {
+      "istoignore": false
+    },
+    "Checkov": {
+      "istoignore": false
+    },
+    "DotnetCli": {
+      "istoignore": false
+    },
+    "Flawfinder": {
+      "istoignore": false
+    },
+    "GitLeaks": {
+      "istoignore": false
+    },
+    "GoSec": {
+      "istoignore": false
+    },
+    "HorusecEngine": {
+      "istoignore": false
+    },
+    "MixAudit": {
+      "istoignore": false
+    },
+    "Nancy": {
+      "istoignore": false
+    },
+    "NpmAudit": {
+      "istoignore": false
+    },
+    "OwaspDependencyCheck": {
+      "istoignore": false
+    },
+    "PhpCS": {
+      "istoignore": false
+    },
+    "Safety": {
+      "istoignore": false
+    },
+    "SecurityCodeScan": {
+      "istoignore": false
+    },
+    "Semgrep": {
+      "istoignore": false
+    },
+    "ShellCheck": {
+      "istoignore": false
+    },
+    "Sobelow": {
+      "istoignore": false
+    },
+    "TfSec": {
+      "istoignore": false
+    },
+    "Trivy": {
+      "istoignore": false
+    },
+    "YarnAudit": {
+      "istoignore": false
+    }
+  },
+  "horusecCliWorkDir": {
+    "go": [],
+    "csharp": [],
+    "ruby": [],
+    "python": [],
+    "java": [],
+    "kotlin": [],
+    "javaScript": [],
+    "leaks": [],
+    "hcl": [],
+    "php": [],
+    "c": [],
+    "yaml": [],
+    "generic": [],
+    "elixir": [],
+    "shell": [],
+    "dart": [],
+    "nginx": []
+  }
 }
