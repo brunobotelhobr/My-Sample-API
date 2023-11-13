@@ -1,4 +1,4 @@
-name: Utils - Clean Workflow Runs
+name: Clean Workflow Runs
 on:
   workflow_dispatch:
   schedule:
