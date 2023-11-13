@@ -16,8 +16,8 @@ jobs:
 
       - name: SAST
         run: |
-          curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
-          horusec start -p="./" -e="true" --disable-docker="true"
+          curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest-beta
+          horusec start -p="./" -e="true"
 
       - name: SCA Dependencies
         uses: aquasecurity/trivy-action@master
