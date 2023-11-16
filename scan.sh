@@ -1,3 +1,3 @@
 #/bin/bash
 
-horusec start -p ./ -a bffd945c-cb1f-4432-838f-5d99f5430aa0 -u http://localhost:8000
+horusec start -p ./ -a df213813-48b4-4aed-8fc7-b8c8464ccf03 -u  https://79f6-2804-7f0-bac2-3824-8f0-bb2d-60c3-fb40.ngrok-free.app
