@@ -3,7 +3,7 @@ name: CI/CD
 on: [push, workflow_dispatch]
 
 env:
-  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  GCLOUD_PROJECT: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: autopilot-cluster-small      # Add your cluster name here.
   GKE_ZONE: us-central1                     # Add your cluster zone here.
   DEPLOYMENT_NAME: deployment.yaml          # Add your deployment name here.
@@ -46,14 +46,14 @@ jobs:
 
       # Setup GCE CLI
       - name: GCloud-CLI-Setup
-        uses: google-github-actions/setup-gcloud@1bee7de035d65ec5da40a31f8589e240eba8fde5
+        uses: google-github-actions/setup-gcloud@v2
         with:
           service_account_key: ${{ secrets.GKE_SA_KEY }}
           project_id: ${{ secrets.GKE_PROJECT }}
 
       # Get the GKE credentials so we can deploy to the cluster
       - name: GCloud-CLI-Context
-        uses: google-github-actions/get-gke-credentials@db150f2cc60d1716e61922b832eae71d2a45938f
+        uses: google-github-actions/get-gke-credentials@v2
         with:
           cluster_name: ${{ env.GKE_CLUSTER }}
           location: ${{ env.GKE_ZONE }}
