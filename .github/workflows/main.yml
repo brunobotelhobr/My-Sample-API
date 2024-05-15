@@ -73,18 +73,18 @@ jobs:
           kubectl rollout status k8s/deployment.yaml
           kubectl get services -o wide
 
-  QA:
-    needs: [CD]
-    runs-on: ubuntu-latest
+      # Get the external IP of the service
+      - name: Get-External-IP
+        run: |-
+          echo "External IP: $(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')"
+          export k8s_service_ip=$(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
-    steps:
-      - name: Download Code
-        uses: actions/checkout@v3
-
+      # Sleep for 45s
       - name: Sleep for 45s
         uses: juliangruber/sleep-action@v2.0.0
         with:
           time: 45s
 
+      # Run QA tests
       - name: QA tests
-        run: chmod +x test/qa.sh; test/qa.sh
+        run: chmod +x test/qa.sh; test/qa.sh $k8s_service_ip
