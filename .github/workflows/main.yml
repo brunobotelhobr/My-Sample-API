@@ -2,6 +2,12 @@ name: CI/CD
 
 on: [push, workflow_dispatch]
 
+env:
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER: autopilot-cluster-small      # Add your cluster name here.
+  GKE_ZONE: us-central1                     # Add your cluster zone here.
+  DEPLOYMENT_NAME: deployment.yaml          # Add your deployment name here.
+
 jobs:
   CI:
     runs-on: ubuntu-latest
@@ -38,15 +44,34 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v3
 
-      - name: Okteto Login
-        uses: okteto/context@latest
+      # Setup GCE CLI
+      - name: GCloud-CLI-Setup
+      - uses: google-github-actions/setup-gcloud@1bee7de035d65ec5da40a31f8589e240eba8fde5
         with:
-          token: ${{ secrets.OKTETO_API_KEY }}
+          service_account_key: ${{ secrets.GKE_SA_KEY }}
+          project_id: ${{ secrets.GKE_PROJECT }}
 
-      - name: Okteto Deploy
-        uses: okteto/apply@latest
+      # Get the GKE credentials so we can deploy to the cluster
+      - name: GCloud-CLI-Context
+      - uses: google-github-actions/get-gke-credentials@db150f2cc60d1716e61922b832eae71d2a45938f
         with:
-          manifest: k8s/deployment.yaml
+          cluster_name: ${{ env.GKE_CLUSTER }}
+          location: ${{ env.GKE_ZONE }}
+          credentials: ${{ secrets.GKE_SA_KEY }}
+
+      # Set up kustomize
+      - name: Setup-Kustomize
+        run: |-
+          curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+          chmod u+x ./kustomize
+
+      # Deploy the Docker image to the GKE cluster
+      - name: Deploy
+        run: |-
+          ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+          ./kustomize build . | kubectl apply -f -
+          kubectl rollout status k8s/deployment.yaml
+          kubectl get services -o wide
 
   QA:
     needs: [CD]
