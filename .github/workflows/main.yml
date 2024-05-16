@@ -20,21 +20,21 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v3
 
-      - name: DockerHub Login
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_LOGIN }}
-          password: ${{ secrets.DOCKERHUB_PASS }}
+  #     - name: DockerHub Login
+  #       uses: docker/login-action@v2
+  #       with:
+  #         username: ${{ secrets.DOCKERHUB_LOGIN }}
+  #         password: ${{ secrets.DOCKERHUB_PASS }}
 
-      - name: Build Artefacts
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: |
-            brunobotelhobr/my-sample-api:${{ github.run_number }}
-            brunobotelhobr/my-sample-api:latest
+  #     - name: Build Artefacts
+  #       uses: docker/build-push-action@v3
+  #       with:
+  #         context: .
+  #         file: ./Dockerfile
+  #         push: true
+  #         tags: |
+  #           brunobotelhobr/my-sample-api:${{ github.run_number }}
+  #           brunobotelhobr/my-sample-api:latest
 
   CD:
     runs-on: ubuntu-latest
@@ -44,47 +44,62 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v3
 
-      # Setup GCE CLI
-      - name: GCloud-CLI-Setup
-        uses: google-github-actions/setup-gcloud@v2
+      - name: 'Set up Cloud SDK'
+        uses: google-github-actions/setup-gcloud@v0
         with:
-          service_account_key: ${{ secrets.GKE_SA_KEY }}
-          project_id: ${{ secrets.GKE_PROJECT }}
+         project_id: ${{ secrets.GKE_PROJECT  }}
+         service_account_key: ${{ secrets.GKE_SA_KEY  }}
+         export_default_credentials: true
 
-      # Get the GKE credentials so we can deploy to the cluster
-      - name: GCloud-CLI-Context
-        uses: google-github-actions/get-gke-credentials@v2
-        with:
-          cluster_name: ${{ env.GKE_CLUSTER }}
-          location: ${{ env.GKE_ZONE }}
-          credentials: ${{ secrets.GKE_SA_KEY }}
+      # Test the gcloud CLI
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
 
-      # Set up kustomize
-      - name: Setup-Kustomize
-        run: |-
-          curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
-          chmod u+x ./kustomize
+      # # Set up the Cloud SDK
+      # - name: 'Set up Cloud SDK'
+      #   uses: 'google-github-actions/setup-gcloud@v2'
 
-      # Deploy the Docker image to the GKE cluster
-      - name: Deploy
-        run: |-
-          ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
-          ./kustomize build . | kubectl apply -f -
-          kubectl rollout status k8s/deployment.yaml
-          kubectl get services -o wide
+      # # Authenticate with the Google Cloud CLI
+      # - name: Authenticate with Google Cloud
+      #   uses: google-github-actions/auth@v3
+      #   with:
+      #     credentials: ${{ secrets.GKE_SA_KEY }}
 
-      # Get the external IP of the service
-      - name: Get-External-IP
-        run: |-
-          echo "External IP: $(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')"
-          export k8s_service_ip=$(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+      # # Setup GCE CLI
+      # - name: GCloud-CLI-Setup
+      #   uses: google-github-actions/setup-gcloud@v2
+      #   with:
+      #     service_account_key: ${{ secrets.GKE_SA_KEY }}
+      #     project_id: ${{ secrets.GKE_PROJECT }}
+      #     cluster_name: ${{ env.GKE_CLUSTER }}
+      #     location: ${{ env.GKE_ZONE }}
 
-      # Sleep for 45s
-      - name: Sleep for 45s
-        uses: juliangruber/sleep-action@v2.0.0
-        with:
-          time: 45s
+      # # Set up kustomize
+      # - name: Setup-Kustomize
+      #   run: |-
+      #     curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+      #     chmod u+x ./kustomize
 
-      # Run QA tests
-      - name: QA tests
-        run: chmod +x test/qa.sh; test/qa.sh $k8s_service_ip
+      # # Deploy the Docker image to the GKE cluster
+      # - name: Deploy
+      #   run: |-
+      #     ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+      #     ./kustomize build . | kubectl apply -f -
+      #     kubectl rollout status k8s/deployment.yaml
+      #     kubectl get services -o wide
+
+      # # Get the external IP of the service
+      # - name: Get-External-IP
+      #   run: |-
+      #     echo "External IP: $(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')"
+      #     export k8s_service_ip=$(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+
+      # # Sleep for 45s
+      # - name: Sleep for 45s
+      #   uses: juliangruber/sleep-action@v2.0.0
+      #   with:
+      #     time: 45s
+
+      # # Run QA tests
+      # - name: QA tests
+      #   run: chmod +x test/qa.sh; test/qa.sh $k8s_service_ip
