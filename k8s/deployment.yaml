@@ -51,12 +51,13 @@ kind: Service
 metadata:
   name: api-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: api
   ports:
     - name: http
       port: 8080
+      targetPort: 8080
 
 ---
 apiVersion: autoscaling/v1
