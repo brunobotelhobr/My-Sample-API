@@ -65,22 +65,22 @@ jobs:
           location: ${{ env.GKE_ZONE }}
           project_id: ${{ secrets.GKE_PROJECT }}
 
-      - name: Deploy to GKE
+      - name: 'Deploy to GKE'
         run: |
           cd k8s
           kubectl apply -f $DEPLOYMENT_NAME
 
-      # # Get the external IP of the service
-      # - name: Get-External-IP
-      #   run: |-
-      #     echo "External IP: $(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')"
-      #     export k8s_service_ip=$(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+      # Get the external IP of the service
+      - name: 'Get External IP'
+        run: |-
+          echo "External IP: $(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')"
+          export k8s_service_ip=$(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
-      # # Sleep for 45s
-      # - name: Sleep for 45s
-      #   uses: juliangruber/sleep-action@v2.0.0
-      #   with:
-      #     time: 45s
+      # Sleep for 45s
+      - name: 'Sleep for 45s'
+        uses: juliangruber/sleep-action@v2.0.0
+        with:
+          time: 45s
 
       # # Run QA tests
       # - name: QA tests
