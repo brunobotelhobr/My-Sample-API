@@ -44,26 +44,17 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v3
 
-      - name: 'Set up Cloud SDK'
-        uses: google-github-actions/setup-gcloud@v3
+      - name: GCP Auth
+        uses: 'google-github-actions/auth@v2'
         with:
-         project_id: ${{ secrets.GKE_PROJECT  }}
-         credentials_json: ${{ secrets.GKE_SA_KEY  }}
-         export_default_credentials: true
-
-      # Test the gcloud CLI
-      - name: 'Use gcloud CLI'
+          credentials_json: '${{ secrets.GKE_PROJECT }}'
+  
+      - name: 'GCP Setup Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+  
+      - name: 'GCP Test CLI'
         run: 'gcloud info'
 
-      # # Set up the Cloud SDK
-      # - name: 'Set up Cloud SDK'
-      #   uses: 'google-github-actions/setup-gcloud@v2'
-
-      # # Authenticate with the Google Cloud CLI
-      # - name: Authenticate with Google Cloud
-      #   uses: google-github-actions/auth@v3
-      #   with:
-      #     credentials: ${{ secrets.GKE_SA_KEY }}
 
       # # Setup GCE CLI
       # - name: GCloud-CLI-Setup
