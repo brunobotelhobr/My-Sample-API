@@ -20,11 +20,11 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v3
 
-      - name: DockerHub Login
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_LOGIN }}
-          password: ${{ secrets.DOCKERHUB_PASS }}
+      # - name: DockerHub Login
+      #   uses: docker/login-action@v2
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_LOGIN }}
+      #     password: ${{ secrets.DOCKERHUB_PASS }}
 
   #     - name: Build Artefacts
   #       uses: docker/build-push-action@v3
@@ -53,11 +53,21 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v2'
         with:
           project_id: ${{ secrets.GKE_PROJECT }}
+  
+      - name: 'GCP Configure Docker'
+        run: |
+          gcloud --quiet auth configure-docker
 
-      # Deploy to GKE
+      - name : 'get-credentials'
+        uses: 'google-github-actions/get-gke-credentials@v2'
+        with:
+          cluster_name: ${{ env.GKE_CLUSTER }}
+          location: ${{ env.GKE_ZONE }}
+          project_id: ${{ secrets.GKE_PROJECT }}
+
+
       - name: Deploy to GKE
         run: |
-          gcloud container clusters get-credentials $GKE_CLUSTER --zone $GKE_ZONE --project $GCLOUD_PROJECT
           kubectl apply -f $DEPLOYMENT_NAME
 
       # # Get the external IP of the service
