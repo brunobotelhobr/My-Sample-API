@@ -51,33 +51,14 @@ jobs:
   
       - name: 'GCP Setup Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v2'
-  
-      - name: 'GCP Test CLI'
-        run: 'gcloud info'
+        with:
+          project_id: ${{ secrets.GKE_PROJECT }}
 
-
-      # # Setup GCE CLI
-      # - name: GCloud-CLI-Setup
-      #   uses: google-github-actions/setup-gcloud@v2
-      #   with:
-      #     service_account_key: ${{ secrets.GKE_SA_KEY }}
-      #     project_id: ${{ secrets.GKE_PROJECT }}
-      #     cluster_name: ${{ env.GKE_CLUSTER }}
-      #     location: ${{ env.GKE_ZONE }}
-
-      # # Set up kustomize
-      # - name: Setup-Kustomize
-      #   run: |-
-      #     curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
-      #     chmod u+x ./kustomize
-
-      # # Deploy the Docker image to the GKE cluster
-      # - name: Deploy
-      #   run: |-
-      #     ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
-      #     ./kustomize build . | kubectl apply -f -
-      #     kubectl rollout status k8s/deployment.yaml
-      #     kubectl get services -o wide
+      # Deploy to GKE
+      - name: Deploy to GKE
+        run: |
+          gcloud container clusters get-credentials $GKE_CLUSTER --zone $GKE_ZONE --project $GCLOUD_PROJECT
+          kubectl apply -f $DEPLOYMENT_NAME
 
       # # Get the external IP of the service
       # - name: Get-External-IP
