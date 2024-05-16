@@ -58,16 +58,16 @@ jobs:
         run: |
           gcloud --quiet auth configure-docker
 
-      - name : 'get-credentials'
+      - name : 'GCP Get GKE Credentials'
         uses: 'google-github-actions/get-gke-credentials@v2'
         with:
           cluster_name: ${{ env.GKE_CLUSTER }}
           location: ${{ env.GKE_ZONE }}
           project_id: ${{ secrets.GKE_PROJECT }}
 
-
       - name: Deploy to GKE
         run: |
+          cd k8s
           kubectl apply -f $DEPLOYMENT_NAME
 
       # # Get the external IP of the service
