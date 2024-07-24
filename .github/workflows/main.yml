@@ -1,6 +1,15 @@
 name: CI/CD
 
 on: [push, workflow_dispatch]
+<<<<<<< HEAD
+=======
+
+env:
+  GCLOUD_PROJECT: ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER: autopilot-cluster-small      # Add your cluster name here.
+  GKE_ZONE: us-central1                     # Add your cluster zone here.
+  DEPLOYMENT_NAME: deployment.yaml          # Add your deployment name here.
+>>>>>>> main
 
 jobs:
   CI:
@@ -12,6 +21,7 @@ jobs:
 
     steps:
       - name: Download Code
+<<<<<<< HEAD
         uses: actions/checkout@v3
 
       # - name: SAST
@@ -67,6 +77,25 @@ jobs:
           exit-code: '1'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+=======
+        uses: actions/checkout@v4
+
+      # - name: DockerHub Login
+      #   uses: docker/login-action@v2
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_LOGIN }}
+      #     password: ${{ secrets.DOCKERHUB_PASS }}
+
+  #     - name: Build Artefacts
+  #       uses: docker/build-push-action@v3
+  #       with:
+  #         context: .
+  #         file: ./Dockerfile
+  #         push: true
+  #         tags: |
+  #           brunobotelhobr/my-sample-api:${{ github.run_number }}
+  #           brunobotelhobr/my-sample-api:latest
+>>>>>>> main
 
   CD:
     runs-on: ubuntu-latest
@@ -74,6 +103,7 @@ jobs:
 
     steps:
       - name: Download Code
+<<<<<<< HEAD
         uses: actions/checkout@v3
 
   #     - name: Okteto Login
@@ -111,3 +141,48 @@ jobs:
 
   #     - name: QA tests
   #       run: chmod +x test/qa.sh; test/qa.sh
+=======
+        uses: actions/checkout@v4
+
+      - name: GCP Auth
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: '${{ secrets.GKE_ACCOUNT }}'
+  
+      - name: 'GCP Setup Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+        with:
+          project_id: ${{ secrets.GKE_PROJECT }}
+  
+      - name: 'GCP Configure Docker'
+        run: |
+          gcloud --quiet auth configure-docker
+
+      - name : 'GCP Get GKE Credentials'
+        uses: 'google-github-actions/get-gke-credentials@v2'
+        with:
+          cluster_name: ${{ env.GKE_CLUSTER }}
+          location: ${{ env.GKE_ZONE }}
+          project_id: ${{ secrets.GKE_PROJECT }}
+
+      - name: 'Deploy to GKE'
+        run: |
+          cd k8s
+          kubectl apply -f $DEPLOYMENT_NAME
+
+      # Get the external IP of the service
+      - name: 'Get External IP'
+        run: |-
+          echo "External IP: $(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')"
+          export k8s_service_ip=$(kubectl get service my-sample-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+
+      # Sleep for 45s
+      - name: 'Sleep for 45s'
+        uses: juliangruber/sleep-action@v2.0.0
+        with:
+          time: 45s
+
+      # # Run QA tests
+      # - name: QA tests
+      #   run: chmod +x test/qa.sh; test/qa.sh $k8s_service_ip
+>>>>>>> main

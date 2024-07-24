@@ -1,0 +1,1 @@
+docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-baseline.py -x scan-zap.xml -t https://api-service-brunobotelhobr.cloud.okteto.net/ 

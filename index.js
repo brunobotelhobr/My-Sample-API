@@ -7,7 +7,11 @@ const swaggerDocument = YAML.load('./docs/swagger.yaml');
 const config = require('./config/system-life');
 const NodeHog = require('nodehog');
 
+<<<<<<< HEAD
 //Codddde
+=======
+//Code
+>>>>>>> main
 
 app.use(config.middlewares.healthMid);
 app.use('/', config.routers);

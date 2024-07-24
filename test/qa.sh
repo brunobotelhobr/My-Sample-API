@@ -1,8 +1,8 @@
 #/bin/bash
 
 echo "API Simple HTTP Test"
-echo "Waiting 10 seconds to Deploy Finish"
-sleep 10
+echo "Waiting 15 seconds to Deploy Finish"
+sleep 15
 
 # Test: Redness
 URL=https://api-service-brunobotelhobr.cloud.okteto.net/ready

@@ -1,0 +1,1 @@
+horusec start -p="./" -e="false" -O=scan-horus.json -o json 
