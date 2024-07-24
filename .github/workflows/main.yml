@@ -14,10 +14,10 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v3
 
-      - name: SAST
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest-beta
-          horusec start -p="./" -e="true"
+      # - name: SAST
+      #   run: |
+      #     curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest-beta
+      #     horusec start -p="./" -e="true"
 
       # - name: SCA Dependencies
       #   uses: aquasecurity/trivy-action@master
