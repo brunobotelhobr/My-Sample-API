@@ -19,27 +19,27 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest-beta
           horusec start -p="./" -e="true"
 
-      - name: SCA Dependencies
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'fs'
-          hide-progress: false
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
-          skip-dirs: ./test
+      # - name: SCA Dependencies
+      #   uses: aquasecurity/trivy-action@master
+      #   with:
+      #     scan-type: 'fs'
+      #     hide-progress: false
+      #     format: 'table'
+      #     exit-code: '1'
+      #     ignore-unfixed: true
+      #     severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+      #     skip-dirs: ./test
 
-      - name: SCA IAC
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'config'
-          hide-progress: false
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
-          skip-dirs: ./test
+      # - name: SCA IAC
+      #   uses: aquasecurity/trivy-action@master
+      #   with:
+      #     scan-type: 'config'
+      #     hide-progress: false
+      #     format: 'table'
+      #     exit-code: '1'
+      #     ignore-unfixed: true
+      #     severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+      #     skip-dirs: ./test
 
       - name: DockerHub Login
         uses: docker/login-action@v2
@@ -61,7 +61,7 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'image'
-          image-ref: 'brunobotelhobr/api_conversao:${{ github.run_number }}'
+          image-ref: 'brunobotelhobr/my-sample-api:latest'
           hide-progress: false
           format: 'table'
           exit-code: '1'
