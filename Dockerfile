@@ -1,5 +1,5 @@
 
-FROM ubuntu:latest
+FROM node:20.16.0-bookworm
 WORKDIR /app
 COPY package*.json ./
 ARG DEBIAN_FRONTEND=noninteractive
