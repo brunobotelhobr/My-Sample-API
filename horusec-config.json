@@ -55,9 +55,7 @@
     "**/.vscode/**"
   ],
   "horusecCliHeaders": {},
-  "horusecCliHorusecApiUri": "http://0.0.0.0:8000",
   "horusecCliJsonOutputFilepath": "",
-  "horusecCliLogFilePath": "/var/folders/qm/307dxcxd74140r5_5cs81lf00000gn/T/horusec-2023-11-13-15-53-50.log",
   "horusecCliMonitorRetryInSeconds": 15,
   "horusecCliPrintOutputType": "",
   "horusecCliProjectPath": "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API",
