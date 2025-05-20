@@ -58,37 +58,7 @@
                   "startLine": 23
                 },
                 "artifactLocation": {
-                  "uri": "/My-Sample-API/index.js"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "owasp-web": "A3: Sensitive Data Exposure",
-            "cwe": "CWE-798: Use of Hard-coded Credentials"
-          },
-          "ruleId": "node_password",
-          "ruleIndex": 0
-        },
-        {
-          "message": {
-            "text": "A hardcoded password in plain text is identified. Store it properly in an environment variable."
-          },
-          "level": "error",
-          "locations": [
-            {
-              "physicalLocation": {
-                "region": {
-                  "snippet": {
-                    "text": "    let password = 'cochilocachimbocai';"
-                  },
-                  "endColumn": 40,
-                  "endLine": 23,
-                  "startColumn": 9,
-                  "startLine": 23
-                },
-                "artifactLocation": {
-                  "uri": "/My-Sample-API/index_js/index.js"
+                  "uri": "/Users/brunobotelho/Documents/Code/POC-Safefix/My-Sample-API/index.js"
                 }
               }
             }
@@ -117,7 +87,7 @@
                   "startLine": 25
                 },
                 "artifactLocation": {
-                  "uri": "/My-Sample-API/index.js"
+                  "uri": "/Users/brunobotelho/Documents/Code/POC-Safefix/My-Sample-API/index.js"
                 }
               }
             }
@@ -146,7 +116,7 @@
                   "startLine": 25
                 },
                 "artifactLocation": {
-                  "uri": "/My-Sample-API/index_js/index.js"
+                  "uri": "/Users/brunobotelho/Documents/Code/POC-Safefix/My-Sample-API/index.js"
                 }
               }
             }
