@@ -1,0 +1,881 @@
+{
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "guid" : "SonarQube",
+        "fullName" : "SonarQube",
+        "rules" : [ {
+          "guid" : "javascript:S4721",
+          "shortDescription" : {
+            "text" : "Make sure that executing this OS command is safe here."
+          }
+        }, {
+          "guid" : "javascript:S1135",
+          "shortDescription" : {
+            "text" : "Complete the task associated to this \"TODO\" comment."
+          }
+        }, {
+          "guid" : "javascript:S2068",
+          "shortDescription" : {
+            "text" : "Review this potentially hard-coded password."
+          }
+        }, {
+          "guid" : "javascript:S5689",
+          "shortDescription" : {
+            "text" : "This framework implicitly discloses version information by default. Make sure it is safe here."
+          }
+        }, {
+          "guid" : "kubernetes:S6897",
+          "shortDescription" : {
+            "text" : "Specify a storage request for this container."
+          }
+        }, {
+          "guid" : "kubernetes:S6865",
+          "shortDescription" : {
+            "text" : "Bind this resource's automounted service account to RBAC or disable automounting."
+          }
+        }, {
+          "guid" : "javascript:S6582",
+          "shortDescription" : {
+            "text" : "Prefer using an optional chain expression instead, as it's more concise and easier to read."
+          }
+        }, {
+          "guid" : "javascript:S3504",
+          "shortDescription" : {
+            "text" : "Unexpected var, use let or const instead."
+          }
+        }, {
+          "guid" : "javascript:S2814",
+          "shortDescription" : {
+            "text" : "'data' is already defined."
+          }
+        }, {
+          "guid" : "javascript:S2392",
+          "shortDescription" : {
+            "text" : "Consider moving declaration of 'data' as it is referenced outside current binding context."
+          }
+        }, {
+          "guid" : "javascript:S6535",
+          "shortDescription" : {
+            "text" : "Unnecessary escape character: \\@."
+          }
+        }, {
+          "guid" : "javascript:S6535",
+          "shortDescription" : {
+            "text" : "Unnecessary escape character: \\-."
+          }
+        }, {
+          "guid" : "docker:S6470",
+          "shortDescription" : {
+            "text" : "Copying recursively might inadvertently add sensitive data to the container. Make sure it is safe here."
+          }
+        }, {
+          "guid" : "javascript:S1763",
+          "shortDescription" : {
+            "text" : "Unreachable code."
+          }
+        }, {
+          "guid" : "javascript:S6535",
+          "shortDescription" : {
+            "text" : "Unnecessary escape character: \\.."
+          }
+        }, {
+          "guid" : "javascript:S2486",
+          "shortDescription" : {
+            "text" : "Handle this exception or don't catch it at all."
+          }
+        }, {
+          "guid" : "docker:S6505",
+          "shortDescription" : {
+            "text" : "Omitting \"--ignore-scripts\" can lead to the execution of shell scripts. Make sure it is safe here."
+          }
+        }, {
+          "guid" : "docker:S7031",
+          "shortDescription" : {
+            "text" : "Merge this RUN instruction with the consecutive ones."
+          }
+        } ]
+      }
+    },
+    "results" : [ {
+      "ruleId" : "kubernetes:S6897",
+      "level" : "warning",
+      "message" : {
+        "text" : "Specify a storage request for this container."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/k8s/deployment.yaml"
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 10,
+            "endLine" : 20,
+            "endColumn" : 20
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "kubernetes:S6865",
+      "level" : "warning",
+      "message" : {
+        "text" : "Bind this resource's automounted service account to RBAC or disable automounting."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/k8s/deployment.yaml"
+          },
+          "region" : {
+            "startLine" : 19,
+            "startColumn" : 6,
+            "endLine" : 19,
+            "endColumn" : 19
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
+          },
+          "region" : {
+            "startLine" : 1,
+            "startColumn" : 0,
+            "endLine" : 1,
+            "endColumn" : 1
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
+          },
+          "region" : {
+            "startLine" : 2,
+            "startColumn" : 0,
+            "endLine" : 2,
+            "endColumn" : 2
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 0,
+            "endLine" : 50,
+            "endColumn" : 50
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S5689",
+      "level" : "note",
+      "message" : {
+        "text" : "This framework implicitly discloses version information by default. Make sure it is safe here."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 6,
+            "endLine" : 3,
+            "endColumn" : 3
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S2068",
+      "level" : "warning",
+      "message" : {
+        "text" : "Review this potentially hard-coded password."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 19,
+            "endLine" : 22,
+            "endColumn" : 22
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S1763",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unreachable code."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 4,
+            "endLine" : 32,
+            "endColumn" : 32
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S6582",
+      "level" : "warning",
+      "message" : {
+        "text" : "Prefer using an optional chain expression instead, as it's more concise and easier to read."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 39,
+            "startColumn" : 16,
+            "endLine" : 39,
+            "endColumn" : 39
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S6535",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unnecessary escape character: \\.."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 27,
+            "endLine" : 41,
+            "endColumn" : 41
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S6535",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unnecessary escape character: \\-."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 29,
+            "endLine" : 41,
+            "endColumn" : 41
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S6535",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unnecessary escape character: \\@."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 34,
+            "endLine" : 41,
+            "endColumn" : 41
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S6535",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unnecessary escape character: \\-."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 48,
+            "endLine" : 41,
+            "endColumn" : 41
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S4721",
+      "level" : "warning",
+      "message" : {
+        "text" : "Make sure that executing this OS command is safe here."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 52,
+            "startColumn" : 4,
+            "endLine" : 52,
+            "endColumn" : 52
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Authorizarion-Keeper.js"
+          },
+          "region" : {
+            "startLine" : 14,
+            "startColumn" : 0,
+            "endLine" : 14,
+            "endColumn" : 14
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Authorizarion-Keeper.js"
+          },
+          "region" : {
+            "startLine" : 15,
+            "startColumn" : 0,
+            "endLine" : 15,
+            "endColumn" : 15
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 18,
+            "startColumn" : 1,
+            "endLine" : 18,
+            "endColumn" : 18
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 1,
+            "endLine" : 20,
+            "endColumn" : 20
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 21,
+            "startColumn" : 1,
+            "endLine" : 21,
+            "endColumn" : 21
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 1,
+            "endLine" : 22,
+            "endColumn" : 22
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 1,
+            "endLine" : 23,
+            "endColumn" : 23
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 29,
+            "startColumn" : 1,
+            "endLine" : 29,
+            "endColumn" : 29
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 33,
+            "startColumn" : 1,
+            "endLine" : 33,
+            "endColumn" : 33
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 44,
+            "startColumn" : 1,
+            "endLine" : 44,
+            "endColumn" : 44
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 48,
+            "startColumn" : 1,
+            "endLine" : 48,
+            "endColumn" : 48
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 49,
+            "startColumn" : 1,
+            "endLine" : 49,
+            "endColumn" : 49
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 1,
+            "endLine" : 50,
+            "endColumn" : 50
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 63,
+            "startColumn" : 1,
+            "endLine" : 63,
+            "endColumn" : 63
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 68,
+            "startColumn" : 1,
+            "endLine" : 68,
+            "endColumn" : 68
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 69,
+            "startColumn" : 1,
+            "endLine" : 69,
+            "endColumn" : 69
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S1135",
+      "level" : "warning",
+      "message" : {
+        "text" : "Complete the task associated to this \"TODO\" comment."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 78,
+            "startColumn" : 24,
+            "endLine" : 78,
+            "endColumn" : 78
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S1763",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unreachable code."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 79,
+            "startColumn" : 2,
+            "endLine" : 92,
+            "endColumn" : 92
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 86,
+            "startColumn" : 3,
+            "endLine" : 86,
+            "endColumn" : 86
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S2392",
+      "level" : "warning",
+      "message" : {
+        "text" : "Consider moving declaration of 'data' as it is referenced outside current binding context."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 86,
+            "startColumn" : 7,
+            "endLine" : 86,
+            "endColumn" : 86
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S2486",
+      "level" : "note",
+      "message" : {
+        "text" : "Handle this exception or don't catch it at all."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 87,
+            "startColumn" : 4,
+            "endLine" : 92,
+            "endColumn" : 92
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 97,
+            "startColumn" : 1,
+            "endLine" : 97,
+            "endColumn" : 97
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S2814",
+      "level" : "warning",
+      "message" : {
+        "text" : "'data' is already defined."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 97,
+            "startColumn" : 5,
+            "endLine" : 97,
+            "endColumn" : 97
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+          },
+          "region" : {
+            "startLine" : 98,
+            "startColumn" : 1,
+            "endLine" : 98,
+            "endColumn" : 98
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "docker:S7031",
+      "level" : "note",
+      "message" : {
+        "text" : "Merge this RUN instruction with the consecutive ones."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/Dockerfile"
+          },
+          "region" : {
+            "startLine" : 6,
+            "startColumn" : 0,
+            "endLine" : 6,
+            "endColumn" : 6
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "docker:S6505",
+      "level" : "warning",
+      "message" : {
+        "text" : "Omitting \"--ignore-scripts\" can lead to the execution of shell scripts. Make sure it is safe here."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/Dockerfile"
+          },
+          "region" : {
+            "startLine" : 9,
+            "startColumn" : 4,
+            "endLine" : 9,
+            "endColumn" : 9
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "docker:S6470",
+      "level" : "error",
+      "message" : {
+        "text" : "Copying recursively might inadvertently add sensitive data to the container. Make sure it is safe here."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/Dockerfile"
+          },
+          "region" : {
+            "startLine" : 10,
+            "startColumn" : 5,
+            "endLine" : 10,
+            "endColumn" : 10
+          }
+        }
+      } ]
+    } ]
+  } ]
+}
