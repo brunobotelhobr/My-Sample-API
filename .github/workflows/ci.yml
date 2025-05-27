@@ -47,7 +47,6 @@ jobs:
           # Generate Report in HTML.
           njsscan --html -o sast-njsscan-report.html . || true
 
-
       - name: SAST - NJSScan Reports Attachment
         uses: actions/upload-artifact@v4
         with:
@@ -55,28 +54,43 @@ jobs:
           path: |
             sast-njsscan-report.*
 
-
-      - name: SCA Dependencies
+      - name: SCA - Trivy
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
           hide-progress: false
-          format: 'table'
           exit-code: '0'
+          format: 'sarif'
+          output: 'sca-trivy.sarif'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
           skip-dirs: ./test
 
-      - name: SCA IAC
+      - name: SCA - Trivy Reports Attachment
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-reports
+          path: |
+            sca-trivy.sarif
+
+      - name: IAC Scan - Trivy
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
           hide-progress: false
-          format: 'table'
           exit-code: '0'
+          format: 'sarif'
+          output: 'iac-scan-trivy.sarif'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
           skip-dirs: ./test
+
+      - name: IAC Scan - Trivy Reports Attachment
+        uses: actions/upload-artifact@v4
+        with:
+          name: iac-scan-trivy-reports
+          path: |
+            iac-scan-trivy.sarif
 
       - name: DockerHub Login
         uses: docker/login-action@v2
@@ -100,7 +114,15 @@ jobs:
           scan-type: 'image'
           image-ref: 'brunobotelhobr/my-sample-api:latest'
           hide-progress: false
-          format: 'table'
+          format: 'sarif'
+          output: 'sca-trivy-image.sarif'
           exit-code: '0'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+      
+      - name: SCA Artefacts Reports Attachment
+        uses: actions/upload-artifact@v4
+        with:
+          name: sca-trivy-image-reports
+          path: |
+            sca-trivy-image.sarif
