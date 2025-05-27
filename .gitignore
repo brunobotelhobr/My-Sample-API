@@ -110,3 +110,6 @@ dist
 
 >>>>>>> main
 .DS_Store
+sast-horusec-report.json
+sast-horusec-report.sarif
+sast-horusec-report.txt

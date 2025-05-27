@@ -24,13 +24,16 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest-beta
           horusec start -p="./" -e="false"
           # Run horusec and generate the report.
-          horusec start -p="./" -e="false" --output-path="./sast-horusec-report.json"
+          horusec start -p="./" -e="false" --output-format sarif --json-output-file sast-horusec-report.sarif ./
+          horusec start -p="./" -e="false" --output-format json --json-output-file sast-horusec-report.json ./
+          horusec start -p="./" -e="false" --output-format text --json-output-file sast-horusec-report.txt ./
       
-      - name: SAST - Horusec Report Attachment
+      - name: SAST - Horusec Reports Attachment
         uses: actions/upload-artifact@v4
         with:
-          name: sast-horusec-report
-          path: sast-horusec-report.json
+          name: horusec-reports
+          path: |
+            sast-horusec-report.*
 
       - name: SAST - NJSScan
         run: |
