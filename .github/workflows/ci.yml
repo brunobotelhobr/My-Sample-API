@@ -23,10 +23,18 @@ jobs:
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest-beta
           horusec start -p="./" -e="false"
+          # Run horusec and generate the report.
+          horusec start -p="./" -e="false" --output-path="./sast-horusec-report.json"
+      
+      - name: SAST - Horusec Report Attachment
+        uses: actions/upload-artifact@v3
+        with:
+          name: sast-horusec-report
+          path: sast-horusec-report.json
 
       - name: SAST - NJSScan
         run: |
-          pip install njs-scan
+          pip install njsscan
           # Generate Report in JSON.
           njsscan --json -o njsscan-report.json .
           # Generate Report in SARIF.
