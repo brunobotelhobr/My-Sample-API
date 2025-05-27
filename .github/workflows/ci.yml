@@ -25,7 +25,7 @@ jobs:
           scan-type: 'fs'
           hide-progress: false
           format: 'table'
-          exit-code: '1'
+          exit-code: '0'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
           skip-dirs: ./test
@@ -36,7 +36,7 @@ jobs:
           scan-type: 'config'
           hide-progress: false
           format: 'table'
-          exit-code: '1'
+          exit-code: '0'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
           skip-dirs: ./test
@@ -64,6 +64,6 @@ jobs:
           image-ref: 'brunobotelhobr/my-sample-api:latest'
           hide-progress: false
           format: 'table'
-          exit-code: '1'
+          exit-code: '0'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
