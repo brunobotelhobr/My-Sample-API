@@ -14,10 +14,25 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v3
 
-      - name: SAST
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: SAST - Horusec
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest-beta
           horusec start -p="./" -e="false"
+
+      - name: SAST - NJSScan
+        run: |
+          pip install njs-scan
+          # Generate Report in JSON.
+          njsscan --json -o njsscan-report.json .
+          # Generate Report in SARIF.
+          njsscan --sarif -o njsscan-report.sarif .
+          # Just cat the report to the console.
+          cat njsscan-report.json
 
       - name: SCA Dependencies
         uses: aquasecurity/trivy-action@master
