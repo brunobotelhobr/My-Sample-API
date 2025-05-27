@@ -5,77 +5,77 @@
         "guid" : "SonarQube",
         "fullName" : "SonarQube",
         "rules" : [ {
-          "guid" : "javascript:S1135",
+          "id" : "javascript:S1135",
           "shortDescription" : {
             "text" : "Complete the task associated to this \"TODO\" comment."
           }
         }, {
-          "guid" : "javascript:S2068",
+          "id" : "javascript:S2068",
           "shortDescription" : {
             "text" : "Review this potentially hard-coded password."
           }
         }, {
-          "guid" : "javascript:S5689",
+          "id" : "javascript:S5689",
           "shortDescription" : {
             "text" : "This framework implicitly discloses version information by default. Make sure it is safe here."
           }
         }, {
-          "guid" : "kubernetes:S6897",
+          "id" : "kubernetes:S6897",
           "shortDescription" : {
             "text" : "Specify a storage request for this container."
           }
         }, {
-          "guid" : "kubernetes:S6865",
+          "id" : "kubernetes:S6865",
           "shortDescription" : {
             "text" : "Bind this resource's automounted service account to RBAC or disable automounting."
           }
         }, {
-          "guid" : "kubernetes:S6596",
+          "id" : "kubernetes:S6596",
           "shortDescription" : {
             "text" : "Use a specific version tag for the image."
           }
         }, {
-          "guid" : "docker:S6471",
+          "id" : "docker:S6471",
           "shortDescription" : {
             "text" : "The \"node\" image runs with \"root\" as the default user. Make sure it is safe here."
           }
         }, {
-          "guid" : "javascript:S3504",
+          "id" : "javascript:S3504",
           "shortDescription" : {
             "text" : "Unexpected var, use let or const instead."
           }
         }, {
-          "guid" : "javascript:S2814",
+          "id" : "javascript:S2814",
           "shortDescription" : {
             "text" : "'data' is already defined."
           }
         }, {
-          "guid" : "javascript:S2392",
+          "id" : "javascript:S2392",
           "shortDescription" : {
             "text" : "Consider moving declaration of 'data' as it is referenced outside current binding context."
           }
         }, {
-          "guid" : "docker:S6470",
+          "id" : "docker:S6470",
           "shortDescription" : {
             "text" : "Copying recursively might inadvertently add sensitive data to the container. Make sure it is safe here."
           }
         }, {
-          "guid" : "javascript:S1763",
+          "id" : "javascript:S1763",
           "shortDescription" : {
             "text" : "Unreachable code."
           }
         }, {
-          "guid" : "javascript:S1186",
+          "id" : "javascript:S1186",
           "shortDescription" : {
             "text" : "Unexpected empty function 'responseReceived'."
           }
         }, {
-          "guid" : "javascript:S2486",
+          "id" : "javascript:S2486",
           "shortDescription" : {
             "text" : "Handle this exception or don't catch it at all."
           }
         }, {
-          "guid" : "docker:S6505",
+          "id" : "docker:S6505",
           "shortDescription" : {
             "text" : "Omitting \"--ignore-scripts\" can lead to the execution of shell scripts. Make sure it is safe here."
           }
@@ -91,7 +91,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/k8s/deployment.yaml"
+            "uri" : "./k8s/deployment.yaml"
           },
           "region" : {
             "startLine" : 20,
@@ -110,7 +110,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/k8s/deployment.yaml"
+            "uri" : "./k8s/deployment.yaml"
           },
           "region" : {
             "startLine" : 19,
@@ -129,7 +129,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/k8s/deployment.yaml"
+            "uri" : "./k8s/deployment.yaml"
           },
           "region" : {
             "startLine" : 21,
@@ -148,7 +148,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 18,
@@ -167,7 +167,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 20,
@@ -186,7 +186,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 21,
@@ -205,7 +205,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 22,
@@ -224,7 +224,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 23,
@@ -243,7 +243,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 29,
@@ -262,7 +262,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 33,
@@ -281,7 +281,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 44,
@@ -300,7 +300,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 48,
@@ -319,7 +319,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 49,
@@ -338,7 +338,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 50,
@@ -357,7 +357,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 63,
@@ -376,7 +376,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 68,
@@ -395,7 +395,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 69,
@@ -414,7 +414,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 78,
@@ -433,7 +433,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 79,
@@ -452,7 +452,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 86,
@@ -471,7 +471,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 86,
@@ -490,7 +490,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 87,
@@ -509,7 +509,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 97,
@@ -528,7 +528,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 97,
@@ -547,7 +547,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Auth.js"
+            "uri" : "./test/OWASP-REST-Auth.js"
           },
           "region" : {
             "startLine" : 98,
@@ -566,7 +566,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
+            "uri" : "./config/system-life.js"
           },
           "region" : {
             "startLine" : 1,
@@ -585,7 +585,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
+            "uri" : "./config/system-life.js"
           },
           "region" : {
             "startLine" : 2,
@@ -604,7 +604,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
+            "uri" : "./config/system-life.js"
           },
           "region" : {
             "startLine" : 50,
@@ -623,7 +623,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+            "uri" : "./index.js"
           },
           "region" : {
             "startLine" : 3,
@@ -642,7 +642,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+            "uri" : "./index.js"
           },
           "region" : {
             "startLine" : 23,
@@ -661,7 +661,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+            "uri" : "./index.js"
           },
           "region" : {
             "startLine" : 33,
@@ -680,7 +680,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Authorizarion-Keeper.js"
+            "uri" : "./test/OWASP-REST-Authorizarion-Keeper.js"
           },
           "region" : {
             "startLine" : 14,
@@ -699,7 +699,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Authorizarion-Keeper.js"
+            "uri" : "./test/OWASP-REST-Authorizarion-Keeper.js"
           },
           "region" : {
             "startLine" : 15,
@@ -718,7 +718,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Authorizarion-Keeper.js"
+            "uri" : "./test/OWASP-REST-Authorizarion-Keeper.js"
           },
           "region" : {
             "startLine" : 29,
@@ -737,7 +737,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/Dockerfile"
+            "uri" : "./Dockerfile"
           },
           "region" : {
             "startLine" : 2,
@@ -756,7 +756,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/Dockerfile"
+            "uri" : "./Dockerfile"
           },
           "region" : {
             "startLine" : 6,
@@ -775,7 +775,7 @@
       "locations" : [ {
         "physicalLocation" : {
           "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/Dockerfile"
+            "uri" : "./Dockerfile"
           },
           "region" : {
             "startLine" : 7,
