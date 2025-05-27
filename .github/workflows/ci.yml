@@ -27,7 +27,7 @@ jobs:
           horusec start -p="./" -e="false" --output-path="./sast-horusec-report.json"
       
       - name: SAST - Horusec Report Attachment
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sast-horusec-report
           path: sast-horusec-report.json
