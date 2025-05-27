@@ -38,12 +38,23 @@ jobs:
       - name: SAST - NJSScan
         run: |
           pip install njsscan
+          # Run njsscan
+          njsscan . || true
           # Generate Report in JSON.
-          njsscan --json -o njsscan-report.json .
+          njsscan --json -o sast-njsscan-report.json . || true
           # Generate Report in SARIF.
-          njsscan --sarif -o njsscan-report.sarif .
-          # Just cat the report to the console.
-          cat njsscan-report.json
+          njsscan --sarif -o sast-njsscan-report.sarif . || true
+          # Generate Report in HTML.
+          njsscan --html -o sast-njsscan-report.html . || true
+
+
+      - name: SAST - NJSScan Reports Attachment
+        uses: actions/upload-artifact@v4
+        with:
+          name: njsscan-reports
+          path: |
+            sast-njsscan-report.*
+
 
       - name: SCA Dependencies
         uses: aquasecurity/trivy-action@master
