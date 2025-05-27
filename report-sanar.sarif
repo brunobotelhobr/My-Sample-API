@@ -5,14 +5,14 @@
         "guid" : "SonarQube",
         "fullName" : "SonarQube",
         "rules" : [ {
-          "guid" : "javascript:S4721",
-          "shortDescription" : {
-            "text" : "Make sure that executing this OS command is safe here."
-          }
-        }, {
           "guid" : "javascript:S1135",
           "shortDescription" : {
             "text" : "Complete the task associated to this \"TODO\" comment."
+          }
+        }, {
+          "guid" : "javascript:S4721",
+          "shortDescription" : {
+            "text" : "Make sure that executing this OS command is safe here."
           }
         }, {
           "guid" : "javascript:S2068",
@@ -132,272 +132,6 @@
             "startColumn" : 6,
             "endLine" : 19,
             "endColumn" : 19
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S3504",
-      "level" : "error",
-      "message" : {
-        "text" : "Unexpected var, use let or const instead."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
-          },
-          "region" : {
-            "startLine" : 1,
-            "startColumn" : 0,
-            "endLine" : 1,
-            "endColumn" : 1
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S3504",
-      "level" : "error",
-      "message" : {
-        "text" : "Unexpected var, use let or const instead."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
-          },
-          "region" : {
-            "startLine" : 2,
-            "startColumn" : 0,
-            "endLine" : 2,
-            "endColumn" : 2
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S3504",
-      "level" : "error",
-      "message" : {
-        "text" : "Unexpected var, use let or const instead."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
-          },
-          "region" : {
-            "startLine" : 50,
-            "startColumn" : 0,
-            "endLine" : 50,
-            "endColumn" : 50
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S5689",
-      "level" : "note",
-      "message" : {
-        "text" : "This framework implicitly discloses version information by default. Make sure it is safe here."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
-          },
-          "region" : {
-            "startLine" : 3,
-            "startColumn" : 6,
-            "endLine" : 3,
-            "endColumn" : 3
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S2068",
-      "level" : "warning",
-      "message" : {
-        "text" : "Review this potentially hard-coded password."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
-          },
-          "region" : {
-            "startLine" : 22,
-            "startColumn" : 19,
-            "endLine" : 22,
-            "endColumn" : 22
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S1763",
-      "level" : "warning",
-      "message" : {
-        "text" : "Unreachable code."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
-          },
-          "region" : {
-            "startLine" : 32,
-            "startColumn" : 4,
-            "endLine" : 32,
-            "endColumn" : 32
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S6582",
-      "level" : "warning",
-      "message" : {
-        "text" : "Prefer using an optional chain expression instead, as it's more concise and easier to read."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
-          },
-          "region" : {
-            "startLine" : 39,
-            "startColumn" : 16,
-            "endLine" : 39,
-            "endColumn" : 39
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S6535",
-      "level" : "warning",
-      "message" : {
-        "text" : "Unnecessary escape character: \\.."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
-          },
-          "region" : {
-            "startLine" : 41,
-            "startColumn" : 27,
-            "endLine" : 41,
-            "endColumn" : 41
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S6535",
-      "level" : "warning",
-      "message" : {
-        "text" : "Unnecessary escape character: \\-."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
-          },
-          "region" : {
-            "startLine" : 41,
-            "startColumn" : 29,
-            "endLine" : 41,
-            "endColumn" : 41
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S6535",
-      "level" : "warning",
-      "message" : {
-        "text" : "Unnecessary escape character: \\@."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
-          },
-          "region" : {
-            "startLine" : 41,
-            "startColumn" : 34,
-            "endLine" : 41,
-            "endColumn" : 41
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S6535",
-      "level" : "warning",
-      "message" : {
-        "text" : "Unnecessary escape character: \\-."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
-          },
-          "region" : {
-            "startLine" : 41,
-            "startColumn" : 48,
-            "endLine" : 41,
-            "endColumn" : 41
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S4721",
-      "level" : "warning",
-      "message" : {
-        "text" : "Make sure that executing this OS command is safe here."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
-          },
-          "region" : {
-            "startLine" : 52,
-            "startColumn" : 4,
-            "endLine" : 52,
-            "endColumn" : 52
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S3504",
-      "level" : "error",
-      "message" : {
-        "text" : "Unexpected var, use let or const instead."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Authorizarion-Keeper.js"
-          },
-          "region" : {
-            "startLine" : 14,
-            "startColumn" : 0,
-            "endLine" : 14,
-            "endColumn" : 14
-          }
-        }
-      } ]
-    }, {
-      "ruleId" : "javascript:S3504",
-      "level" : "error",
-      "message" : {
-        "text" : "Unexpected var, use let or const instead."
-      },
-      "locations" : [ {
-        "physicalLocation" : {
-          "artifactLocation" : {
-            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Authorizarion-Keeper.js"
-          },
-          "region" : {
-            "startLine" : 15,
-            "startColumn" : 0,
-            "endLine" : 15,
-            "endColumn" : 15
           }
         }
       } ]
@@ -816,6 +550,272 @@
             "startColumn" : 1,
             "endLine" : 98,
             "endColumn" : 98
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
+          },
+          "region" : {
+            "startLine" : 1,
+            "startColumn" : 0,
+            "endLine" : 1,
+            "endColumn" : 1
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
+          },
+          "region" : {
+            "startLine" : 2,
+            "startColumn" : 0,
+            "endLine" : 2,
+            "endColumn" : 2
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/config/system-life.js"
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 0,
+            "endLine" : 50,
+            "endColumn" : 50
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S5689",
+      "level" : "note",
+      "message" : {
+        "text" : "This framework implicitly discloses version information by default. Make sure it is safe here."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 6,
+            "endLine" : 3,
+            "endColumn" : 3
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S2068",
+      "level" : "warning",
+      "message" : {
+        "text" : "Review this potentially hard-coded password."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 19,
+            "endLine" : 22,
+            "endColumn" : 22
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S1763",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unreachable code."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 4,
+            "endLine" : 32,
+            "endColumn" : 32
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S6582",
+      "level" : "warning",
+      "message" : {
+        "text" : "Prefer using an optional chain expression instead, as it's more concise and easier to read."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 39,
+            "startColumn" : 16,
+            "endLine" : 39,
+            "endColumn" : 39
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S6535",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unnecessary escape character: \\.."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 27,
+            "endLine" : 41,
+            "endColumn" : 41
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S6535",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unnecessary escape character: \\-."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 29,
+            "endLine" : 41,
+            "endColumn" : 41
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S6535",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unnecessary escape character: \\@."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 34,
+            "endLine" : 41,
+            "endColumn" : 41
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S6535",
+      "level" : "warning",
+      "message" : {
+        "text" : "Unnecessary escape character: \\-."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 48,
+            "endLine" : 41,
+            "endColumn" : 41
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S4721",
+      "level" : "warning",
+      "message" : {
+        "text" : "Make sure that executing this OS command is safe here."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/index.js"
+          },
+          "region" : {
+            "startLine" : 52,
+            "startColumn" : 4,
+            "endLine" : 52,
+            "endColumn" : 52
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Authorizarion-Keeper.js"
+          },
+          "region" : {
+            "startLine" : 14,
+            "startColumn" : 0,
+            "endLine" : 14,
+            "endColumn" : 14
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "javascript:S3504",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected var, use let or const instead."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "/Users/botelho/Library/CloudStorage/Dropbox/My-Code/My-Sample-API/test/OWASP-REST-Authorizarion-Keeper.js"
+          },
+          "region" : {
+            "startLine" : 15,
+            "startColumn" : 0,
+            "endLine" : 15,
+            "endColumn" : 15
           }
         }
       } ]
