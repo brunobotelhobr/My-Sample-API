@@ -69,6 +69,18 @@ app.get('/temperature/celsiusparafahrenheit/:value', (req, res) => {
     res.json({ "fahrenheit": fahrenheit, "hostname": os.hostname() });
 });
 
+app.get('/isoflegalage/:year', (req, res) => {
+
+    let year = req.params.year;
+    const currentYear = new Date().getFullYear(); // Get the current year from Date object
+    let isOfLegalAge = false
+    if ((currentYear - year) >= 18)
+        isOfLegalAge = true
+
+    res.json({ "isOfLegalAge": isOfLegalAge, "hostname": os.hostname() });
+
+})
+
 app.get('*', (req, res) => {
     res.redirect('/docs');
 });

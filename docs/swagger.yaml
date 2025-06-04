@@ -65,6 +65,40 @@ paths:
         400:
           description: Bad Input Parameter
           content: {}
+  /isoflegalage/{age}:
+    get:
+      tags: 
+        - age
+      description: Checks if the provided age is 18 or older.
+      parameters:
+        - name: age
+          in: path
+          description: Age for verification
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: Result of the verification
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  isOfLegalAge:
+                    type: boolean
+                  message:
+                    type: string
+        400:
+          description: Invalid age
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
   /ready:
     get:
       tags:
