@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: brunobotelhobr/my-sample-api:latest
+          image: myapp:1.0.0
           ports:
             - containerPort: 8080
           livenessProbe:
@@ -41,9 +41,11 @@ spec:
             requests:
               cpu: "150m"
               memory: "32Mi"
+              storage: "1Gi"
             limits:
               cpu: "300m"
               memory: "64Mi"
+          automountServiceAccountToken: false
 
 ---
 apiVersion: v1

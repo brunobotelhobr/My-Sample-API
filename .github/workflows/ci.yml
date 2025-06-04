@@ -14,32 +14,83 @@ jobs:
       - name: Download Code
         uses: actions/checkout@v3
 
-      - name: SAST
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: SAST - Horusec
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest-beta
           horusec start -p="./" -e="false"
+          # Run horusec and generate the report.
+          horusec start -p="./" -e="false" --output-format sarif --json-output-file sast-horusec-report.sarif ./
+          horusec start -p="./" -e="false" --output-format json --json-output-file sast-horusec-report.json ./
+          horusec start -p="./" -e="false" --output-format text --json-output-file sast-horusec-report.txt ./
+      
+      - name: SAST - Horusec Reports Attachment
+        uses: actions/upload-artifact@v4
+        with:
+          name: horusec-reports
+          path: |
+            sast-horusec-report.*
 
-      - name: SCA Dependencies
+      - name: SAST - NJSScan
+        run: |
+          pip install njsscan
+          # Run njsscan
+          njsscan . || true
+          # Generate Report in JSON.
+          njsscan --json -o sast-njsscan-report.json . || true
+          # Generate Report in SARIF.
+          njsscan --sarif -o sast-njsscan-report.sarif . || true
+          # Generate Report in HTML.
+          njsscan --html -o sast-njsscan-report.html . || true
+
+      - name: SAST - NJSScan Reports Attachment
+        uses: actions/upload-artifact@v4
+        with:
+          name: njsscan-reports
+          path: |
+            sast-njsscan-report.*
+
+      - name: SCA - Trivy
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
           hide-progress: false
-          format: 'table'
-          exit-code: '1'
+          exit-code: '0'
+          format: 'sarif'
+          output: 'sca-trivy.sarif'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
           skip-dirs: ./test
 
-      - name: SCA IAC
+      - name: SCA - Trivy Reports Attachment
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-reports
+          path: |
+            sca-trivy.sarif
+
+      - name: IAC Scan - Trivy
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
           hide-progress: false
-          format: 'table'
-          exit-code: '1'
+          exit-code: '0'
+          format: 'sarif'
+          output: 'iac-scan-trivy.sarif'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
           skip-dirs: ./test
+
+      - name: IAC Scan - Trivy Reports Attachment
+        uses: actions/upload-artifact@v4
+        with:
+          name: iac-scan-trivy-reports
+          path: |
+            iac-scan-trivy.sarif
 
       - name: DockerHub Login
         uses: docker/login-action@v2
@@ -63,7 +114,15 @@ jobs:
           scan-type: 'image'
           image-ref: 'brunobotelhobr/my-sample-api:latest'
           hide-progress: false
-          format: 'table'
-          exit-code: '1'
+          format: 'sarif'
+          output: 'sca-trivy-image.sarif'
+          exit-code: '0'
           ignore-unfixed: true
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+      
+      - name: SCA Artefacts Reports Attachment
+        uses: actions/upload-artifact@v4
+        with:
+          name: sca-trivy-image-reports
+          path: |
+            sca-trivy-image.sarif

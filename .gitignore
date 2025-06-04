@@ -110,3 +110,9 @@ dist
 
 >>>>>>> main
 .DS_Store
+sast-horusec-report.json
+sast-horusec-report.sarif
+sast-horusec-report.txt
+sast-njsscan-report.html
+.scannerwork/.sonar_lock
+.scannerwork/report-task.txt
