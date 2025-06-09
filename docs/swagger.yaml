@@ -331,6 +331,76 @@ paths:
         400:
           description: Bad Input Parameter
           content: {}
+
+  /validate-email:
+    post:
+      tags:
+        - Misc
+      summary: Validate if the input is a valid email (potentially vulnerable to ReDoS)
+      description: |
+        Receives an email string and tests it against a regular expression for validation.
+        **Warning:** The regex used can be vulnerable to Regular Expression Denial of Service (ReDoS).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: "user@example.com"
+      responses:
+        200:
+          description: Email validation result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  valid:
+                    type: boolean
+                  hostname:
+                    type: string
+        400:
+          description: Bad Input Parameter
+          content: {}
+
+  /ping:
+    get:
+      tags:
+        - Misc
+      summary: Ping an IPv4 address (potentially vulnerable to OS Command Injection)
+      description: |
+        Executes a ping command to the IPv4 address provided by the user via the 'ip' query parameter.
+        **Warning:** This endpoint is potentially vulnerable to OS Command Injection if 'ip' is not properly sanitized.
+      parameters:
+        - name: ip
+          in: query
+          description: IPv4 address to ping
+          required: true
+          schema:
+            type: string
+            example: 8.8.8.8
+      responses:
+        200:
+          description: Ping command output
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  output:
+                    type: string
+        500:
+          description: Ping command execution error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
 components:
   securitySchemes:
     bearerAuth:

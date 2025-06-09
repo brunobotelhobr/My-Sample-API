@@ -26,8 +26,6 @@ function sendingRequest(msg, initiator, helper) {
   return msg;
 }
 
-function responseReceived(msg, initiator, helper) {}
-
 // My Logger Function
 function logger() {
 	print('[' + this['zap.script.name'] + '] ' + arguments[0]);
