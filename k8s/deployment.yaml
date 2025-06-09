@@ -16,9 +16,25 @@ spec:
         prometeus.io/path: "/metrics"
         prometeus.io/scrape: "true"
     spec:
+      # Adicionando securityContext no nível do pod
+      securityContext:
+        fsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
       containers:
         - name: api
           image: brunobotelhobr/my-sample-api:latest
+          # Adicionando securityContext no nível do container
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1000
+            runAsGroup: 1000
           ports:
             - containerPort: 8080
           livenessProbe:
