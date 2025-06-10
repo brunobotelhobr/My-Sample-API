@@ -1,135 +1,44 @@
 name: CI
 
-on: 
+on:
   workflow_call:
   workflow_dispatch:
   push:
+    branches: [main]
   pull_request:
+    branches: [main]
 
 jobs:
-  CI:
+  build-and-test:
+    name: Build and Test
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
     steps:
-      - name: Download Code
-        uses: actions/checkout@v3
-
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
-      - name: SAST - Horusec
+      - name: Install Python dependencies
         run: |
-          curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest-beta
-          horusec start -p="./" -e="false"
-          # Run horusec and generate the report.
-          horusec start -p="./" -e="false" --output-format sarif --json-output-file sast-horusec-report.sarif ./
-          horusec start -p="./" -e="false" --output-format json --json-output-file sast-horusec-report.json ./
-          horusec start -p="./" -e="false" --output-format text --json-output-file sast-horusec-report.txt ./
-      
-      - name: SAST - Horusec Reports Attachment
-        uses: actions/upload-artifact@v4
-        with:
-          name: horusec-reports
-          path: |
-            sast-horusec-report.*
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      - name: SAST - NJSScan
+      - name: Build Docker image
         run: |
-          pip install njsscan
-          # Run njsscan
-          njsscan .
-          # Generate Report in JSON.
-          njsscan --json -o sast-njsscan-report.json .
-          # Generate Report in SARIF.
-          njsscan --sarif -o sast-njsscan-report.sarif .
-          # Generate Report in HTML.
-          njsscan --html -o sast-njsscan-report.html .
+          docker build -t my-vulnerable-app:ci .
 
-      - name: SAST - NJSScan Reports Attachment
-        uses: actions/upload-artifact@v4
-        with:
-          name: njsscan-reports
-          path: |
-            sast-njsscan-report.*
+      - name: Run Docker container (10s)
+        run: |
+          docker run -d --name my-vulnerable-app-test -p 8000:8000 my-vulnerable-app:ci
+          sleep 10
+          docker ps -a
+          docker logs my-vulnerable-app-test
 
-      - name: SCA - Trivy
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'fs'
-          hide-progress: false
-          exit-code: '0'
-          format: 'sarif'
-          output: 'sca-trivy.sarif'
-          ignore-unfixed: true
-          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
-          skip-dirs: ./test
-
-      - name: SCA - Trivy Reports Attachment
-        uses: actions/upload-artifact@v4
-        with:
-          name: trivy-reports
-          path: |
-            sca-trivy.sarif
-
-      - name: IAC Scan - Trivy
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'config'
-          hide-progress: false
-          exit-code: '0'
-          format: 'sarif'
-          output: 'iac-scan-trivy.sarif'
-          ignore-unfixed: true
-          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
-          skip-dirs: ./test
-
-      - name: IAC Scan - Trivy Reports Attachment
-        uses: actions/upload-artifact@v4
-        with:
-          name: iac-scan-trivy-reports
-          path: |
-            iac-scan-trivy.sarif
-
-      - name: DockerHub Login
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_LOGIN }}
-          password: ${{ secrets.DOCKERHUB_PASS }}
-
-      - name: Build Artefacts
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: |
-            brunobotelhobr/my-sample-api:${{ github.run_number }}
-            brunobotelhobr/my-sample-api:latest
-
-      - name: SCA Artefacts
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'image'
-          image-ref: 'brunobotelhobr/my-sample-api:latest'
-          hide-progress: false
-          format: 'sarif'
-          output: 'sca-trivy-image.sarif'
-          exit-code: '0'
-          ignore-unfixed: true
-          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
-      
-      - name: SCA Artefacts Reports Attachment
-        uses: actions/upload-artifact@v4
-        with:
-          name: sca-trivy-image-reports
-          path: |
-            sca-trivy-image.sarif
+      - name: Stop and remove container
+        if: always()
+        run: |
+          docker stop my-vulnerable-app-test || true
+          docker rm my-vulnerable-app-test || true
