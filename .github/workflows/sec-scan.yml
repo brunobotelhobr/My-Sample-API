@@ -2,9 +2,8 @@ name: Security Scan
 
 on:
   push:
-    branches:
-      - main
-      - "*"
+    branches-ignore:
+      - 'main'
   pull_request:
     branches:
       - main
