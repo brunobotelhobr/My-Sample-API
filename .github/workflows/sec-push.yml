@@ -2,6 +2,9 @@ name: Security-SCA-Push
 
 on:
   push:
+    branches-ignore:
+      - main
+    
   workflow_call:
   workflow_dispatch:
 
