@@ -17,3 +17,5 @@ jobs:
         with:
           # sua configuração do SCA aqui
           license-check: true
+          base-ref: ${{ github.event.before || github.sha }}
+          head-ref: ${{ github.sha }}
