@@ -1,10 +1,12 @@
-name: Security-SCA-PR
+name: Security-SCA
 
 on:
+  push:
   pull_request:
     branches: [main]
   workflow_call:
   workflow_dispatch:
+
 
 jobs:
   SCA:
@@ -13,12 +15,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Check for open Pull Request
+        id: check_pr
+        run: |
+          PR_COUNT=$(gh pr list --base main --head ${{ github.ref }} --json state | jq '. | length')
+          echo "::set-output name=pr_count::$PR_COUNT"
+
       - name: Run Dependency Review
+        if: github.event_name == 'push' || (github.event_name == 'pull_request' && steps.check_pr.outputs.pr_count == '0')
         uses: actions/dependency-review-action@v4
         with:
+          # sua configuração do SCA aqui
           fail-on-severity: moderate
           license-check: true
-
           base-ref: ${{ github.event.before || github.sha }}
           head-ref: ${{ github.sha }}
 
