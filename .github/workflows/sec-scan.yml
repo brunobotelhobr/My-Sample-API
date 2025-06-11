@@ -10,15 +10,13 @@ on:
       - main
 
 jobs:
-  dependabot:
-    name: Run Dependabot
+  dependency-review:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: 'Checkout Repository'
         uses: actions/checkout@v4
-      - name: Run Dependabot
-        uses: dependabot/fetch-metadata@v2
+      - name: 'Dependency Review'
+        uses: actions/dependency-review-action@v4
         with:
-          alert-lookup: true
-          compat-lookup: true
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          fail-on-severity: low
+
