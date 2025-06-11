@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-06-10T16:18:19.369418446-03:00",
+  "CreatedAt": "2025-06-11T14:45:08.015928814-03:00",
   "ArtifactName": ".",
   "ArtifactType": "filesystem",
   "Metadata": {
@@ -27,7 +27,7 @@
           "PkgName": "body-parser",
           "PkgIdentifier": {
             "PURL": "pkg:npm/body-parser@1.19.0",
-            "UID": "9ecd107c11c8f9f9"
+            "UID": "7d582071247bd2ca"
           },
           "InstalledVersion": "1.19.0",
           "FixedVersion": "1.20.3",
@@ -84,7 +84,7 @@
           "PkgName": "cookie",
           "PkgIdentifier": {
             "PURL": "pkg:npm/cookie@0.4.0",
-            "UID": "2ceb9eb56dc141fa"
+            "UID": "37558f8fb6fc469c"
           },
           "InstalledVersion": "0.4.0",
           "FixedVersion": "0.7.0",
@@ -132,7 +132,7 @@
           "PkgName": "express",
           "PkgIdentifier": {
             "PURL": "pkg:npm/express@4.17.1",
-            "UID": "d6c526629303adc5"
+            "UID": "aec310310cf9697e"
           },
           "InstalledVersion": "4.17.1",
           "FixedVersion": "4.20.0, 5.0.0",
@@ -184,12 +184,96 @@
           "LastModifiedDate": "2024-09-20T16:07:47.997Z"
         },
         {
+          "VulnerabilityID": "CVE-2017-5941",
+          "PkgID": "node-serialize@0.0.4",
+          "PkgName": "node-serialize",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/node-serialize@0.0.4",
+            "UID": "3b3401cc0b8eccd2"
+          },
+          "InstalledVersion": "0.0.4",
+          "Status": "affected",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-5941",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Code Execution through IIFE in node-serialize",
+          "Description": "An issue was discovered in the node-serialize package 0.0.4 for Node.js. Untrusted data passed into the unserialize() function can be exploited to achieve arbitrary code execution by passing a JavaScript Object with an Immediately Invoked Function Expression (IIFE).",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-502"
+          ],
+          "VendorSeverity": {
+            "ghsa": 4,
+            "nvd": 4
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "http://packetstormsecurity.com/files/161356/Node.JS-Remote-Code-Execution.html",
+            "http://packetstormsecurity.com/files/163222/Node.JS-Remote-Code-Execution.html",
+            "http://www.securityfocus.com/bid/96225",
+            "https://github.com/advisories/GHSA-q4v7-4rhw-9hqm",
+            "https://github.com/luin/serialize/issues/4",
+            "https://nodesecurity.io/advisories/311",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-5941",
+            "https://opsecx.com/index.php/2017/02/08/exploiting-node-js-deserialization-bug-for-remote-code-execution",
+            "https://opsecx.com/index.php/2017/02/08/exploiting-node-js-deserialization-bug-for-remote-code-execution/",
+            "https://www.npmjs.com/advisories/311"
+          ],
+          "PublishedDate": "2017-02-09T19:59:00.147Z",
+          "LastModifiedDate": "2025-04-20T01:37:25.86Z"
+        },
+        {
+          "VulnerabilityID": "NSWG-ECO-311",
+          "PkgID": "node-serialize@0.0.4",
+          "PkgName": "node-serialize",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/node-serialize@0.0.4",
+            "UID": "3b3401cc0b8eccd2"
+          },
+          "InstalledVersion": "0.0.4",
+          "FixedVersion": "\u003c0.0.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "nodejs-security-wg",
+          "DataSource": {
+            "ID": "nodejs-security-wg",
+            "Name": "Node.js Ecosystem Security Working Group",
+            "URL": "https://github.com/nodejs/security-wg"
+          },
+          "Title": "Code Execution through IIFE",
+          "Description": "node-serialize is a module for serializing an object or function into JSON.\n\nnode-serialize can be abused to execute arbitrary code via a [immediately invoked function expression](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression) (IIFE) if untrusted user input is passed into `unserialize()`",
+          "Severity": "CRITICAL",
+          "VendorSeverity": {
+            "nodejs-security-wg": 4
+          },
+          "References": [
+            "https://github.com/luin/serialize/issues/4",
+            "https://opsecx.com/index.php/2017/02/08/exploiting-node-js-deserialization-bug-for-remote-code-execution/"
+          ]
+        },
+        {
           "VulnerabilityID": "CVE-2024-45296",
           "PkgID": "path-to-regexp@0.1.7",
           "PkgName": "path-to-regexp",
           "PkgIdentifier": {
             "PURL": "pkg:npm/path-to-regexp@0.1.7",
-            "UID": "f5d742f5611597d0"
+            "UID": "25a8a13318e1f992"
           },
           "InstalledVersion": "0.1.7",
           "FixedVersion": "1.9.0, 0.1.10, 8.0.0, 3.3.0, 6.3.0",
@@ -247,7 +331,7 @@
           "PkgName": "path-to-regexp",
           "PkgIdentifier": {
             "PURL": "pkg:npm/path-to-regexp@0.1.7",
-            "UID": "f5d742f5611597d0"
+            "UID": "25a8a13318e1f992"
           },
           "InstalledVersion": "0.1.7",
           "FixedVersion": "0.1.12",
@@ -301,7 +385,7 @@
           "PkgName": "send",
           "PkgIdentifier": {
             "PURL": "pkg:npm/send@0.17.1",
-            "UID": "883c17389240c14"
+            "UID": "681407a1e2c7735a"
           },
           "InstalledVersion": "0.17.1",
           "FixedVersion": "0.19.0",
@@ -357,7 +441,7 @@
           "PkgName": "serve-static",
           "PkgIdentifier": {
             "PURL": "pkg:npm/serve-static@1.14.1",
-            "UID": "2a8e26637a4111eb"
+            "UID": "6a99301625798a60"
           },
           "InstalledVersion": "1.14.1",
           "FixedVersion": "1.16.0, 2.1.0",
