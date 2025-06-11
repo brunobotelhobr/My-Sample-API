@@ -1,0 +1,20 @@
+name: Security-SCA-Push
+
+on:
+  push:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  SCA:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Dependency Review
+        uses: actions/dependency-review-action@v4
+        with:
+          license-check: true
+          base-ref: ${{ github.event.before || github.sha }}
+          head-ref: ${{ github.sha }}
