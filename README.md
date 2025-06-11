@@ -14,7 +14,7 @@ You can set up your local environment for development or testing.
 
 First, install the required packages:
 ```sh
-npm install
+npm install 
 ```
 
 Then, start the server:
