@@ -16,5 +16,3 @@ jobs:
         with:
           fail-on-severity: low
           comment-summary-in-pr: always
-          fail-on-licenses: false
-
