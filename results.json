@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-06-06T17:53:57.036261762-03:00",
+  "CreatedAt": "2025-06-11T14:45:08.015928814-03:00",
   "ArtifactName": ".",
   "ArtifactType": "filesystem",
   "Metadata": {
@@ -22,12 +22,69 @@
       "Type": "npm",
       "Vulnerabilities": [
         {
+          "VulnerabilityID": "CVE-2024-45590",
+          "PkgID": "body-parser@1.19.0",
+          "PkgName": "body-parser",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/body-parser@1.19.0",
+            "UID": "7d582071247bd2ca"
+          },
+          "InstalledVersion": "1.19.0",
+          "FixedVersion": "1.20.3",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-45590",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "body-parser: Denial of Service Vulnerability in body-parser",
+          "Description": "body-parser is Node.js body parsing middleware. body-parser \u003c1.20.3 is vulnerable to denial of service when url encoding is enabled. A malicious actor using a specially crafted payload could flood the server with a large number of requests, resulting in denial of service. This issue is patched in 1.20.3.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-405"
+          ],
+          "VendorSeverity": {
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-45590",
+            "https://github.com/expressjs/body-parser",
+            "https://github.com/expressjs/body-parser/commit/b2695c4450f06ba3b0ccf48d872a229bb41c9bce",
+            "https://github.com/expressjs/body-parser/security/advisories/GHSA-qwcr-r2fm-qrc7",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-45590",
+            "https://www.cve.org/CVERecord?id=CVE-2024-45590"
+          ],
+          "PublishedDate": "2024-09-10T16:15:21.083Z",
+          "LastModifiedDate": "2024-09-20T16:26:44.977Z"
+        },
+        {
           "VulnerabilityID": "CVE-2024-47764",
           "PkgID": "cookie@0.4.0",
           "PkgName": "cookie",
           "PkgIdentifier": {
             "PURL": "pkg:npm/cookie@0.4.0",
-            "UID": "2ceb9eb56dc141fa"
+            "UID": "37558f8fb6fc469c"
           },
           "InstalledVersion": "0.4.0",
           "FixedVersion": "0.7.0",
@@ -70,68 +127,12 @@
           "LastModifiedDate": "2024-10-07T17:48:28.117Z"
         },
         {
-          "VulnerabilityID": "CVE-2024-29041",
-          "PkgID": "express@4.17.1",
-          "PkgName": "express",
-          "PkgIdentifier": {
-            "PURL": "pkg:npm/express@4.17.1",
-            "UID": "d6c526629303adc5"
-          },
-          "InstalledVersion": "4.17.1",
-          "FixedVersion": "4.19.2, 5.0.0-beta.3",
-          "Status": "fixed",
-          "Layer": {},
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-29041",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory npm",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
-          },
-          "Title": "express: cause malformed URLs to be evaluated",
-          "Description": "Express.js minimalist web framework for node. Versions of Express.js prior to 4.19.0 and all pre-release alpha and beta versions of 5.0 are affected by an open redirect vulnerability using malformed URLs. When a user of Express performs a redirect using a user-provided URL Express performs an encode [using `encodeurl`](https://github.com/pillarjs/encodeurl) on the contents before passing it to the `location` header. This can cause malformed URLs to be evaluated in unexpected ways by common redirect allow list implementations in Express applications, leading to an Open Redirect via bypass of a properly implemented allow list. The main method impacted is `res.location()` but this is also called from within `res.redirect()`. The vulnerability is fixed in 4.19.2 and 5.0.0-beta.3.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-601",
-            "CWE-1286"
-          ],
-          "VendorSeverity": {
-            "cbl-mariner": 2,
-            "ghsa": 2,
-            "redhat": 3
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-              "V3Score": 6.1
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-              "V3Score": 6.1
-            }
-          },
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2024-29041",
-            "https://expressjs.com/en/4x/api.html#res.location",
-            "https://github.com/expressjs/express",
-            "https://github.com/expressjs/express/commit/0867302ddbde0e9463d0564fea5861feb708c2dd",
-            "https://github.com/expressjs/express/commit/0b746953c4bd8e377123527db11f9cd866e39f94",
-            "https://github.com/expressjs/express/pull/5539",
-            "https://github.com/expressjs/express/security/advisories/GHSA-rv95-896h-c2vc",
-            "https://github.com/koajs/koa/issues/1800",
-            "https://nvd.nist.gov/vuln/detail/CVE-2024-29041",
-            "https://www.cve.org/CVERecord?id=CVE-2024-29041"
-          ],
-          "PublishedDate": "2024-03-25T21:15:46.847Z",
-          "LastModifiedDate": "2024-11-21T09:07:26.023Z"
-        },
-        {
           "VulnerabilityID": "CVE-2024-43796",
           "PkgID": "express@4.17.1",
           "PkgName": "express",
           "PkgIdentifier": {
             "PURL": "pkg:npm/express@4.17.1",
-            "UID": "d6c526629303adc5"
+            "UID": "aec310310cf9697e"
           },
           "InstalledVersion": "4.17.1",
           "FixedVersion": "4.20.0, 5.0.0",
@@ -183,90 +184,88 @@
           "LastModifiedDate": "2024-09-20T16:07:47.997Z"
         },
         {
-          "VulnerabilityID": "CVE-2022-3517",
-          "PkgID": "minimatch@3.0.4",
-          "PkgName": "minimatch",
+          "VulnerabilityID": "CVE-2017-5941",
+          "PkgID": "node-serialize@0.0.4",
+          "PkgName": "node-serialize",
           "PkgIdentifier": {
-            "PURL": "pkg:npm/minimatch@3.0.4",
-            "UID": "59f390e6228c1c1c"
+            "PURL": "pkg:npm/node-serialize@0.0.4",
+            "UID": "3b3401cc0b8eccd2"
           },
-          "InstalledVersion": "3.0.4",
-          "FixedVersion": "3.0.5",
-          "Status": "fixed",
+          "InstalledVersion": "0.0.4",
+          "Status": "affected",
           "Layer": {},
           "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-3517",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-5941",
           "DataSource": {
             "ID": "ghsa",
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Title": "nodejs-minimatch: ReDoS via the braceExpand function",
-          "Description": "A vulnerability was found in the minimatch package. This flaw allows a Regular Expression Denial of Service (ReDoS) when calling the braceExpand function with specific arguments, resulting in a Denial of Service.",
-          "Severity": "HIGH",
+          "Title": "Code Execution through IIFE in node-serialize",
+          "Description": "An issue was discovered in the node-serialize package 0.0.4 for Node.js. Untrusted data passed into the unserialize() function can be exploited to achieve arbitrary code execution by passing a JavaScript Object with an Immediately Invoked Function Expression (IIFE).",
+          "Severity": "CRITICAL",
           "CweIDs": [
-            "CWE-400",
-            "CWE-1333"
+            "CWE-502"
           ],
           "VendorSeverity": {
-            "alma": 2,
-            "ghsa": 3,
-            "nvd": 3,
-            "oracle-oval": 3,
-            "redhat": 2,
-            "rocky": 2,
-            "ubuntu": 2
+            "ghsa": 4,
+            "nvd": 4
           },
           "CVSS": {
             "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
             },
             "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2023:0321",
-            "https://access.redhat.com/security/cve/CVE-2022-3517",
-            "https://bugzilla.redhat.com/2066009",
-            "https://bugzilla.redhat.com/2130518",
-            "https://bugzilla.redhat.com/2134609",
-            "https://bugzilla.redhat.com/2140911",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2066009",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2130518",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2134609",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2140911",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2142808",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44906",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3517",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35256",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43548",
-            "https://errata.almalinux.org/9/ALSA-2023-0321.html",
-            "https://errata.rockylinux.org/RLSA-2023:0321",
-            "https://github.com/grafana/grafana-image-renderer/issues/329",
-            "https://github.com/isaacs/minimatch",
-            "https://github.com/isaacs/minimatch/commit/a8763f4388e51956be62dc6025cec1126beeb5e6",
-            "https://github.com/isaacs/minimatch/commit/a8763f4388e51956be62dc6025cec1126beeb5e6 (v3.0.5)",
-            "https://github.com/nodejs/node/issues/42510",
-            "https://linux.oracle.com/cve/CVE-2022-3517.html",
-            "https://linux.oracle.com/errata/ELSA-2023-1743.html",
-            "https://lists.debian.org/debian-lts-announce/2023/01/msg00011.html",
-            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/MTEUUTNIEBHGKUKKLNUZSV7IEP6IP3Q3/",
-            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/UM6XJ73Q3NAM5KSGCOKJ2ZIA6GUWUJLK/",
-            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MTEUUTNIEBHGKUKKLNUZSV7IEP6IP3Q3",
-            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UM6XJ73Q3NAM5KSGCOKJ2ZIA6GUWUJLK",
-            "https://nvd.nist.gov/vuln/detail/CVE-2022-3517",
-            "https://ubuntu.com/security/notices/USN-6086-1",
-            "https://www.cve.org/CVERecord?id=CVE-2022-3517"
+            "http://packetstormsecurity.com/files/161356/Node.JS-Remote-Code-Execution.html",
+            "http://packetstormsecurity.com/files/163222/Node.JS-Remote-Code-Execution.html",
+            "http://www.securityfocus.com/bid/96225",
+            "https://github.com/advisories/GHSA-q4v7-4rhw-9hqm",
+            "https://github.com/luin/serialize/issues/4",
+            "https://nodesecurity.io/advisories/311",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-5941",
+            "https://opsecx.com/index.php/2017/02/08/exploiting-node-js-deserialization-bug-for-remote-code-execution",
+            "https://opsecx.com/index.php/2017/02/08/exploiting-node-js-deserialization-bug-for-remote-code-execution/",
+            "https://www.npmjs.com/advisories/311"
           ],
-          "PublishedDate": "2022-10-17T20:15:09.937Z",
-          "LastModifiedDate": "2025-05-13T14:15:18.11Z"
+          "PublishedDate": "2017-02-09T19:59:00.147Z",
+          "LastModifiedDate": "2025-04-20T01:37:25.86Z"
+        },
+        {
+          "VulnerabilityID": "NSWG-ECO-311",
+          "PkgID": "node-serialize@0.0.4",
+          "PkgName": "node-serialize",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/node-serialize@0.0.4",
+            "UID": "3b3401cc0b8eccd2"
+          },
+          "InstalledVersion": "0.0.4",
+          "FixedVersion": "\u003c0.0.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "nodejs-security-wg",
+          "DataSource": {
+            "ID": "nodejs-security-wg",
+            "Name": "Node.js Ecosystem Security Working Group",
+            "URL": "https://github.com/nodejs/security-wg"
+          },
+          "Title": "Code Execution through IIFE",
+          "Description": "node-serialize is a module for serializing an object or function into JSON.\n\nnode-serialize can be abused to execute arbitrary code via a [immediately invoked function expression](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression) (IIFE) if untrusted user input is passed into `unserialize()`",
+          "Severity": "CRITICAL",
+          "VendorSeverity": {
+            "nodejs-security-wg": 4
+          },
+          "References": [
+            "https://github.com/luin/serialize/issues/4",
+            "https://opsecx.com/index.php/2017/02/08/exploiting-node-js-deserialization-bug-for-remote-code-execution/"
+          ]
         },
         {
           "VulnerabilityID": "CVE-2024-45296",
@@ -274,7 +273,7 @@
           "PkgName": "path-to-regexp",
           "PkgIdentifier": {
             "PURL": "pkg:npm/path-to-regexp@0.1.7",
-            "UID": "f5d742f5611597d0"
+            "UID": "25a8a13318e1f992"
           },
           "InstalledVersion": "0.1.7",
           "FixedVersion": "1.9.0, 0.1.10, 8.0.0, 3.3.0, 6.3.0",
@@ -332,7 +331,7 @@
           "PkgName": "path-to-regexp",
           "PkgIdentifier": {
             "PURL": "pkg:npm/path-to-regexp@0.1.7",
-            "UID": "f5d742f5611597d0"
+            "UID": "25a8a13318e1f992"
           },
           "InstalledVersion": "0.1.7",
           "FixedVersion": "0.1.12",
@@ -381,91 +380,12 @@
           "LastModifiedDate": "2025-01-24T20:15:33.107Z"
         },
         {
-          "VulnerabilityID": "CVE-2022-24999",
-          "PkgID": "qs@6.7.0",
-          "PkgName": "qs",
-          "PkgIdentifier": {
-            "PURL": "pkg:npm/qs@6.7.0",
-            "UID": "40286eca0115c93d"
-          },
-          "InstalledVersion": "6.7.0",
-          "FixedVersion": "6.10.3, 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, 6.2.4",
-          "Status": "fixed",
-          "Layer": {},
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-24999",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory npm",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
-          },
-          "Title": "express: \"qs\" prototype poisoning causes the hang of the node process",
-          "Description": "qs before 6.10.3, as used in Express before 4.17.3 and other products, allows attackers to cause a Node process hang for an Express application because an __ proto__ key can be used. In many typical Express use cases, an unauthenticated remote attacker can place the attack payload in the query string of the URL that is used to visit the application, such as a[__proto__]=b\u0026a[__proto__]\u0026a[length]=100000000. The fix was backported to qs 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, and 6.2.4 (and therefore Express 4.17.3, which has \"deps: qs@6.9.7\" in its release description, is not vulnerable).",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-1321"
-          ],
-          "VendorSeverity": {
-            "alma": 2,
-            "ghsa": 3,
-            "nvd": 3,
-            "oracle-oval": 2,
-            "redhat": 2
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            },
-            "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            }
-          },
-          "References": [
-            "https://access.redhat.com/errata/RHSA-2023:0050",
-            "https://access.redhat.com/security/cve/CVE-2022-24999",
-            "https://bugzilla.redhat.com/2044591",
-            "https://bugzilla.redhat.com/2066009",
-            "https://bugzilla.redhat.com/2134609",
-            "https://bugzilla.redhat.com/2140911",
-            "https://bugzilla.redhat.com/2150323",
-            "https://errata.almalinux.org/8/ALSA-2023-0050.html",
-            "https://github.com/expressjs/express/releases/tag/4.17.3",
-            "https://github.com/ljharb/qs",
-            "https://github.com/ljharb/qs/commit/4310742efbd8c03f6495f07906b45213da0a32ec",
-            "https://github.com/ljharb/qs/commit/727ef5d34605108acb3513f72d5435972ed15b68",
-            "https://github.com/ljharb/qs/commit/73205259936317b40f447c5cdb71c5b341848e1b",
-            "https://github.com/ljharb/qs/commit/8b4cc14cda94a5c89341b77e5fe435ec6c41be2d",
-            "https://github.com/ljharb/qs/commit/ba24e74dd17931f825adb52f5633e48293b584e1",
-            "https://github.com/ljharb/qs/commit/e799ba57e573a30c14b67c1889c7c04d508b9105",
-            "https://github.com/ljharb/qs/commit/ed0f5dcbef4b168a8ae299d78b1e4a2e9b1baf1f",
-            "https://github.com/ljharb/qs/commit/f945393cfe442fe8c6e62b4156fd35452c0686ee",
-            "https://github.com/ljharb/qs/commit/fc3682776670524a42e19709ec4a8138d0d7afda",
-            "https://github.com/ljharb/qs/pull/428",
-            "https://github.com/n8tz/CVE-2022-24999",
-            "https://linux.oracle.com/cve/CVE-2022-24999.html",
-            "https://linux.oracle.com/errata/ELSA-2023-0050.html",
-            "https://lists.debian.org/debian-lts-announce/2023/01/msg00039.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2022-24999",
-            "https://security.netapp.com/advisory/ntap-20230908-0005",
-            "https://security.netapp.com/advisory/ntap-20230908-0005/",
-            "https://www.cve.org/CVERecord?id=CVE-2022-24999"
-          ],
-          "PublishedDate": "2022-11-26T22:15:10.153Z",
-          "LastModifiedDate": "2025-04-29T14:15:20.41Z"
-        },
-        {
           "VulnerabilityID": "CVE-2024-43799",
           "PkgID": "send@0.17.1",
           "PkgName": "send",
           "PkgIdentifier": {
             "PURL": "pkg:npm/send@0.17.1",
-            "UID": "883c17389240c14"
+            "UID": "681407a1e2c7735a"
           },
           "InstalledVersion": "0.17.1",
           "FixedVersion": "0.19.0",
@@ -521,7 +441,7 @@
           "PkgName": "serve-static",
           "PkgIdentifier": {
             "PURL": "pkg:npm/serve-static@1.14.1",
-            "UID": "2a8e26637a4111eb"
+            "UID": "6a99301625798a60"
           },
           "InstalledVersion": "1.14.1",
           "FixedVersion": "1.16.0, 2.1.0",
@@ -571,93 +491,6 @@
           ],
           "PublishedDate": "2024-09-10T15:15:17.937Z",
           "LastModifiedDate": "2024-09-20T17:36:30.313Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2021-46708",
-          "PkgID": "swagger-ui-dist@3.34.0",
-          "PkgName": "swagger-ui-dist",
-          "PkgIdentifier": {
-            "PURL": "pkg:npm/swagger-ui-dist@3.34.0",
-            "UID": "bc67306140ea099d"
-          },
-          "InstalledVersion": "3.34.0",
-          "FixedVersion": "4.1.3",
-          "Status": "fixed",
-          "Layer": {},
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-46708",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory npm",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
-          },
-          "Title": "Spoofing attack in swagger-ui-dist",
-          "Description": "The swagger-ui-dist package before 4.1.3 for Node.js could allow a remote attacker to hijack the clicking action of the victim. By persuading a victim to visit a malicious Web site, a remote attacker could exploit this vulnerability to hijack the victim's click actions and possibly launch further attacks against the victim.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-1021"
-          ],
-          "VendorSeverity": {
-            "ghsa": 2,
-            "nvd": 2
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-              "V3Score": 6.1
-            },
-            "nvd": {
-              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-              "V2Score": 4.3,
-              "V3Score": 6.1
-            }
-          },
-          "References": [
-            "https://github.com/swagger-api/swagger-ui",
-            "https://nvd.nist.gov/vuln/detail/CVE-2021-46708",
-            "https://security.netapp.com/advisory/ntap-20220407-0004",
-            "https://security.netapp.com/advisory/ntap-20220407-0004/",
-            "https://security.snyk.io/vuln/SNYK-JS-SWAGGERUIDIST-2314884",
-            "https://www.npmjs.com/package/swagger-ui-dist/v/4.1.3"
-          ],
-          "PublishedDate": "2022-03-11T07:15:07.927Z",
-          "LastModifiedDate": "2024-11-21T06:34:36.543Z"
-        },
-        {
-          "VulnerabilityID": "GHSA-qrmm-w75w-3wpx",
-          "PkgID": "swagger-ui-dist@3.34.0",
-          "PkgName": "swagger-ui-dist",
-          "PkgIdentifier": {
-            "PURL": "pkg:npm/swagger-ui-dist@3.34.0",
-            "UID": "bc67306140ea099d"
-          },
-          "InstalledVersion": "3.34.0",
-          "FixedVersion": "4.1.3",
-          "Status": "fixed",
-          "Layer": {},
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://github.com/advisories/GHSA-qrmm-w75w-3wpx",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory npm",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
-          },
-          "Title": "Server side request forgery in SwaggerUI",
-          "Description": "SwaggerUI supports displaying remote OpenAPI definitions through the `?url` parameter. This enables robust demonstration capabilities on sites like `petstore.swagger.io`, `editor.swagger.io`, and similar sites, where users often want to see what their OpenAPI definitions would look like rendered.\n\nHowever, this functionality may pose a risk for users who host their own SwaggerUI instances. In particular, including remote OpenAPI definitions opens a vector for phishing attacks by abusing the trusted names/domains of self-hosted instances.\n\nAn example scenario abusing this functionality could take the following form:\n- `https://example.com/api-docs` hosts a version of SwaggerUI with `?url=` query parameter enabled.\n- Users will trust the domain `https://example.com` and the contents of the OpenAPI definition.\n- A malicious actor may craft a similar OpenAPI definition and service that responds to the defined APIs at `https://evildomain`.\n- Users mistakenly click a phishing URL like `https://example.com/api-docs?url=https://evildomain/fakeapi.yaml` and enters sensitive data via the \"Try-it-out\" feature.\n\nWe do want to stress that this attack vector is limited to scenarios that actively trick users into divulging sensitive information. The ease of this is highly contextual and, therefore, the threat model may be different for individual users and organizations. It is *not* possible to perform non-interactive attacks (e.g., cross-site scripting or code injection) through this mechanism.\n\n### Resolution \nWe've made the decision to [disable query parameters (#4872)](https://github.com/swagger-api/swagger-ui/issues/4872) by default starting with SwaggerUI version `4.1.3`. Please update to this version when it becomes available (**ETA: 2021 December**). Users will still be able to be re-enable the options at their discretion. We'll continue to enable query parameters on the Swagger demo sites.\n\n### Workaround\nIf you host a version of SwaggerUI and wish to mitigate this issue immediately, you are encouraged to add the following custom plugin code:\n\n```js\nSwaggerUI({\n  //  ...other configuration options,\n  plugins: [function UrlParamDisablePlugin() {\n    return {\n      statePlugins: {\n        spec: {\n          wrapActions: {\n            // Remove the ?url parameter from loading an external OpenAPI definition.\n            updateUrl: (oriAction) =\u003e (payload) =\u003e {\n              const url = new URL(window.location.href)\n              if (url.searchParams.has('url')) {\n                url.searchParams.delete('url')\n                window.location.replace(url.toString())\n              }\n              return oriAction(payload)\n            }\n          }\n        }\n      }\n    }\n  }],\n})\n```\n\n### Future UX work\n\nThrough the exploration of this issue, it became apparent that users may not be aware to which web server the Try-it-out function will send requests. While this information is currently presented at the top of the page, understanding may improve by displaying it closer to the \"Execute\" button where requests are actually made. We'll be exploring these UX improvements over the coming months and welcome community input. Please create a Feature Request under the GitHub Issue tab to start a conversation with us and the community.\n\n## Reflected XSS attack\n\n**Warning** in versions \u003c 3.38.0, it is possible to combine the URL options (as mentioned above) with a vulnerability in DOMPurify (https://www.cvedetails.com/cve/CVE-2020-26870/) to create a reflected XSS vector. If your version of Swagger UI is older than 3.38.0, we suggest you upgrade or implement the workaround as mentioned above.\n",
-          "Severity": "MEDIUM",
-          "VendorSeverity": {
-            "ghsa": 2
-          },
-          "References": [
-            "https://github.com/domaindrivendev/Swashbuckle.AspNetCore/commit/401c7cb81e5efe835ceb8aae23e82057d57c7d29",
-            "https://github.com/swagger-api/swagger-ui",
-            "https://github.com/swagger-api/swagger-ui/commit/01a3e55960f864a0acf6a8d06e5ddaf6776a7f76",
-            "https://github.com/swagger-api/swagger-ui/issues/4872",
-            "https://github.com/swagger-api/swagger-ui/security/advisories/GHSA-qrmm-w75w-3wpx"
-          ],
-          "PublishedDate": "2021-12-09T19:08:38Z",
-          "LastModifiedDate": "2022-05-26T20:08:34Z"
         }
       ]
     }

@@ -1,12 +1,13 @@
-name: Security-SCA-Push
+name: Security-SCA-PR
 
 on:
-  push:
+  pull_request:
+    branches: [main]
   workflow_call:
   workflow_dispatch:
 
 jobs:
-  SCA-Push:
+  SCA-PR:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -15,6 +16,9 @@ jobs:
       - name: Run Dependency Review
         uses: actions/dependency-review-action@v4
         with:
-          license-check: true
+          fail-on-severity: moderate
+
           base-ref: ${{ github.event.before || github.sha }}
           head-ref: ${{ github.sha }}
+
+          comment-summary-in-pr: on-failure
