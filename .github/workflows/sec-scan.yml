@@ -1,4 +1,4 @@
-name: Security Scan
+name: DependaBot Scan
 
 on:
   pull_request:
