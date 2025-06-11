@@ -1,25 +1,15 @@
-# Dependabot configuration for security and SCA (Software Composition Analysis)
-# This workflow uses GitHub's official "dependency-review-action" and is highly configurable.
-# All available options are included and commented for easy customization.
-
 name: Security-SCA
 
 on:
   push:
   pull_request:
     branches: [main]
-  # Allow the workflow to be triggered by manual dispatch, push, or pull request events
   workflow_call:
-  # Trigger the workflow on manual dispatch or push/pull request events
   workflow_dispatch:
-  # Trigger the workflow every day at midnight UTC
-#   schedule:
-#     - cron: '0 0 * * *'
 
 permissions:
   contents: read
   pull-requests: write
-  # security-events: write  # Uncomment if you want to upload SARIF results
 
 jobs:
   SCA:
@@ -28,60 +18,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Dependency Review
+      - name: Run Dependency Review
+        if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'opened')
         uses: actions/dependency-review-action@v4
         with:
-          # Defines the threshold for the level of severity. The action will fail on any pull requests that introduce vulnerabilities of the specified severity level or higher.
           fail-on-severity: moderate
-
-          # Contains a list of allowed licenses. The action will fail on pull requests that introduce dependencies with licenses that do not match the list.
-          # allow-licenses: MIT,Apache-2.0
-
-          # Contains a list of prohibited licenses. The action will fail on pull requests that introduce dependencies with licenses that match the list.
-          # deny-licenses: GPL-3.0
-
-          # Contains a list of strings of the build environments you want to support. The action will fail on pull requests that introduce vulnerabilities in the scopes that match the list.
-          # fail-on-scopes: runtime,development,unknown
-
-          # Contains a list of GitHub Advisory Database IDs that can be skipped during detection.
-          # allow-ghsas: GHSA-xxxx-xxxx-xxxx
-
-          # Enable or disable the license check performed by the action.
           license-check: true
 
-          # Enable or disable the vulnerability check performed by the action.
-          # vulnerability-check: true
-
-          # Contains a list of packages that will be excluded from license checks.
-          # allow-dependencies-licenses: pkg:pypi/somepackage@1.0.0
-
-          # Provide custom git references for the git base/head when performing the comparison check. Only used for event types other than pull_request and pull_request_target.
           base-ref: ${{ github.event.before || github.sha }}
           head-ref: ${{ github.sha }}
 
-          # Enable or disable reporting the review summary as a comment in the pull request. Possible values: always, on-failure, never
           comment-summary-in-pr: on-failure
-
-          # Any number of packages to block in a PR. This option will match on the exact version provided. If no version is provided, the option will treat the specified package as a wildcard and deny all versions.
-          # deny-packages: pkg:pypi/unsafe-package
-
-          # Any number of groups (namespaces) to block in a PR.
-          # deny-groups: pkg:pypi/unsafe-namespace
-
-          # Enable or disable retrying the action every 10 seconds while waiting for dependency submission actions to complete.
-          # retry-on-snapshot-warnings: false
-
-          # Maximum amount of time (in seconds) to retry the action while waiting for dependency submission actions to complete.
-          # retry-on-snapshot-warnings-timeout: 120
-
-          # When set to true, the action will log all vulnerabilities as warnings regardless of the severity, and the action will complete with a success status. This overrides the fail-on-severity option.
-          # warn-only: false
-
-          # When set to true, the action will output information about all the known OpenSSF Scorecard scores for the dependencies changed in this pull request.
-          # show-openssf-scorecard: true
-
-          # When show-openssf-scorecard is set to true, this option lets you configure the threshold for when a score is considered too low and gets a warning in the CI.
-          # warn-on-openssf-scorecard-level: 3
-
-          # config-file: Path to a custom configuration file
-          # config-file: .github/dependency-review-config.yml
