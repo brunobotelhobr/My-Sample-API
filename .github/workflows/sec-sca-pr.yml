@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  SCA:
+  SCA-PR:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
