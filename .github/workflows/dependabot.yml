@@ -1,4 +1,4 @@
-name: Security-SCA-PR
+name: Dependabot Advanced
 
 on:
   pull_request:
@@ -6,19 +6,23 @@ on:
   workflow_call:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
-  SCA-PR:
+  dependency-review:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Run Dependency Review
         uses: actions/dependency-review-action@v4
         with:
-          fail-on-severity: moderate
+          fail-on-severity: low
 
           base-ref: ${{ github.event.before || github.sha }}
           head-ref: ${{ github.sha }}
 
-          comment-summary-in-pr: on-failure
+          comment-summary-in-pr: always
