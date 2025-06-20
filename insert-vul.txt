@@ -1,0 +1,5 @@
+# install
+npm install lodash@4.17.15 --save
+npm install minimist@0.2.0 --save
+npm uninstall lodash --save
+npm uninstall minimist@0.2.0 --save
