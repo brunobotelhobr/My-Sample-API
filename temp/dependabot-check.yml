@@ -1,0 +1,21 @@
+name: Security Scan
+
+on:
+  pull_request:
+    branches:
+      - main
+      - "*"
+
+jobs:
+  dependabot:
+    name: Run Dependabot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run Dependabot
+        uses: dependabot/fetch-metadata@v2
+        with:
+          alert-lookup: true
+          compat-lookup: true
+          github-token: "${{ secrets.GITHUB_TOKEN }}"

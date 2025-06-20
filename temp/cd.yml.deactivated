@@ -1,0 +1,49 @@
+name: CD
+
+on: workflow_dispatch
+
+jobs:
+
+  CD:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Code
+        uses: actions/checkout@v3
+
+  #     - name: Okteto Login
+  #       uses: okteto/context@latest
+  #       with:
+  #         token: ${{ secrets.OKTETO_API_KEY }}
+
+  #     - name: Okteto Deploy
+  #       uses: okteto/apply@latest
+  #       with:
+  #         manifest: k8s/deployment.yaml
+
+  #     - name: Sleep for 45s
+  #       uses: juliangruber/sleep-action@v1
+  #       with:
+  #         time: 45s
+
+  #     - name: DAST
+  #       uses: zaproxy/action-api-scan@v0.4.0
+  #       with:
+  #         target: https://api-service-brunobotelhobr.cloud.okteto.net/openapi.yaml
+  #         format: openapi
+  #         rules_file_name: .zap_ignore
+  #         allow_issue_writing: false
+  #         cmd_options: "-a"
+  #         fail_action: true
+
+  # QA:
+  #   needs: [CD]
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Download Code
+  #       uses: actions/checkout@v3
+
+  #     - name: QA tests
+  #       run: chmod +x test/qa.sh; test/qa.sh
+
