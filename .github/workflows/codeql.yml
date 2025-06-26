@@ -16,7 +16,7 @@ jobs:
       contents: read
 
     strategy:
-      fail-fast: true
+      fail-fast: 'true'
       matrix:
         include:
         - language: javascript-typescript
