@@ -13,6 +13,8 @@ const connection = mysql.createConnection({
   database: 'userdb'
 });
 
+
+
 // Rota de login com vulnerabilidade de injeção SQL
 app.post('/api/login', (req, res) => {
   const username = req.body.username;
